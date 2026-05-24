@@ -1,0 +1,55 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+
+export default function Preloader() {
+  const [v, setV] = useState(0);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+        const preloader = document.getElementById('preloader');
+        const preloaderBar = document.getElementById('preloader-bar');
+        const loaderTextInner = document.getElementById('loader-text-inner');
+
+        if (!preloader || !preloaderBar || !loaderTextInner) return;
+
+        const tl = gsap.timeline();
+        const obj = { v: 0 };
+
+        tl.to(loaderTextInner, { y: '0%', duration: 0.8, ease: 'power3.out' })
+          .to(preloaderBar, { width: '100%', duration: 1.0, ease: 'expo.inOut' }, '<0.1')
+          .to(obj, {
+              v: 100, 
+              duration: 1.0, 
+              ease: 'expo.inOut',
+              onUpdate: () => setV(Math.round(obj.v))
+          }, '<')
+          .to(preloader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '+=0.1')
+          .add(() => {
+            preloader.style.display = 'none';
+          })
+          .from('#top', { scale: 1.04, duration: 1.4, ease: 'power3.out', transformOrigin: 'center top' }, '-=0.6')
+          .to('.hero-line', { y: '0%', duration: 1.1, stagger: 0.1, ease: 'power3.out' }, '-=1.2')
+          .to('.fade-up', { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'power2.out' }, '-=0.9');
+    });
+    
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div id="preloader" className="flex flex-col items-center justify-center">
+        <div className="loader-text mb-8">
+            <span id="loader-text-inner" className="inline-block">
+                <img 
+                    src="/logo_transparent.png" 
+                    alt="Dr. Rashmi Agarwal Logo" 
+                    className="h-16 md:h-20 w-auto object-contain drop-shadow-lg"
+                />
+            </span>
+        </div>
+        <div className="bar"><div className="bar-fill" id="preloader-bar"></div></div>
+        <div className="count" id="preloader-count">{String(v).padStart(3, '0')}</div>
+    </div>
+  );
+}
