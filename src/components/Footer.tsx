@@ -29,21 +29,21 @@ export default function Footer() {
             </div>
             
             <div className="md:col-span-2">
-              <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Conditions</div>
+              <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Treatments</div>
               <div className="flex flex-col gap-2" style={{ fontSize: '0.875rem' }}>
-                <Link href="/ivf" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IVF Treatment</Link>
-                <Link href="/iui" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IUI Treatment</Link>
-                <Link href="/fertility" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Female Fertility</Link>
+                <Link href="/treatments/ivf" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IVF</Link>
+                <Link href="/treatments/iui" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IUI</Link>
+                <Link href="/treatments/icsi" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">ICSI &amp; SSR</Link>
               </div>
             </div>
-            
+
             <div className="md:col-span-2">
               <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Explore</div>
               <div className="flex flex-col gap-2" style={{ fontSize: '0.875rem' }}>
-                <Link href="/#about" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">About</Link>
-                <Link href="/#record" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Record</Link>
-                <Link href="/#faq" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">FAQ</Link>
-                <Link href="/#book" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Book</Link>
+                <Link href="/about" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">About</Link>
+                <Link href="/treatments" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Treatments</Link>
+                <Link href="/faqs" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">FAQ</Link>
+                <Link href="/contact" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Contact</Link>
               </div>
             </div>
           </div>

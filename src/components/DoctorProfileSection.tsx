@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { Award, GraduationCap, ShieldCheck, Star, Users, BookOpen, Trophy, History, Stethoscope, MapPin, CalendarCheck2, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,10 +28,10 @@ export default function DoctorProfileSection() {
     }, []);
 
     const stats = [
-        { label: "Consultations", value: "21K+", icon: Users },
-        { label: "Publications", value: "25+", icon: BookOpen },
-        { label: "Awards Won", value: "40+", icon: Trophy },
-        { label: "Years Experience", value: "8+", icon: History },
+        { label: "Consultations", value: "9K+", icon: Users },
+        { label: "Publications", value: "5+", icon: BookOpen },
+        { label: "Awards Won", value: "10+", icon: Trophy },
+        { label: "Years Experience", value: "10+", icon: History },
     ];
 
     const expertises = [
@@ -79,11 +80,11 @@ export default function DoctorProfileSection() {
                         </span>
                     </div>
                     <h2 className="display-sm text-slate-900 mb-6 font-bold">
-                        Global Standard Care by <br className="hidden sm:block" />
-                        <span className="text-pink-600">Dr. Rashmi Agarwal</span>
+                        Dr. Rashmi Agarwal : Senior IVF and <br className="hidden sm:block" />
+                        <span className="text-pink-600">Fertility Specialist</span>
                     </h2>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto">
-                        Combining 8+ years of clinical excellence with the world's most advanced reproductive technologies for fertility treatment.
+                        Combining 10+ years of clinical excellence with the world&apos;s most advanced reproductive technologies for fertility treatment.
                     </p>
                 </div>
 
@@ -148,10 +149,10 @@ export default function DoctorProfileSection() {
                             </h4>
                             <div className="space-y-4">
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    Dr. Rashmi Agarwal is an expert on infertility with more than 6 years of experience in OB-GYN, or obstetrician-gynecologist, and Fertility Medicine. Dr. Rashmi has a lot of experience dealing with all kinds of fertility problems. Whether it’s a test, a plan for improving fertility, or a surgery, like a laparoscopic procedure for an ectopic pregnancy, a reversal of sterilisation, endometriosis, fibroids, etc. She also does surgical sperm retrieval for men who are unable to have children. Her areas of interest include infertility caused by PCOS, repeated IVF failures, and repeated miscarriages.
+                                    Dr. Rashmi Agarwal is a fellowship trained fertility specialist practising in Gurugram and Delhi NCR. Her qualifications (MBBS, MS in Obstetrics and Gynaecology (Gold Medalist), DNB, and FNB in Reproductive Medicine) reflect one of the most rigorous training pathways in Indian reproductive medicine. Over more than ten years of dedicated clinical practice, she has guided thousands of couples through everything from simple ovulation problems to repeated IVF failures and recurrent miscarriage.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    She graduated with an MBBS degree from the Indira Gandhi Government Medical College in Maharashtra in 2012. Master of Surgery in Obstetrics and Gynecology, Government Medical College, Maharashtra, 2015. Fellowship in Reproductive Medicine at the Diplomate of the National Board of Obstetrics and Gynecology, New Delhi, 2019. She has a significant body of work published in a variety of international journals, demonstrating her deep commitment to academics and the pursuit of knowledge. Moreover, she has a mission to make vetted health information available to everyone over the Internet.
+                                    What sets her clinic apart is not just the advanced training. It is the core philosophy of her practice. She reviews your medical reports herself, explains every treatment option in plain language, tells you honestly when a simpler treatment is worth trying before IVF, and stays personally involved from your first scan to your early pregnancy. Her special interests include PCOS related infertility, repeated IVF failure, recurrent pregnancy loss, male infertility including advanced surgical sperm retrieval, and fertility enhancing keyhole surgeries.
                                 </p>
                             </div>
                         </div>
@@ -202,7 +203,7 @@ export default function DoctorProfileSection() {
 
                         {/* CTA Buttons */}
                         <div className="dp-fade-up flex flex-col sm:flex-row gap-4 pt-4">
-                            <a href="/#book" className="flex-1 px-8 py-4 bg-pink-600 text-white text-sm font-black rounded-full hover:bg-pink-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-pink-600/20 active:scale-[0.98]">
+                            <a href="/contact" className="flex-1 px-8 py-4 bg-pink-600 text-white text-sm font-black rounded-full hover:bg-pink-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-pink-600/20 active:scale-[0.98]">
                                 <CalendarCheck2 className="w-5 h-5" />
                                 Book Consultation Free
                             </a>
@@ -210,6 +211,9 @@ export default function DoctorProfileSection() {
                                 <MessageCircle className="w-5 h-5 text-green-600" />
                                 WhatsApp Report
                             </a>
+                            <Link href="/about" className="flex-1 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 text-sm font-black rounded-full hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-[0.98]">
+                                Read Dr. Rashmi&apos;s Full Story
+                            </Link>
                         </div>
 
                     </div>

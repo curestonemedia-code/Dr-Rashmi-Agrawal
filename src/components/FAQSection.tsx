@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 // ── ICONS ──
 const PlusIcon = ({ className = '' }: { className?: string }) => (
@@ -90,36 +91,24 @@ export default function FAQSection() {
 
     const faqs = [
         {
-            q: 'What is the success rate of IVF treatments?',
-            a: 'Our IVF success rates are among the highest in North India, averaging around 75% for patients under 35. However, individual success depends on various factors including age, reproductive history, and specific fertility challenges. We will give you a personalized assessment during your consultation.'
+            q: 'When should we see a fertility specialist?',
+            a: 'If you are under 35 and have been trying for a year without success, or over 35 and trying for six months, it is time for an evaluation. Seek help sooner if you experience irregular periods, known PCOS, endometriosis, past pelvic surgeries, or any known male fertility issues.'
         },
         {
-            q: 'Is the IVF procedure painful?',
-            a: 'Most patients experience minimal discomfort. The egg retrieval is performed under mild anesthesia, so you will not feel any pain. Some mild cramping or bloating may occur afterward, similar to a menstrual period, which typically subsides within 24–48 hours.'
+            q: 'Does a fertility consultation mean we will be pushed into IVF?',
+            a: 'No. A large share of couples at our centre conceive with simpler methods like ovulation induction or IUI. IVF is only advised when your diagnostic reports show it is medically necessary, and Dr. Rashmi will always explain why in writing.'
         },
         {
-            q: 'How long does one IVF cycle take?',
-            a: 'A typical IVF cycle takes about 3 to 4 weeks. This includes the time for ovarian stimulation (10-12 days), egg retrieval, fertilization in the lab, and the embryo transfer. We closely monitor your progress throughout the entire process.'
+            q: 'How much does IVF cost at your centre?',
+            a: 'Clear IVF packages start from ₹1,20,000. Your final cost depends on whether your specific case requires advanced lab add ons like ICSI, surgical sperm retrieval, embryo freezing, or genetic testing. You receive a complete written breakdown upfront.'
         },
         {
-            q: 'Are there options if my partner has severe male infertility?',
-            a: 'Yes, absolutely. We specialize in advanced techniques like ICSI (Intracytoplasmic Sperm Injection) where a single healthy sperm is injected directly into the egg, which is highly effective for severe male factor infertility.'
+            q: 'Can we consult online before visiting Gurugram?',
+            a: 'Yes. You can send your previous medical reports and scans through WhatsApp at +91 88002 63884 for a preliminary review. From there, we can set up a video consultation to discuss your options before you travel to the clinic.'
         },
         {
-            q: 'Do you offer options for genetic testing?',
-            a: 'Yes, we offer Preimplantation Genetic Testing (PGT) to screen embryos for chromosomal abnormalities or specific genetic diseases before transfer, increasing the chances of a healthy pregnancy and reducing the risk of miscarriage.'
-        },
-        {
-            q: 'Can I consult online before visiting the clinic?',
-            a: 'Absolutely. You can send your previous medical reports and scans via WhatsApp for a preliminary evaluation. We can arrange an online video consultation to discuss your case and treatment options before you travel to our centre in Gurugram.'
-        },
-        {
-            q: 'What are the typical costs for IVF?',
-            a: 'We believe in complete transparency. Our IVF packages start from ₹1,20,000. The exact cost depends on whether additional procedures like ICSI, freezing, or PGT are required. We will provide a detailed, written estimate before starting any treatment.'
-        },
-        {
-            q: 'What kind of support is available during the treatment?',
-            a: "We offer comprehensive support including medical counseling, nutritional advice, and continuous WhatsApp access to our care team. You are never alone on this journey; our team is with you at every step."
+            q: 'Is IVF a painful procedure?',
+            a: 'Most patients find the process highly manageable. Ovarian stimulation injections use fine pen devices that cause minimal discomfort. The egg retrieval procedure is done under short anaesthesia so you feel nothing, and embryo transfers are completely painless.'
         },
     ];
 
@@ -147,11 +136,11 @@ export default function FAQSection() {
                             </div>
                             
                             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-slate-900 leading-[1.1] font-sans">
-                                Everything<br className="hidden lg:block" /> patients ask.
+                                Questions every<br className="hidden lg:block" /> couple asks first.
                             </h2>
-                            
+
                             <p className="text-base md:text-lg text-slate-500 mt-5 leading-relaxed max-w-md font-normal">
-                                The most common concerns we hear in the consultation room, answered honestly. If yours isn't here, message us directly.
+                                The most common concerns we hear in the consultation room, answered honestly. If yours isn&apos;t here, <Link href="/faqs" className="text-pink-600 font-semibold hover:underline">see the full FAQ page</Link> or message us directly.
                             </p>
 
                             {/* WhatsApp CTA */}
@@ -173,7 +162,7 @@ export default function FAQSection() {
                                 </div>
                                 <div>
                                     <div className="text-sm font-semibold text-slate-800">Verified Answers</div>
-                                    <div className="text-xs text-slate-500">By Dr. Rashmi Gupta</div>
+                                    <div className="text-xs text-slate-500">By Dr. Rashmi Agarwal</div>
                                 </div>
                             </div>
                         </div>

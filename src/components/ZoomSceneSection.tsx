@@ -120,7 +120,7 @@ export default function ZoomSceneSection() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-16 md:mt-24 pt-8 md:pt-10 border-t border-white/10 w-full">
                         <div>
                             <p className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white tracking-tight leading-none">
-                                21,000<span className="text-pink-500 font-semibold">+</span>
+                                9,000<span className="text-pink-500 font-semibold">+</span>
                             </p>
                             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mt-3 md:mt-4">
                                 CONSULTATIONS
@@ -128,7 +128,7 @@ export default function ZoomSceneSection() {
                         </div>
                         <div>
                             <p className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white tracking-tight leading-none">
-                                9,500<span className="text-pink-500 font-semibold">+</span>
+                                3,000<span className="text-pink-500 font-semibold">+</span>
                             </p>
                             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mt-3 md:mt-4">
                                 TREATMENTS
@@ -136,7 +136,7 @@ export default function ZoomSceneSection() {
                         </div>
                         <div>
                             <p className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-pink-500 tracking-tight leading-none flex items-baseline">
-                                8<span className="text-pink-500 font-semibold text-2xl md:text-3xl ml-1">+</span>
+                                10<span className="text-pink-500 font-semibold text-2xl md:text-3xl ml-1">+</span>
                             </p>
                             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mt-3 md:mt-4">
                                 YEARS EXPERIENCE

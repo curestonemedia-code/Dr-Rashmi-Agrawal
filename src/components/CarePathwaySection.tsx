@@ -6,8 +6,8 @@ export default function CarePathwaySection() {
         {
             num: '01',
             phase: 'Evaluation',
-            title: 'Initial Consultation & Diagnosis',
-            desc: 'Comprehensive fertility evaluation using advanced ultrasound and hormonal profiling to understand your unique needs.',
+            title: 'Consultation and Diagnosis',
+            desc: 'A detailed, unhurried first visit. Dr. Rashmi reviews your clinical history and previous reports, performs an ultrasound assessment, and orders only the targeted tests you actually need.',
             img: 'https://images.unsplash.com/photo-1576089172869-4f5f6f315620?auto=format&fit=crop&q=80&w=800',
             alt: 'Diagnostics',
             stats: [
@@ -19,11 +19,25 @@ export default function CarePathwaySection() {
         },
         {
             num: '02',
-            phase: 'Treatment',
-            title: 'Personalised Intervention',
-            desc: 'From simple ovulation induction to advanced ICSI and IVF, we provide evidence-based care focused on maximizing success rates.',
+            phase: 'The Plan',
+            title: 'Your Personalised Plan',
+            desc: 'You receive a clear, written medical plan: the recommended treatment pathway, realistic expectations for your specific case, alternative choices, and full cost transparency in writing.',
             img: '/Photos for website.jpg',
-            alt: 'Procedure',
+            alt: 'Personalised plan',
+            stats: [
+                { val: 'Written', label: 'Plan' },
+                { val: 'Clear', label: 'Cost' },
+                { val: 'Honest', label: 'Advice', accent: true },
+            ],
+            theme: 'dark',
+        },
+        {
+            num: '03',
+            phase: 'Treatment',
+            title: 'Supervised Treatment',
+            desc: 'Whether your plan involves simple ovulation tracking, an IUI, or an advanced IVF cycle, every scan, dose adjustment, and procedure is performed directly by Dr. Rashmi.',
+            img: '/12.webp',
+            alt: 'Supervised treatment',
             stats: [
                 { val: 'IVF & ICSI', label: 'Protocols' },
                 { val: 'High', label: 'Success' },
@@ -32,15 +46,15 @@ export default function CarePathwaySection() {
             theme: 'dark',
         },
         {
-            num: '03',
+            num: '04',
             phase: 'Support',
-            title: 'Pregnancy Journey',
-            desc: 'Dedicated support and continuous monitoring through early pregnancy, ensuring a safe and healthy start for your growing family.',
-            img: '/12.webp',
-            alt: 'Recovery',
+            title: 'Continuous Care and Support',
+            desc: 'We stay close to you throughout your cycle, with responsive WhatsApp access to our care team. Following your positive pregnancy test, Dr. Rashmi monitors your early development scans before handing over safely to routine obstetric care.',
+            img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&q=80&w=800',
+            alt: 'Continuous support',
             stats: [
                 { val: 'Close', label: 'Monitoring' },
-                { val: '24/7', label: 'Support' },
+                { val: 'WhatsApp', label: 'Support' },
                 { val: 'Joyful', label: 'Outcome', accent: true },
             ],
             theme: 'dark',
@@ -59,11 +73,11 @@ export default function CarePathwaySection() {
                         <div className="flex items-center gap-2 mb-5">
                             <span className="w-2 h-2 rounded-full bg-pink-600 animate-pulse"></span>
                             <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-pink-600">
-                                02 / The Care Pathway
+                                The Care Pathway
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-[-0.035em] text-slate-900 leading-[1.05] font-sans">
-                            From diagnosis<br className="hidden md:block" /> to discharge.
+                        <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-normal tracking-[-0.035em] text-slate-900 leading-[1.1] font-sans">
+                            From Your First Free Consultation to Early Pregnancy
                         </h2>
                     </div>
                     <div className="hidden md:block pb-2">
@@ -74,7 +88,7 @@ export default function CarePathwaySection() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid lg:grid-cols-3 gap-5 md:gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
                     {steps.map((step) => (
                         <div
                             key={step.num}
