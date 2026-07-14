@@ -47,7 +47,7 @@ export default function LiveOTSection() {
                                 04 / Treatment Insights
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-slate-900 mb-4 font-sans">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-4 font-sans">
                             Fertility treatments, explained.
                         </h2>
                         <p className="text-base md:text-lg text-slate-500 max-w-2xl leading-relaxed">
@@ -87,7 +87,7 @@ export default function LiveOTSection() {
             >
                 {cases.map(({ vid, label, title, desc, stats }) => (
                     <div
-                        key={vid}
+                        key={label}
                         className="w-[85vw] md:w-[640px] lg:w-[720px] xl:w-[780px] flex-shrink-0 snap-center bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.02)]"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center h-full">

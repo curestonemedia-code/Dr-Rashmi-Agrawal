@@ -108,7 +108,7 @@ export default function ExperienceAndMemberships() {
                             Portfolio
                         </span>
                     </div>
-                    <h2 className="display-sm text-slate-900 font-bold">
+                    <h2 className="display-sm text-slate-900 font-black!">
                         Work Experience
                     </h2>
                 </div>

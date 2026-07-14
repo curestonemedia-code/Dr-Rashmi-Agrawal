@@ -79,12 +79,12 @@ export default function DoctorProfileSection() {
                             Meet Your Specialist
                         </span>
                     </div>
-                    <h2 className="display-sm text-slate-900 mb-6 font-bold">
-                        Dr. Rashmi Agarwal : Senior IVF and <br className="hidden sm:block" />
-                        <span className="text-pink-600">Fertility Specialist</span>
+                    <h2 className="display-sm text-slate-900 mb-6 font-black!">
+                        Meet Dr. Rashmi Agarwal, <br className="hidden sm:block" />
+                        <span className="text-pink-600">Your Fertility Specialist</span>
                     </h2>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto">
-                        Combining 10+ years of clinical excellence with the world&apos;s most advanced reproductive technologies for fertility treatment.
+                        10+ years of clinical excellence, backed by advanced reproductive technology.
                     </p>
                 </div>
 
@@ -149,10 +149,10 @@ export default function DoctorProfileSection() {
                             </h4>
                             <div className="space-y-4">
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    Dr. Rashmi Agarwal is a fellowship trained fertility specialist practising in Gurugram and Delhi NCR. Her qualifications (MBBS, MS in Obstetrics and Gynaecology (Gold Medalist), DNB, and FNB in Reproductive Medicine) reflect one of the most rigorous training pathways in Indian reproductive medicine. Over more than ten years of dedicated clinical practice, she has guided thousands of couples through everything from simple ovulation problems to repeated IVF failures and recurrent miscarriage.
+                                    Fellowship trained fertility specialist practising in Gurugram and Delhi NCR. Over 10 years guiding couples through everything from ovulation problems to repeated IVF failure.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    What sets her clinic apart is not just the advanced training. It is the core philosophy of her practice. She reviews your medical reports herself, explains every treatment option in plain language, tells you honestly when a simpler treatment is worth trying before IVF, and stays personally involved from your first scan to your early pregnancy. Her special interests include PCOS related infertility, repeated IVF failure, recurrent pregnancy loss, male infertility including advanced surgical sperm retrieval, and fertility enhancing keyhole surgeries.
+                                    She reviews every report herself, explains options in plain language, and stays personally involved from your first scan to early pregnancy.
                                 </p>
                             </div>
                         </div>

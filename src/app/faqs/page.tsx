@@ -4,9 +4,15 @@ import { ChevronRight, MessageCircle } from "lucide-react";
 import FaqAccordion from "@/components/FaqAccordion";
 import { ALL_FAQS, FAQ_CATEGORIES } from "@/constants/faqs";
 
+const TITLE = 'Fertility and IVF FAQs | Dr. Rashmi Agarwal';
+const DESCRIPTION = 'Fertility questions answered by Dr. Rashmi Agarwal in Gurugram. IVF, IUI, ICSI, cost, pain, PCOS, and male infertility, explained in plain language.';
+
 export const metadata: Metadata = {
-    title: 'Fertility and IVF FAQs | Dr. Rashmi Agarwal',
-    description: 'Frequently asked fertility questions answered by Dr. Rashmi Agarwal. Topics include IVF, IUI, ICSI, cost, pain, success, PCOS, and male infertility.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: '/faqs' },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/faqs', type: 'website' },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 
 const faqSchema = {
@@ -41,11 +47,11 @@ export default function FaqsPage() {
                     <div className="chip mb-6 mx-auto w-fit">
                         <span className="chip-dot"></span>Frequently Asked Questions
                     </div>
-                    <h1 className="display-sm text-slate-900 mb-6">
-                        Every Question You Have Been Searching For, Answered by a Specialist
+                    <h1 className="display-sm text-slate-900 mb-6 font-black!">
+                        Every question, honestly answered.
                     </h1>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto mb-10">
-                        Honest answers covering diagnosis, treatment, cost, pain, male infertility, PCOS, and everything in between. Written in plain language by Dr. Rashmi Agarwal.
+                        Diagnosis, cost, pain, male infertility, PCOS — in plain language, by Dr. Rashmi Agarwal.
                     </p>
 
                     <nav aria-label="FAQ categories" className="flex flex-wrap justify-center gap-2">
@@ -84,7 +90,7 @@ export default function FaqsPage() {
 
             <section className="cta-band edge section-tight" data-bg="#ef8b92" data-theme="dark">
                 <div className="container-x relative text-center">
-                    <h2 className="display-sm mb-6 split-words" style={{ color: "#fff" }}>Still have questions?</h2>
+                    <h2 className="display-sm mb-6" style={{ color: "#fff" }}>Still have questions?</h2>
                     <p className="body-lg mb-10 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
                         Send your reports on WhatsApp or book a free consultation.
                     </p>

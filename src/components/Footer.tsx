@@ -16,7 +16,7 @@ export default function Footer() {
                 />
               </Link>
               <p className="mt-6 max-w-sm" style={{ color: 'var(--on-dark-muted)', fontSize: '0.9rem', lineHeight: '1.65' }}>
-                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist · Senior Consultant at Dr. Rashmi Agarwal IVF Centre, providing advanced reproductive care.
+                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist in Gurgaon · Senior Consultant at Dr. Rashmi Agarwal IVF Centre, providing reproductive care across Gurugram and Delhi NCR.
               </p>
             </div>
             
@@ -33,7 +33,8 @@ export default function Footer() {
               <div className="flex flex-col gap-2" style={{ fontSize: '0.875rem' }}>
                 <Link href="/treatments/ivf" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IVF</Link>
                 <Link href="/treatments/iui" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">IUI</Link>
-                <Link href="/treatments/icsi" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">ICSI &amp; SSR</Link>
+                <Link href="/treatments/icsi" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">ICSI</Link>
+                <Link href="/treatments/surgical-sperm-retrieval" style={{ color: 'var(--on-dark-muted)' }} className="hover:text-white transition">Surgical Sperm Retrieval</Link>
               </div>
             </div>
 

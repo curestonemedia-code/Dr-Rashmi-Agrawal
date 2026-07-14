@@ -172,7 +172,7 @@ export default function TestimonialsSection() {
                                     05 / Patient Voices
                                 </span>
                             </div>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-slate-900 leading-[1.1]">
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">
                                 In their own<br className="hidden md:block" /> words.
                             </h2>
                             <p className="text-base md:text-lg text-slate-500 mt-5 max-w-xl leading-relaxed">

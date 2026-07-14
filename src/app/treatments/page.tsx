@@ -5,9 +5,15 @@ import {
     ArrowRight, MessageCircle, ChevronRight,
 } from 'lucide-react';
 
+const TITLE = 'Fertility Treatments in Gurgaon | Dr. Rashmi Agarwal';
+const DESCRIPTION = 'Fertility treatments in Gurugram: IVF, ICSI, surgical sperm retrieval, IUI, and laparoscopy under Dr. Rashmi Agarwal. Compare your options in one place.';
+
 export const metadata: Metadata = {
-    title: 'Fertility Treatments in Gurgaon | Dr. Rashmi Agarwal',
-    description: 'Complete fertility treatments in Gurugram. Compare your options including IVF, ICSI, Surgical Sperm Retrieval, IUI, and laparoscopy under Dr. Rashmi Agarwal.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: '/treatments' },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/treatments', type: 'website' },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 
 const treatments = [
@@ -15,65 +21,73 @@ const treatments = [
         href: '/treatments/ivf',
         Icon: Baby,
         title: 'IVF (In Vitro Fertilisation)',
-        recommended: 'Blocked tubes, endometriosis, low AMH, higher age, failed IUIs, and long standing infertility.',
-        desc: 'Eggs are retrieved, fertilised with sperm in our advanced lab, and the healthy embryo is transferred to the uterus.',
+        recommended: 'Blocked tubes, low AMH, endometriosis, failed IUIs.',
+        desc: 'Eggs and sperm combined in the lab; the healthy embryo transferred to the uterus.',
         link: 'Full Guide: IVF Treatment',
     },
     {
         href: '/treatments/insemination',
         Icon: TestTube,
         title: 'Insemination',
-        recommended: 'Couples wanting to understand all insemination options, including donor insemination under ART Act rules.',
-        desc: 'The umbrella concept for placing laboratory prepared sperm into the reproductive tract safely and precisely to maximise the chance of natural fertilisation.',
+        recommended: 'Couples exploring partner or donor options, ART Act compliant.',
+        desc: 'Prepared sperm placed in the reproductive tract to maximise natural fertilisation.',
         link: 'Full Guide: Insemination',
     },
     {
         href: '/treatments/hysteroscopy-laparoscopy',
         Icon: Stethoscope,
         title: 'Hysteroscopy and Laparoscopy Surgeries',
-        recommended: 'Suspected polyps, septum, adhesions, endometriosis, fibroids, ovarian cysts, or blocked tubes.',
-        desc: 'Minimally invasive camera guided surgical procedures to diagnose and treat structural issues while strictly protecting your ovarian reserve.',
+        recommended: 'Polyps, septum, adhesions, endometriosis, fibroids, blocked tubes.',
+        desc: 'Minimally invasive keyhole surgery, protecting your ovarian reserve throughout.',
         link: 'Full Guide: Surgical Options',
     },
     {
         href: '/treatments/icsi',
         Icon: Syringe,
-        title: 'ICSI and Surgical Sperm Retrieval',
-        recommended: 'Low sperm count, poor motility, previous fertilisation failure, or azoospermia (zero sperm count in ejaculate).',
-        desc: 'One selected healthy sperm is injected directly into each mature egg. For azoospermia, we provide advanced Surgical Sperm Retrieval techniques including PESA, TESA, and Micro TESE to safely extract sperm for fertilisation.',
-        link: 'Full Guide: ICSI and Surgical Sperm Retrieval',
+        title: 'ICSI (Intracytoplasmic Sperm Injection)',
+        recommended: 'Low count, poor motility, or prior fertilisation failure.',
+        desc: 'One healthy sperm injected directly into each mature egg under a microscope.',
+        link: 'Full Guide: ICSI Treatment',
+    },
+    {
+        href: '/treatments/surgical-sperm-retrieval',
+        Icon: Stethoscope,
+        title: 'Surgical Sperm Retrieval (PESA, TESA, Micro TESE)',
+        recommended: 'Azoospermia, confirmed on two semen analyses.',
+        desc: 'Sperm retrieved directly from the reproductive tract for use with ICSI.',
+        link: 'Full Guide: Surgical Sperm Retrieval',
     },
     {
         href: '/treatments/iui',
         Icon: TestTube2,
         title: 'IUI (Intrauterine Insemination)',
-        recommended: 'Mild male factor, cervical issues, unexplained infertility, and single women or couples using donor sperm as per law.',
-        desc: 'Lab prepared, concentrated sperm is placed directly inside the uterus at the exact time of ovulation. Quick, painless, and done in minutes.',
+        recommended: 'Mild male factor, cervical issues, unexplained infertility.',
+        desc: 'Concentrated sperm placed inside the uterus at the exact fertile window.',
         link: 'Full Guide: IUI Treatment',
     },
     {
         href: '/treatments/ovulation-induction',
         Icon: CalendarRange,
         title: 'Ovulation Induction and Cycle Monitoring',
-        recommended: 'Irregular or absent ovulation, PCOS, and young couples early in their journey.',
-        desc: 'Oral or injectable medicines mature an egg, and serial ultrasounds pinpoint the exact fertile window for timed intercourse or IUI. Often the only treatment needed.',
+        recommended: 'Irregular ovulation, PCOS, early in your journey.',
+        desc: 'Medication plus tracking scans to pinpoint the exact fertile window.',
         link: 'Full Guide: Ovulation Induction',
     },
     {
         href: '/treatments/endometrial-biopsy-era',
         Icon: FileSearch,
         title: 'Endometrial Biopsy and ERA',
-        recommended: 'Repeated IVF implantation failure or evaluating the uterine environment.',
-        desc: 'Targeted diagnostic testing of the uterine lining to identify chronic infections or determine the precise, personalized window of implantation for IVF embryo transfers.',
+        recommended: 'Repeated IVF implantation failure.',
+        desc: 'Pinpoints the precise, personalised window of implantation for embryo transfer.',
         link: 'Full Guide: Advanced Diagnostics',
     },
 ];
 
 const comparisons = [
-    { name: 'Ovulation Induction', time: '1 cycle takes about 1 month.', note: 'Tablets or injections plus scans. First step for ovulation problems.' },
-    { name: 'IUI', time: '1 cycle takes about 1 month.', note: 'A 10 minute clinic procedure. First step for mild factors; usually 3 to 4 attempts maximum.' },
-    { name: 'IVF, ICSI, and Surgical Sperm Retrieval', time: '1 cycle takes about 3 to 4 weeks of active treatment.', note: 'Daycare egg retrieval under anaesthesia. Definitive treatment for most complex causes.' },
-    { name: 'Hysteroscopy and Laparoscopy', time: 'Daycare surgery.', note: 'Short anaesthesia. Diagnoses and treats structural causes in one sitting.' },
+    { name: 'Ovulation Induction', time: 'About 1 month per cycle.', note: 'Tablets or injections plus scans. First step for ovulation problems.' },
+    { name: 'IUI', time: 'About 1 month per cycle.', note: 'A 10-minute clinic procedure. Usually 3–4 attempts maximum.' },
+    { name: 'IVF, ICSI, and Surgical Sperm Retrieval', time: '3–4 weeks of active treatment.', note: 'Daycare retrieval under anaesthesia. Definitive for complex causes.' },
+    { name: 'Hysteroscopy and Laparoscopy', time: 'Daycare surgery.', note: 'Short anaesthesia. Diagnoses and treats in one sitting.' },
 ];
 
 export default function TreatmentsPage() {
@@ -91,11 +105,11 @@ export default function TreatmentsPage() {
                     <div className="chip mb-6 mx-auto w-fit">
                         <span className="chip-dot"></span>Treatments
                     </div>
-                    <h1 className="display-sm text-slate-900 mb-6">
-                        Every Fertility Treatment, One Honest Guide
+                    <h1 className="display-sm text-slate-900 mb-6 font-black!">
+                        Every treatment, honestly explained.
                     </h1>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto mb-10">
-                        From a simple tablet that triggers ovulation to advanced ICSI and precision diagnostics, this page explains what each treatment does and how we decide together.
+                        From a simple ovulation tablet to advanced ICSI. What each treatment does, and how we decide together.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/contact" className="btn btn-primary btn-lg">
@@ -111,10 +125,10 @@ export default function TreatmentsPage() {
             {/* INTRODUCTION */}
             <section className="section-tight edge">
                 <div className="container-x max-w-4xl">
-                    <h2 className="heading text-slate-900 mb-8">How We Choose the Right Treatment for You</h2>
+                    <h2 className="heading text-slate-900 mb-8 font-black!">How we choose your treatment</h2>
                     <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-                        <p>Fertility treatment is not a menu you order from, it is a medical decision that flows from your diagnosis. Age, ovarian reserve, tubal status, sperm parameters, previous attempts, and how long you have been trying all shape the recommendation. Two couples facing fertility challenges may need completely different plans.</p>
-                        <p>At Dr. Rashmi Agarwal IVF Centre, treatments sit on a ladder from simplest to advanced. We start at the lowest step that gives your specific case a genuine chance, and we escalate deliberately, never by default, and never to inflate a bill. Below, each treatment is explained in plain language.</p>
+                        <p>Not a menu — a decision that flows from your diagnosis. Age, ovarian reserve, and sperm parameters all shape the plan.</p>
+                        <p>Treatments sit on a ladder from simplest to advanced. We start at the lowest step that gives your case a genuine chance, and escalate only when it&apos;s needed.</p>
                     </div>
                 </div>
             </section>
@@ -148,7 +162,7 @@ export default function TreatmentsPage() {
             {/* COMPARISON */}
             <section className="section edge">
                 <div className="container-x">
-                    <h2 className="heading text-slate-900 mb-10">Quick Comparison: Time, Invasiveness, and Typical Use</h2>
+                    <h2 className="heading text-slate-900 mb-10">Time and invasiveness, compared.</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {comparisons.map((c, i) => (
                             <div key={i} className="bg-slate-50 border border-slate-100 p-6 rounded-3xl">
@@ -159,7 +173,7 @@ export default function TreatmentsPage() {
                         ))}
                     </div>
                     <p className="text-sm text-slate-400 mt-8">
-                        These are typical patterns, not strict rules. Your plan is built during your consultation, based exclusively on your medical reports.
+                        Typical patterns, not strict rules — your plan is built from your own reports.
                     </p>
                 </div>
             </section>
@@ -167,9 +181,9 @@ export default function TreatmentsPage() {
             {/* CTA BANNER */}
             <section className="cta-band edge section-tight" data-bg="#ef8b92" data-theme="dark">
                 <div className="container-x relative text-center">
-                    <h2 className="display-sm mb-6" style={{ color: '#fff' }}>Stop Guessing Which Treatment You Need</h2>
+                    <h2 className="display-sm mb-6" style={{ color: '#fff' }}>Stop guessing. Start knowing.</h2>
                     <p className="body-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                        One consultation, one ultrasound, and a few targeted tests will let you know exactly where you stand and what to do next. That clarity is worth more than months of internet research.
+                        One consultation and a few targeted tests tell you exactly where you stand.
                     </p>
                     <Link href="/contact" className="btn btn-white btn-lg">
                         Book Free Consultation

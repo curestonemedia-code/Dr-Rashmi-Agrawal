@@ -7,7 +7,7 @@ export default function CarePathwaySection() {
             num: '01',
             phase: 'Evaluation',
             title: 'Consultation and Diagnosis',
-            desc: 'A detailed, unhurried first visit. Dr. Rashmi reviews your clinical history and previous reports, performs an ultrasound assessment, and orders only the targeted tests you actually need.',
+            desc: 'An unhurried first visit — history, reports, ultrasound, and only the tests you actually need.',
             img: 'https://images.unsplash.com/photo-1576089172869-4f5f6f315620?auto=format&fit=crop&q=80&w=800',
             alt: 'Diagnostics',
             stats: [
@@ -21,7 +21,7 @@ export default function CarePathwaySection() {
             num: '02',
             phase: 'The Plan',
             title: 'Your Personalised Plan',
-            desc: 'You receive a clear, written medical plan: the recommended treatment pathway, realistic expectations for your specific case, alternative choices, and full cost transparency in writing.',
+            desc: 'A clear, written plan — treatment path, realistic expectations, and full cost in writing.',
             img: '/Photos for website.jpg',
             alt: 'Personalised plan',
             stats: [
@@ -35,7 +35,7 @@ export default function CarePathwaySection() {
             num: '03',
             phase: 'Treatment',
             title: 'Supervised Treatment',
-            desc: 'Whether your plan involves simple ovulation tracking, an IUI, or an advanced IVF cycle, every scan, dose adjustment, and procedure is performed directly by Dr. Rashmi.',
+            desc: 'Every scan, dose, and procedure performed directly by Dr. Rashmi — start to finish.',
             img: '/12.webp',
             alt: 'Supervised treatment',
             stats: [
@@ -49,7 +49,7 @@ export default function CarePathwaySection() {
             num: '04',
             phase: 'Support',
             title: 'Continuous Care and Support',
-            desc: 'We stay close to you throughout your cycle, with responsive WhatsApp access to our care team. Following your positive pregnancy test, Dr. Rashmi monitors your early development scans before handing over safely to routine obstetric care.',
+            desc: 'WhatsApp access throughout your cycle, plus early pregnancy scans before a safe handover.',
             img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&q=80&w=800',
             alt: 'Continuous support',
             stats: [
@@ -76,8 +76,8 @@ export default function CarePathwaySection() {
                                 The Care Pathway
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-normal tracking-[-0.035em] text-slate-900 leading-[1.1] font-sans">
-                            From Your First Free Consultation to Early Pregnancy
+                        <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-black tracking-[-0.035em] text-slate-900 leading-[1.1] font-sans">
+                            From diagnosis to delivery.
                         </h2>
                     </div>
                     <div className="hidden md:block pb-2">
@@ -131,7 +131,7 @@ export default function CarePathwaySection() {
                                     {step.phase}
                                 </span>
 
-                                <h3 className={`text-2xl md:text-[1.75rem] font-medium mb-3 tracking-tight ${step.theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                                <h3 className={`text-2xl md:text-[1.75rem] font-bold mb-3 tracking-tight ${step.theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                                     {step.title}
                                 </h3>
 

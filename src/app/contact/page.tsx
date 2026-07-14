@@ -3,9 +3,15 @@ import Link from 'next/link';
 import { Phone, MessageCircle, MapPin, Clock, Mail, AlertTriangle, ChevronRight } from 'lucide-react';
 import ContactForm from './ContactForm';
 
+const TITLE = 'Contact Dr. Rashmi Agarwal IVF Centre | Gurgaon';
+const DESCRIPTION = 'Contact Dr. Rashmi Agarwal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a free fertility consultation.';
+
 export const metadata: Metadata = {
-    title: 'Contact Dr. Rashmi Agarwal IVF Centre | Gurgaon',
-    description: 'Contact Dr. Rashmi Agarwal IVF Centre in Gurugram. Get our clinic address, phone number, WhatsApp details, hours, and find out how to book your free fertility consultation.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: '/contact' },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/contact', type: 'website' },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 
 const contactCards = [
@@ -15,10 +21,10 @@ const contactCards = [
 ];
 
 const steps = [
-    { title: 'Reach out', desc: 'Call or WhatsApp +91 88002 63884. Our coordinator responds the same day, usually within the hour.' },
-    { title: 'Share your details', desc: 'Name, age, brief history, and any previous reports you have. WhatsApp photos of reports are welcome for a free preliminary review.' },
-    { title: 'Confirmation', desc: 'You receive a confirmed date, time, and a short checklist of what to bring.' },
-    { title: 'Your consultation', desc: 'Arrive ten minutes early. Bring every old report, scan and prescription, even from years ago. Dr. Rashmi reads them all.' },
+    { title: 'Reach out', desc: 'Call or WhatsApp us — our coordinator replies the same day, usually within the hour.' },
+    { title: 'Share your details', desc: 'Name, age, brief history, and any reports you have — photos welcome.' },
+    { title: 'Confirmation', desc: 'A confirmed date, time, and a short checklist of what to bring.' },
+    { title: 'Your consultation', desc: 'Arrive ten minutes early with every old report. Dr. Rashmi reads them all.' },
 ];
 
 export default function ContactPage() {
@@ -44,9 +50,9 @@ export default function ContactPage() {
                     <div className="chip mb-6 mx-auto w-fit">
                         <span className="chip-dot"></span>Contact Us
                     </div>
-                    <h1 className="display-sm text-slate-900 mb-6">We Are Here When You Are Ready</h1>
+                    <h1 className="display-sm text-slate-900 mb-6 font-black!">Get in Touch</h1>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto">
-                        A phone call, a WhatsApp message, or a walk in. However you prefer to reach us, we respond the same day. No call centre runaround; you reach the team that actually handles your care.
+                        Call, WhatsApp, or walk in. We respond the same day — no call centre runaround.
                     </p>
                 </div>
             </section>
@@ -118,7 +124,7 @@ export default function ContactPage() {
                                 <div>
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] mb-1">Urgent or After Hours Concerns</p>
                                     <p className="text-slate-600 leading-relaxed text-sm">
-                                        If you are a current patient experiencing severe abdominal pain, heavy bleeding, breathlessness or any emergency symptom during your treatment cycle, message us on WhatsApp with a brief description. For a life threatening emergency, call 112 or go to the nearest emergency department first, then inform us.
+                                        Active patients: message WhatsApp for cycle-related symptoms. For a life-threatening emergency, call 112 first.
                                     </p>
                                 </div>
                             </div>
@@ -127,7 +133,7 @@ export default function ContactPage() {
                         <div className="bg-slate-50 border border-slate-100 rounded-[2rem] p-8 md:p-10">
                             <h2 className="heading-sm text-slate-900 mb-2">Send Us a Message</h2>
                             <p className="text-slate-500 mb-8">
-                                Fill in the form below and our team will get back to you within 24 hours. For faster response, call or WhatsApp +91 88002 63884.
+                                We reply within 24 hours. For faster response, call or WhatsApp us directly.
                             </p>
                             <ContactForm />
                         </div>
@@ -158,7 +164,7 @@ export default function ContactPage() {
                 <div className="container-x max-w-3xl">
                     <h2 className="heading-sm text-slate-900 mb-4">Coming from Outside Gurugram?</h2>
                     <p className="text-slate-600 leading-relaxed">
-                        Many of our patients travel from across North India and beyond. To make your visit efficient, WhatsApp your reports before travelling, book a video consultation for the initial discussion, and we will schedule your in person visits for only the essential steps. Our coordinator helps with local accommodation recommendations if needed.
+                        WhatsApp your reports before travelling, do the first discussion by video, and visit only for essential steps.
                     </p>
                 </div>
             </section>
@@ -166,9 +172,9 @@ export default function ContactPage() {
             {/* CTA BANNER */}
             <section className="cta-band edge section-tight" data-bg="#ef8b92" data-theme="dark">
                 <div className="container-x relative text-center">
-                    <h2 className="display-sm mb-6" style={{ color: '#fff' }}>One Call. One Appointment. One Clear Plan.</h2>
+                    <h2 className="display-sm mb-6" style={{ color: '#fff' }}>One call. One clear plan.</h2>
                     <p className="body-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                        Stop researching and start knowing. Your first free consultation gives you a diagnosis, a treatment plan, and a written cost estimate, all in one visit.
+                        A diagnosis, a treatment plan, and a written cost estimate — all in one visit.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <a href="tel:+918800263884" className="btn btn-white btn-lg">

@@ -67,12 +67,12 @@ export default function HeroSection() {
                             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-black text-slate-900 tracking-tight leading-[1.05] mb-6 font-sans">
                                 <div className="overflow-hidden">
                                     <span className="hero-line block" style={{ transform: 'translateY(110%)' }}>
-                                        Advanced IVF and ICSI Care,
+                                        Advanced
                                     </span>
                                 </div>
                                 <div className="overflow-hidden mt-2">
                                     <span className="hero-line block" style={{ transform: 'translateY(110%)' }}>
-                                        Guided by <span className="text-[#e11d48]">One Doctor</span> Who Knows Your Name
+                                        <span className="text-[#e11d48]">IVF &amp; ICSI</span> Care.
                                     </span>
                                 </div>
                             </h1>
@@ -85,7 +85,7 @@ export default function HeroSection() {
 
                             {/* Body Text */}
                             <p className="text-base md:text-lg text-slate-700 max-w-xl leading-relaxed mb-8 fade-up opacity-0 translate-y-4">
-                                Fertility treatment in Gurugram led personally by Dr. Rashmi Agarwal. Benefit from 9,000+ consultations, 3,000+ fertility treatments, and evidence based protocols delivered with honesty and warmth. No conveyor belts. No false promises. Just careful medicine.
+                                Fertility care in Gurugram, led personally by Dr. Rashmi Agarwal. 9,000+ consultations, 3,000+ treatments — no conveyor belts, just careful medicine.
                             </p>
 
                             {/* CTA Button Actions */}

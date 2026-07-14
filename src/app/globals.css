@@ -83,33 +83,34 @@ a { text-decoration: none; color: inherit; }
     z-index: 60;
 }
 
-/* ---- Typography ---- */
+/* ---- Typography ----
+   Weights matched to Cure Stone's type scale: font-black titles/headings, font-medium body copy. */
 .display {
-    font-weight: 300; letter-spacing: -0.035em; line-height: 0.98;
+    font-weight: 900; letter-spacing: -0.035em; line-height: 0.98;
     font-size: clamp(3rem, 8vw, 7.5rem);
 }
 .display-sm {
-    font-weight: 300; letter-spacing: -0.03em; line-height: 1.02;
+    font-weight: 900; letter-spacing: -0.03em; line-height: 1.02;
     font-size: clamp(2.25rem, 5vw, 4.5rem);
 }
 .display-xl {
-    font-weight: 300; letter-spacing: -0.04em; line-height: 0.95;
+    font-weight: 900; letter-spacing: -0.04em; line-height: 0.95;
     font-size: clamp(4rem, 12vw, 10rem);
 }
 .heading {
-    font-weight: 500; letter-spacing: -0.02em; line-height: 1.15;
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.15;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 .heading-sm {
-    font-weight: 500; letter-spacing: -0.015em; line-height: 1.2;
+    font-weight: 700; letter-spacing: -0.015em; line-height: 1.2;
     font-size: 1.5rem;
 }
 .eyebrow {
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
 }
-.body-lg { font-size: 1.125rem; line-height: 1.65; color: var(--ink-soft); font-weight: 400; }
-.body    { font-size: 1rem;     line-height: 1.65; color: var(--ink-soft); font-weight: 400; }
-.body-sm { font-size: 0.875rem; line-height: 1.6;  color: var(--ink-muted); font-weight: 400; }
+.body-lg { font-size: 1.125rem; line-height: 1.65; color: var(--ink-soft); font-weight: 500; }
+.body    { font-size: 1rem;     line-height: 1.65; color: var(--ink-soft); font-weight: 500; }
+.body-sm { font-size: 0.875rem; line-height: 1.6;  color: var(--ink-muted); font-weight: 500; }
 .mark { color: var(--brand); }
 
 .on-dark .body-lg, .on-dark .body, .on-dark .body-sm { color: var(--on-dark-muted); }

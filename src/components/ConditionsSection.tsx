@@ -8,56 +8,56 @@ export default function ConditionsSection() {
             href: '/treatments/ivf',
             Icon: Baby,
             title: 'IVF (In Vitro Fertilisation)',
-            desc: 'Eggs and sperm are combined in our advanced laboratory, and the healthiest embryo is transferred to the uterus. Highly effective for blocked tubes, low AMH, endometriosis, and long standing infertility.',
+            desc: 'Eggs and sperm combined in the lab — the healthiest embryo transferred back to the uterus.',
             chips: ['ICSI Add-on', 'Blastocyst Culture', 'PGT Available'],
         },
         {
             href: '/treatments/insemination',
             Icon: TestTube,
             title: 'Insemination',
-            desc: 'Timed placement of laboratory prepared sperm into the reproductive tract to maximise the chance of natural fertilisation, strictly adhering to all legal guidelines.',
+            desc: 'Prepared sperm placed precisely, timed to ovulation, fully within ART Act guidelines.',
             chips: ['ART Act Compliant', 'Donor Option', 'Partner Cycle'],
         },
         {
-            href: '/treatments/icsi',
+            href: '/treatments/surgical-sperm-retrieval',
             Icon: Syringe,
             title: 'Surgical Sperm Retrieval (PESA, TESA, Micro TESE)',
-            desc: 'For men with zero sperm count in the ejaculate (azoospermia), we use advanced, precise surgical retrieval techniques to safely extract sperm directly from the reproductive tract for use with ICSI.',
+            desc: 'Precision retrieval directly from the reproductive tract for men with azoospermia.',
             chips: ['PESA', 'TESA', 'Micro TESE'],
         },
         {
             href: '/treatments/hysteroscopy-laparoscopy',
             Icon: Stethoscope,
             title: 'Hysteroscopy and Laparoscopy Surgeries',
-            desc: 'Minimally invasive keyhole and camera guided surgeries to examine, diagnose, and treat hidden structural causes of infertility like polyps, septum, fibroids, cysts, and advanced endometriosis.',
+            desc: 'Keyhole surgery to diagnose and treat polyps, fibroids, cysts, and endometriosis.',
             chips: ['Day-Case Surgery', 'Fertility-First', 'Same-Sitting Treatment'],
         },
         {
             href: '/treatments/icsi',
             Icon: Syringe,
             title: 'Intracytoplasmic Sperm Injection (ICSI)',
-            desc: 'A single healthy sperm is injected directly into each egg, making it the ideal treatment for severe male factor infertility and maximizing fertilisation chances.',
+            desc: 'One healthy sperm injected directly into the egg — built for severe male factor.',
             chips: ['Single Sperm Injection', 'Severe Male Factor', 'High Fertilisation Rate'],
         },
         {
             href: '/treatments/iui',
             Icon: TestTube2,
             title: 'IUI (Intrauterine Insemination)',
-            desc: 'Washed, concentrated sperm is placed directly inside the uterus at the exact time of ovulation. A gentle, accessible, and affordable first step for many couples.',
+            desc: 'Washed sperm placed inside the uterus at the exact fertile window. Quick, gentle.',
             chips: ['10-Minute Procedure', 'Cost-Effective', 'First-Line Option'],
         },
         {
             href: '/treatments/ovulation-induction',
             Icon: CalendarRange,
             title: 'Ovulation Induction and Cycle Monitoring',
-            desc: 'Carefully dosed medicines paired with tracking scans to help your ovaries release a mature egg at the right time. Often the only treatment young couples need to conceive.',
+            desc: 'Dosed medication plus tracking scans — often the only treatment young couples need.',
             chips: ['Letrozole / Clomid', 'PCOS Focused', 'Cycle Monitoring'],
         },
         {
             href: '/treatments/endometrial-biopsy-era',
             Icon: FileSearch,
             title: 'Endometrial Biopsy and ERA',
-            desc: 'Advanced diagnostic evaluation of the uterine lining to identify chronic hidden infections or determine the exact personalized window of implantation for IVF transfers.',
+            desc: 'Pinpoints the exact implantation window after repeated IVF transfer failure.',
             chips: ['Personalised Window', 'Repeated Failure Workup', 'Infection Screening'],
         },
     ];
@@ -89,10 +89,10 @@ export default function ConditionsSection() {
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-[-0.035em] text-slate-900 leading-[1.1] font-sans">
-                        Comprehensive fertility<br className="hidden md:block" /> treatments and advanced care.
+                        Every path to<br className="hidden md:block" /> parenthood, covered.
                     </h2>
                     <p className="text-base md:text-lg text-slate-500 mt-5 max-w-2xl leading-relaxed font-medium">
-                        Not every couple needs IVF. Treatment at our centre starts with an accurate diagnosis, followed by the least invasive option that genuinely fits your medical situation.
+                        Not every couple needs IVF. We start with the least invasive option that genuinely fits your case.
                     </p>
                 </div>
 
@@ -145,7 +145,7 @@ export default function ConditionsSection() {
                 {/* Section CTA */}
                 <div className="mt-14 text-center">
                     <p className="text-slate-500 max-w-2xl mx-auto mb-6">
-                        Not sure which treatment path matches your profile? Book a free consultation. Dr. Rashmi will guide you honestly, even if the current answer is to keep trying naturally.
+                        Not sure which path is right for you? A free consultation will tell you honestly.
                     </p>
                     <Link
                         href="/?interest=other#book"

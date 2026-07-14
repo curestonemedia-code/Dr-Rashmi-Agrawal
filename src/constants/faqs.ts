@@ -48,7 +48,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How much does IVF cost at your centre?",
-        a: "IVF packages start from ₹1,20,000. You receive a written, itemised estimate before starting, so there are no mid cycle surprises.",
+        a: "Cost depends on your specific protocol and whether add ons like ICSI, freezing, or genetic testing are needed. You receive a written, itemised estimate before starting, so there are no mid cycle surprises.",
       },
       {
         q: "My husband has zero sperm count. Can we still have a biological child?",

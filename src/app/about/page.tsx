@@ -5,9 +5,15 @@ import {
     CalendarCheck2, MessageCircle, CheckCircle2, Building2, ChevronRight,
 } from 'lucide-react';
 
+const TITLE = 'Dr. Rashmi Agarwal | IVF Specialist in Gurgaon | About';
+const DESCRIPTION = 'Meet Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram and Delhi NCR.';
+
 export const metadata: Metadata = {
-    title: 'Dr. Rashmi Agarwal | IVF Specialist in Gurgaon | About',
-    description: 'Meet Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Advanced fertility care in Gurugram.',
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: '/about' },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/about', type: 'profile' },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 
 const qualifications = [
@@ -35,20 +41,20 @@ const experience = [
 ];
 
 const specializations = [
-    { title: 'PCOS Related Infertility', desc: 'From lifestyle first plans to letrozole cycles and IVF for resistant cases, with careful protocols that avoid ovarian hyperstimulation.' },
-    { title: 'Repeated IVF Failure', desc: 'Structured re-evaluation of embryo quality, uterine receptivity, and protocol design for couples whose previous cycles have failed elsewhere.' },
-    { title: 'Recurrent Pregnancy Loss', desc: 'Systematic investigation of genetic, anatomical, hormonal, and immunological causes after two or more miscarriages.' },
-    { title: 'Male Infertility and Surgical Sperm Retrieval', desc: 'ICSI for severe male factor, and surgical retrieval (TESA, PESA, Micro TESE) for men with azoospermia who were told they could never father a child.' },
-    { title: 'Fertility Enhancing Surgery', desc: 'Laparoscopic treatment of endometriosis, fibroids, ovarian cysts, and ectopic pregnancy; hysteroscopic correction of polyps, septum, and adhesions; sterilisation reversal.' },
-    { title: 'Advanced ART Techniques', desc: 'ICSI, blastocyst culture, vitrification (egg and embryo freezing), and preimplantation genetic testing (PGT).' },
+    { title: 'PCOS Related Infertility', desc: 'Lifestyle-first plans to letrozole cycles and IVF for resistant cases.' },
+    { title: 'Repeated IVF Failure', desc: 'Re-evaluating embryo quality, uterine receptivity, and protocol design.' },
+    { title: 'Recurrent Pregnancy Loss', desc: 'Genetic, anatomical, hormonal, and immunological workup after miscarriage.' },
+    { title: 'Male Infertility & SSR', desc: 'ICSI plus surgical retrieval (TESA, PESA, Micro TESE) for azoospermia.' },
+    { title: 'Fertility Enhancing Surgery', desc: 'Laparoscopic and hysteroscopic correction of endometriosis, fibroids, and polyps.' },
+    { title: 'Advanced ART Techniques', desc: 'ICSI, blastocyst culture, vitrification, and preimplantation genetic testing.' },
 ];
 
 const trustPoints = [
-    { title: 'She tells the truth about your chances.', desc: 'No inflated promises, no fear based selling. Patients regularly report that her honesty, even when the news was hard, is what made them stay.' },
-    { title: 'She does her own procedures.', desc: 'Scans, egg retrievals, embryo transfers, laparoscopies: the doctor you consult is the doctor who treats you.' },
-    { title: 'Her advice is not for sale.', desc: 'If the right answer is "wait three months," or "try naturally with these corrections first," that is the advice you get.' },
-    { title: 'She publishes and teaches.', desc: 'With 5+ peer reviewed publications, her protocols follow evidence, not habit.' },
-    { title: 'Patients rate the experience 4.9/5.', desc: 'Across 1,000+ verified reviews on Google and Practo, the words that repeat are "honest," "patient," and "explained everything."' },
+    { title: 'She tells the truth about your chances.', desc: 'No inflated promises, no fear-based selling — even when the news is hard.' },
+    { title: 'She does her own procedures.', desc: 'Scans, retrievals, transfers, laparoscopies — the doctor you consult treats you.' },
+    { title: 'Her advice is not for sale.', desc: 'If "wait three months" is the right answer, that\'s what you\'ll hear.' },
+    { title: 'She publishes and teaches.', desc: '5+ peer reviewed publications — protocols follow evidence, not habit.' },
+    { title: 'Patients rate the experience 4.9/5.', desc: 'Across 1,000+ verified reviews on Google and Practo.' },
 ];
 
 const stats = [
@@ -74,10 +80,10 @@ export default function AboutPage() {
                         <span className="chip-dot"></span>About Your Doctor
                     </div>
                     <h1 className="display-sm text-slate-900 mb-6">
-                        Medicine With a Memory for Names, Not Just Case Numbers
+                        Medicine that remembers your name.
                     </h1>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto mb-10">
-                        Dr. Rashmi Agarwal has spent over 10 years doing one thing: helping couples who were told it would be difficult. Here is her story, her training, and the way she practises.
+                        Over 10 years helping couples who were told it would be difficult. Her story, training, and approach.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/contact" className="btn btn-primary btn-lg">
@@ -100,13 +106,13 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="lg:col-span-7">
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Dr. Rashmi Agarwal</h2>
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-2">Dr. Rashmi Agarwal</h2>
                             <p className="text-pink-600 font-bold text-sm uppercase tracking-wider mb-8">
-                                Senior IVF and Fertility Specialist — MBBS, MS (OBGY) Gold Medalist, DNB, FNB Reproductive Medicine — Gurugram and Delhi NCR
+                                Senior IVF & Fertility Specialist — MBBS, MS (OBGY) Gold Medalist, DNB, FNB
                             </p>
-                            <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed mb-12">
-                                <p>Some doctors choose fertility medicine because it is a growing field. Dr. Rashmi chose it because it is the one branch of medicine where the outcome is not just a cured patient, it is a new person in the world, and a family changed forever. That responsibility shapes everything about how she works: the length of her consultations, the honesty of her counselling, and her insistence on personally supervising every step of every treatment.</p>
-                                <p>Today she leads the Dr. Rashmi Agarwal IVF Centre in Gurugram, where she has completed more than 9,000 consultations and 3,000 fertility treatments, from first cycle ovulation induction to complex IVF after repeated failures elsewhere. Her clinical judgement is matched by an academic record of 5+ publications in national and international journals and more than 10 awards, including the Gold Medal in her MS in Obstetrics and Gynaecology.</p>
+                            <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed mb-12">
+                                <p>Fertility medicine is the one branch where the outcome isn&apos;t just a cured patient — it&apos;s a family changed forever. That shapes how she works, consults, and treats.</p>
+                                <p>She leads the Dr. Rashmi Agarwal IVF Centre in Gurugram: 9,000+ consultations, 3,000+ treatments, 5+ publications, and the Gold Medal in her MS.</p>
                             </div>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 {stats.map((s, i) => (
@@ -127,11 +133,11 @@ export default function AboutPage() {
             {/* BIOGRAPHY */}
             <section className="section edge bg-slate-50/60">
                 <div className="container-x max-w-4xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">The Making of a Fertility Specialist</h2>
-                    <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-                        <p>Dr. Rashmi&apos;s medical journey began at Indira Gandhi Government Medical College, Maharashtra, where she completed her MBBS in 2012. She went on to earn her Master of Surgery in Obstetrics and Gynaecology from Government Medical College, Maharashtra, in 2015, graduating as a Gold Medalist, a distinction awarded to the top ranked postgraduate of the year.</p>
-                        <p>Rather than stopping at general gynaecology, she pursued the most demanding path in the field: the Diplomate of National Board (DNB) in Obstetrics and Gynaecology, followed by the Fellowship of National Board (FNB) in Reproductive Medicine in New Delhi, completed in 2019. The FNB is India&apos;s most rigorous formal super specialisation in fertility medicine, a full time, examination based national fellowship, not a weekend certificate course. It is what separates a trained reproductive medicine specialist from a gynaecologist who also does IVF.</p>
-                        <p>Her training years included residencies in both General Surgery at Pt. B.D. Sharma PGIMS, Rohtak, and Obstetrics and Gynaecology at Dr. RML Hospital and PGIMER, New Delhi, two of North India&apos;s busiest teaching hospitals. That surgical foundation is why she operates her own laparoscopies and hysteroscopies today instead of referring them out.</p>
+                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8">The Making of a Specialist</h2>
+                    <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
+                        <p>MBBS from Indira Gandhi Government Medical College (2012), then an MS in Obstetrics and Gynaecology, graduating Gold Medalist, an academic honour awarded to one postgraduate each year.</p>
+                        <p>She then pursued a DNB followed by an FNB in Reproductive Medicine, New Delhi (2019) — India&apos;s most rigorous, full-time super specialisation in fertility, not a weekend course.</p>
+                        <p>Residencies in General Surgery at PGIMS Rohtak and OBGYN at Dr. RML Hospital gave her the surgical foundation to operate her own laparoscopies and hysteroscopies today.</p>
                     </div>
                 </div>
             </section>
@@ -173,7 +179,7 @@ export default function AboutPage() {
             {/* EXPERIENCE */}
             <section className="section edge bg-slate-50/60">
                 <div className="container-x">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Where She Has Practised</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-10">Where She Has Practised</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {experience.map((e, i) => (
                             <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex gap-4">
@@ -188,7 +194,7 @@ export default function AboutPage() {
                         ))}
                     </div>
                     <p className="text-slate-500 mt-10 max-w-3xl leading-relaxed">
-                        Experience across government teaching hospitals and major private chains means Dr. Rashmi has seen fertility medicine from every side: high volume, high complexity, and high accountability.
+                        Government teaching hospitals to major private chains — fertility medicine from every side.
                     </p>
                 </div>
             </section>
@@ -196,7 +202,7 @@ export default function AboutPage() {
             {/* SPECIALIZATIONS */}
             <section className="section edge">
                 <div className="container-x">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Areas of Special Expertise</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-10">Areas of Special Expertise</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {specializations.map((s, i) => (
                             <div key={i} className="p-7 rounded-3xl bg-slate-50/50 border border-transparent hover:border-pink-100 hover:bg-white hover:shadow-xl hover:shadow-pink-500/5 transition-all">
@@ -212,11 +218,11 @@ export default function AboutPage() {
             <section className="section edge bg-slate-950 text-white relative overflow-hidden" data-bg="#020617" data-theme="dark">
                 <div className="absolute -top-24 -right-24 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl pointer-events-none" />
                 <div className="container-x relative z-10 max-w-4xl">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-10">How Dr. Rashmi Practises</h2>
-                    <div className="space-y-8 text-slate-300 text-base md:text-lg leading-relaxed">
-                        <p><strong className="text-white">Diagnosis before treatment, always.</strong> Around one in four couples referred for IVF elsewhere turns out to need something simpler, or something different entirely. Every plan at this centre begins with a complete evaluation of both partners, because treating half a couple is treating half the problem.</p>
-                        <p><strong className="text-white">The least invasive option that genuinely works.</strong> Escalation is a ladder, not an elevator: lifestyle correction and ovulation induction where appropriate, IUI where the evidence supports it, and IVF or ICSI when the diagnosis truly calls for it. You will always be told the reasoning, the realistic chance of success for your case, and the cost in writing before anything begins.</p>
-                        <p><strong className="text-white">One accountable doctor.</strong> Fertility treatment involves dozens of small judgement calls: a dose adjusted here, a transfer postponed there. Those calls are made by Dr. Rashmi personally, not delegated down a hierarchy. When you message the clinic, the answer that comes back has her judgement behind it.</p>
+                    <h2 className="text-3xl md:text-4xl font-black mb-10">How Dr. Rashmi Practises</h2>
+                    <div className="space-y-6 text-slate-300 text-base md:text-lg leading-relaxed">
+                        <p><strong className="text-white">Diagnosis before treatment, always.</strong> One in four couples referred for IVF elsewhere need something simpler. Every plan starts with evaluating both partners.</p>
+                        <p><strong className="text-white">The least invasive option that works.</strong> Escalation is a ladder, not an elevator — lifestyle, then IUI, then IVF only when truly needed.</p>
+                        <p><strong className="text-white">One accountable doctor.</strong> Every dose, every judgement call, made by Dr. Rashmi personally — never delegated down a hierarchy.</p>
                     </div>
                 </div>
             </section>
@@ -228,13 +234,13 @@ export default function AboutPage() {
                         <div className="bg-pink-50 p-8 md:p-10 rounded-[2rem] border border-pink-100">
                             <h3 className="text-xl font-bold text-slate-900 mb-4">Our Mission</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                To give every couple an honest diagnosis, a clear plan, and an evidence based chance of taking a healthy baby home, while treating them with the dignity, transparency, and warmth they deserve at the most vulnerable time of their lives.
+                                An honest diagnosis, a clear plan, and an evidence-based chance of taking a healthy baby home — with dignity at every step.
                             </p>
                         </div>
                         <div className="bg-slate-50 p-8 md:p-10 rounded-[2rem] border border-slate-100">
                             <h3 className="text-xl font-bold text-slate-900 mb-4">Our Vision</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                A North India where no couple abandons their dream of parenthood because of misinformation, fear of cost, or a bad first experience, and where trustworthy fertility knowledge is freely available to everyone, in their own language, before they ever step into a clinic. That is also why Dr. Rashmi invests heavily in free patient education online.
+                                A North India where no couple gives up on parenthood over misinformation or cost — trustworthy fertility knowledge, freely available.
                             </p>
                         </div>
                     </div>
@@ -244,7 +250,7 @@ export default function AboutPage() {
             {/* WHY PATIENTS TRUST HER */}
             <section className="section edge bg-slate-50/60">
                 <div className="container-x">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-10">Why Patients Trust Her</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-10">Why Patients Trust Her</h2>
                     <div className="grid md:grid-cols-2 gap-5">
                         {trustPoints.map((p, i) => (
                             <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex gap-4">
@@ -264,7 +270,7 @@ export default function AboutPage() {
                 <div className="container-x relative text-center">
                     <h2 className="display-sm mb-6" style={{ color: '#fff' }}>Consult the Doctor, Not the Brand</h2>
                     <p className="body-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                        Your first free consultation with Dr. Rashmi is a 45 minute, unhurried conversation: history, reports, ultrasound assessment, and a clear plan. Bring your questions and every old report you have.
+                        A 45-minute, unhurried first consultation: history, reports, ultrasound, and a clear plan.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <Link href="/contact" className="btn btn-white btn-lg">

@@ -7,6 +7,7 @@ import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { SITE_URL, SITE_NAME, clinicSchema } from "@/constants/site";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -14,9 +15,41 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agarwal IVF Centre";
+const DESCRIPTION = "Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
+
 export const metadata: Metadata = {
-  title: "IVF Specialist in Gurgaon | Dr. Rashmi Agarwal IVF Centre",
-  description: "Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), FNB Reproductive Medicine. Advanced IVF, ICSI, and IUI in Gurugram with 9,000+ consultations. Book your free consultation today.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "IVF specialist Gurgaon",
+    "fertility clinic Gurgaon",
+    "IVF centre Gurugram",
+    "infertility treatment Gurugram",
+    "IVF doctor Delhi NCR",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/dr rashmi.jpg", width: 1200, height: 1500, alt: "Dr. Rashmi Agarwal" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/dr rashmi.jpg"],
+  },
   icons: {
     icon: [
       { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -42,6 +75,10 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased bg-gradient-primary`}
     >
       <body className="min-h-full flex flex-col transition-colors duration-500 ease-in-out bg-white text-gray-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema).replace(/</g, "\\u003c") }}
+        />
         <SmoothScroll>
           <ScrollProgress />
           <Preloader />

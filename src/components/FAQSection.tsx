@@ -100,7 +100,7 @@ export default function FAQSection() {
         },
         {
             q: 'How much does IVF cost at your centre?',
-            a: 'Clear IVF packages start from ₹1,20,000. Your final cost depends on whether your specific case requires advanced lab add ons like ICSI, surgical sperm retrieval, embryo freezing, or genetic testing. You receive a complete written breakdown upfront.'
+            a: 'Your cost depends on whether your specific case requires advanced lab add ons like ICSI, surgical sperm retrieval, embryo freezing, or genetic testing. You receive a complete written breakdown before starting, with no hidden fees.'
         },
         {
             q: 'Can we consult online before visiting Gurugram?',
@@ -135,12 +135,12 @@ export default function FAQSection() {
                                 </span>
                             </div>
                             
-                            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-normal tracking-tight text-slate-900 leading-[1.1] font-sans">
-                                Questions every<br className="hidden lg:block" /> couple asks first.
+                            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight text-slate-900 leading-[1.1] font-sans">
+                                Everything<br className="hidden lg:block" /> patients ask.
                             </h2>
 
-                            <p className="text-base md:text-lg text-slate-500 mt-5 leading-relaxed max-w-md font-normal">
-                                The most common concerns we hear in the consultation room, answered honestly. If yours isn&apos;t here, <Link href="/faqs" className="text-pink-600 font-semibold hover:underline">see the full FAQ page</Link> or message us directly.
+                            <p className="text-base md:text-lg text-slate-500 mt-5 leading-relaxed max-w-md">
+                                Answered honestly. If yours isn&apos;t here, <Link href="/faqs" className="text-pink-600 font-semibold hover:underline">see the full FAQ</Link> or message us.
                             </p>
 
                             {/* WhatsApp CTA */}
