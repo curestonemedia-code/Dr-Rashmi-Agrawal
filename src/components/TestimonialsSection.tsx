@@ -13,18 +13,12 @@ const CloseIcon = () => (
         <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
 );
-const QuoteIcon = () => (
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
-        <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-    </svg>
-);
-
 
 // ── TESTIMONIAL CARD ──
 function TestimonialCard({
-    vid, name, cond, quote
+    vid, name
 }: {
-    vid: string; name: string; cond: string; quote: string;
+    vid: string; name: string;
 }) {
     const [isHovered, setIsHovered] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -82,13 +76,6 @@ function TestimonialCard({
                         </div>
                     </div>
 
-                    {/* Quote Badge */}
-                    <div className="absolute top-4 left-4">
-                        <div className="w-10 h-10 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white">
-                            <QuoteIcon />
-                        </div>
-                    </div>
-
                     {/* Duration Badge */}
                     <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white text-[11px] font-semibold tracking-wide">
                         Play Video
@@ -98,12 +85,9 @@ function TestimonialCard({
                     <div className="absolute bottom-0 left-0 right-0 p-5">
                         <div className="transform transition-transform duration-500 group-hover:translate-y-0 translate-y-2">
                             <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-pink-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider uppercase mb-2">
-                                {cond}
+                                Patient Story
                             </div>
-                            <h3 className="text-white text-lg font-semibold tracking-tight">{name}</h3>
-                            <p className={`text-white/70 text-sm mt-1.5 leading-relaxed transition-all duration-500 ${isHovered ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'} overflow-hidden`}>
-                                "{quote}"
-                            </p>
+                            <h3 className="text-white text-base font-semibold tracking-tight leading-snug">{name}</h3>
                         </div>
                     </div>
                 </div>
@@ -118,32 +102,24 @@ export default function TestimonialsSection() {
 
     const testimonials = [
         {
-            vid: 'dQw4w9WgXcQ',
-            img: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=600&auto=format&fit=crop',
-            name: 'Priya & Rahul, 34',
-            cond: 'IVF Success · Gurugram',
-            quote: 'After 3 failed cycles elsewhere, Dr. Rashmi gave us hope. Her personalized care made our dream of becoming parents a reality.'
+            vid: 'nOiQspt6VWI',
+            name: 'Har Jagah Se Nirasha Mili, Phir IVF Se Mila Twins Ka Sukh! ✨ | Cure Infertility #ivf',
         },
         {
-            vid: 'dQw4w9WgXcQ',
-            img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop',
-            name: 'Sneha M., 29',
-            cond: 'Severe PCOS · Delhi',
-            quote: 'Dealing with PCOS was overwhelming until I met Dr. Agarwal. The treatment plan was perfectly tailored to my body.'
+            vid: 'SxTcuQ7KL1c',
+            name: '5 Saal Ka Intezaar Khatam! 😍 | IVF Success Story with Positive Results | Dr. Rashmi Agrawal #ivf',
         },
         {
-            vid: 'dQw4w9WgXcQ',
-            img: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop',
-            name: 'Amit & Shilpa',
-            cond: 'ICSI Treatment · Noida',
-            quote: 'We were told we had very little chance. The advanced ICSI protocol here changed everything. Forever grateful!'
+            vid: 'K_KZMhaL9dY',
+            name: '4 साल बाद मिला माँ बनने का सुख! | IVF Success Story with Dr. Rashmi Agrawal #ivf',
         },
         {
-            vid: 'dQw4w9WgXcQ',
-            img: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?q=80&w=600&auto=format&fit=crop',
-            name: 'Kritika V., 32',
-            cond: 'Repeated Miscarriages',
-            quote: 'Dr. Rashmi\'s thorough investigation finally found the root cause. Her continuous support kept us strong through the journey.'
+            vid: 'PaH8yCIq29Y',
+            name: '9 Years बाद मिली Parents बनने की खुशी! Chennai to Gurgaon',
+        },
+        {
+            vid: 'me6DoNl7tsk',
+            name: 'IVF ने 6 साल का सपना पूरा किया | 6 साल का इंतजार खत्म | IVF Success Story #ivf #fertlity',
         },
     ];
 
@@ -203,22 +179,20 @@ export default function TestimonialsSection() {
                         </div>
                     </div>
 
-                    {/* Cards Grid / Carousel - Changed container to horizontal scrollable wrapper on smaller viewports */}
+                    {/* Horizontal Carousel */}
                     <div
                         ref={scrollRef}
-                        className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 overflow-x-auto md:overflow-x-visible scrollbar-none snap-x snap-mandatory pb-4 md:pb-0"
+                        className="flex gap-5 md:gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-4"
                         style={{
                             scrollbarWidth: 'none',
                             msOverflowStyle: 'none',
                         }}
                     >
                         {testimonials.map((t) => (
-                            <div key={t.name} className="w-[85vw] sm:w-[45vw] md:w-auto flex-shrink-0 snap-center">
+                            <div key={t.name} className="w-[75vw] sm:w-[320px] md:w-[300px] lg:w-[320px] flex-shrink-0 snap-center">
                                 <TestimonialCard
                                     vid={t.vid}
                                     name={t.name}
-                                    cond={t.cond}
-                                    quote={t.quote}
                                 />
                             </div>
                         ))}
@@ -228,11 +202,10 @@ export default function TestimonialsSection() {
                     <div className="mt-12 flex items-center justify-center gap-2 text-slate-400">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-50">
                             <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="16" x2="12" y2="12" />
-                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                            <path d="M9 12l2 2 4-4" />
                         </svg>
                         <p className="text-sm text-slate-400">
-                            Patient names shown are illustrative placeholders — swap in real content when ready.
+                            Real patient videos from Dr. Rashmi Agrawal&apos;s YouTube channel.
                         </p>
                     </div>
                 </div>

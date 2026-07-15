@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 export default function LiveOTSection() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,21 +15,18 @@ export default function LiveOTSection() {
 
     const cases = [
         {
-            vid: 'dQw4w9WgXcQ', label: 'Treatment 01 · IVF',
-            title: 'The IVF Journey Explained',
-            desc: 'A comprehensive walkthrough of the In-Vitro Fertilization process, from initial consultation and ovarian stimulation to embryo transfer.',
+            vid: 'h8pBhvxheVI', label: 'Treatment 01 · IVF',
+            title: 'Different steps Of IVF Process | Explanation of IVF Steps | IVF के विभिन्न चरण  Dr. Rashmi Agrawal',
             stats: [{ v: 'Step-by-step', l: 'Guide' }, { v: 'High', l: 'Success Rate' }, { v: 'Advanced', l: 'Care', accent: true }],
         },
         {
-            vid: 'dQw4w9WgXcQ', label: 'Treatment 02 · ICSI',
-            title: 'Understanding ICSI',
-            desc: 'Learn about Intracytoplasmic Sperm Injection, a highly specialized and targeted treatment designed to overcome severe male infertility factors.',
+            vid: 'YvvciOHrnec', label: 'Treatment 02 · ICSI',
+            title: 'ICSI Step by Step 🧬 IVF का Advanced Process Explained in Hindi',
             stats: [{ v: 'Targeted', l: 'Precision' }, { v: 'Male', l: 'Factor' }, { v: 'Effective', l: 'Solution', accent: true }],
         },
         {
-            vid: 'dQw4w9WgXcQ', label: 'Treatment 03 · IUI',
-            title: 'IUI Procedure Breakdown',
-            desc: 'Dr. Agarwal explains Intrauterine Insemination, a minimally invasive fertility treatment that offers an accessible first step for many couples.',
+            vid: 'nmkvMS2at_0', label: 'Treatment 03 · IUI',
+            title: 'Is IUI and IVF two different process? | IVF ya IUI क्या फरक है - Dr. Rashmi Agrawal #ivfindia #ivf',
             stats: [{ v: 'Accessible', l: 'First Step' }, { v: 'Minimally', l: 'Invasive' }, { v: 'Quick', l: 'Recovery', accent: true }],
         },
     ];
@@ -85,7 +82,7 @@ export default function LiveOTSection() {
                 className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none px-6 md:px-12 lg:px-20 pb-6"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {cases.map(({ vid, label, title, desc, stats }) => (
+                {cases.map(({ vid, label, title, stats }) => (
                     <div
                         key={label}
                         className="w-[85vw] md:w-[640px] lg:w-[720px] xl:w-[780px] flex-shrink-0 snap-center bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.02)]"
@@ -113,9 +110,6 @@ export default function LiveOTSection() {
                                     <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-slate-900 tracking-tight mb-2">
                                         {title}
                                     </h3>
-                                    <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-6 font-normal">
-                                        {desc}
-                                    </p>
                                 </div>
 
                                 <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-100 mt-auto">

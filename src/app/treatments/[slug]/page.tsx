@@ -39,7 +39,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Egg Retrieval', value: 'Daycare' },
             { label: 'Embryo Culture', value: '5', unit: 'd' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'h8pBhvxheVI',
         sections: [
             {
                 kind: 'text',
@@ -188,7 +188,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Recovery', value: '1–7', unit: 'd' },
             { label: 'Anaesthesia', value: 'Short GA' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: '3XH4BmNM-Fo',
         sections: [
             {
                 kind: 'text',
@@ -243,7 +243,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Proven Since', value: '1992' },
             { label: 'Precision', value: 'Microscope' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'YvvciOHrnec',
         sections: [
             {
                 kind: 'text',
@@ -305,7 +305,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Recovery', value: '1–2', unit: 'd' },
             { label: 'Paired With', value: 'ICSI' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'ypvbBToaFY4',
         sections: [
             {
                 kind: 'text',
@@ -367,7 +367,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Typical Attempts', value: '3–4', unit: ' cycles' },
             { label: 'Cost', value: 'Lowest' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'nmkvMS2at_0',
         sections: [
             {
                 kind: 'text',
@@ -412,7 +412,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Invasiveness', value: 'Zero' },
             { label: 'Cycle', value: '1', unit: ' month' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'rux07h3arf0',
         sections: [
             {
                 kind: 'text',
