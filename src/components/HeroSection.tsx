@@ -42,11 +42,13 @@ export default function HeroSection() {
             >
                 {/* Background Video */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <iframe
-                        src="https://www.youtube.com/embed/yJONw4bEcNw?autoplay=1&mute=1&controls=0&loop=1&playlist=yJONw4bEcNw&modestbranding=1&playsinline=1&rel=0"
-                        className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] min-w-[100vw] min-h-[100vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-80"
-                        allow="autoplay; encrypted-media"
-                        frameBorder="0"
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover opacity-100 "
+                        src="/video_for_website.mp4"
                     />
                     <div className="absolute inset-0 bg-white/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:via-white/60 lg:via-white/10 lg:via-white/0 lg:to-white/0" />
                 </div>
@@ -114,7 +116,7 @@ export default function HeroSection() {
                                     { val: '10+', label: 'Years Experience' },
                                     { val: '5+', label: 'Publications' },
                                 ].map(({ val, label, accent }) => (
-                                    <div key={label} className="relative">
+                                    <div key={label} className="relative text-center md:text-left">
                                         <div className={`text-2xl md:text-3xl font-extrabold tracking-tight ${accent ? 'text-pink-600' : 'text-slate-900'}`}>{val}</div>
                                         <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">{label}</div>
                                         {accent && <div className="absolute -top-1 -right-1 w-2 h-2 bg-pink-400 rounded-full animate-pulse" />}

@@ -16,12 +16,12 @@ export default function Footer() {
                 />
               </Link>
               <p className="mt-6 max-w-sm" style={{ color: 'var(--on-dark-muted)', fontSize: '0.9rem', lineHeight: '1.65' }}>
-                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist in Gurgaon · Senior Consultant at Dr. Rashmi Agrawal IVF Centre, providing reproductive care across Gurugram and Delhi NCR.
+                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist in Gurgaon · Senior Consultant at Dr. Rashmi Agrawal IVF Centre, Sector 27, Gurugram.
               </p>
             </div>
             
             <div className="md:col-span-3">
-              <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Clinical Hub</div>
+              <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Visit Us</div>
               <div style={{ color: '#fff', fontWeight: 500 }}>Dr. Rashmi Agrawal IVF Centre</div>
               <div className="mt-2" style={{ color: 'var(--on-dark-muted)', fontSize: '0.875rem', lineHeight: '1.65' }}>
                 NOVA IVF, Plot No 522, near Supermarket,<br/>Sector 27, Gurugram, Haryana 122009<br/>+91 88002 63884<br/>Cure@thecurestone.com

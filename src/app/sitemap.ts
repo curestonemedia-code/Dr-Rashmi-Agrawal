@@ -3,7 +3,7 @@ import { SITE_URL } from "@/constants/site";
 
 const treatmentSlugs = [
     "ivf",
-    "insemination",
+    "pgt",
     "hsg",
     "hysteroscopy-laparoscopy",
     "icsi",

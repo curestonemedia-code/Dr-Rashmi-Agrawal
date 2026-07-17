@@ -85,6 +85,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { q: 'How much does IVF cost at your centre?', a: 'Cost depends on your specific protocol and whether add ons like ICSI, freezing, or genetic testing are needed. You receive a written, itemised estimate before starting, so there are no mid cycle surprises.' },
             { q: 'Are IVF injections painful?', a: 'Much less than feared. Daily injections use fine pen devices most women self administer painlessly. Egg retrieval is done under short anaesthesia so you sleep through it.' },
             { q: 'How many IUI cycles should we try before moving to IVF?', a: 'Evidence shows most IUI successes happen within the first 3 to 4 properly monitored cycles. Beyond that, the chance per cycle drops and IVF usually becomes a much wiser investment of your time and money.' },
+            { q: 'What is the success rate of IVF for women over 35?', a: 'Success depends heavily on ovarian reserve and egg quality, which decline with age. We assess your AMH and antral follicle count first, then give you a realistic, case-specific estimate rather than a generic percentage.' },
+            { q: 'How many IVF attempts are usually needed for a successful pregnancy?', a: 'Many couples succeed within 2 to 3 well-planned cycles, though this varies by age and diagnosis. Each cycle\'s protocol is adjusted based on how the previous one responded.' },
+            { q: 'Can I work during an IVF cycle?', a: 'Yes, for most of it. Only the day of egg retrieval requires rest, since it is done under short anaesthesia. Many patients continue their normal routine through stimulation and after the transfer.' },
+            { q: 'What is the difference between fresh and frozen embryo transfer in IVF?', a: 'A fresh transfer happens 3 to 5 days after retrieval in the same cycle. A frozen transfer uses a vitrified embryo in a later cycle, often with better uterine lining preparation. We recommend whichever gives your case the better chance.' },
         ],
         cta: {
             heading: 'Ready for Real Answers About IVF?',
@@ -93,49 +97,64 @@ const treatmentData: Record<string, TreatmentEntry> = {
             secondary: 'WhatsApp Reports: +91 88002 63884',
         },
     },
-    'insemination': {
-        eyebrow: 'Artificial Insemination',
-        title: 'Insemination, explained simply.',
+    'pgt': {
+        eyebrow: 'Preimplantation Genetic Testing',
+        title: 'Test the embryo before the transfer.',
         seo: {
-            title: 'Artificial Insemination in Gurgaon',
-            description: 'Partner and donor insemination in Gurugram, fully ART Act 2021 compliant. Learn how the procedure works and who it helps. Book a free consultation with Dr. Rashmi Agrawal.',
+            title: 'PGT (Preimplantation Genetic Testing) in Gurgaon',
+            description: 'Preimplantation Genetic Testing (PGT) during IVF in Gurugram screens embryos for chromosomal and genetic conditions before transfer. Consult Dr. Rashmi Agrawal.',
         },
-        heroDesc: 'Prepared sperm placed at exactly the right moment — partner or donor, always ART Act compliant.',
+        heroDesc: 'A few cells are biopsied from each embryo and screened before transfer — so only a genetically healthy embryo is chosen.',
         heroStats: [
-            { label: 'Procedure Time', value: '10', unit: 'min' },
-            { label: 'Anaesthesia', value: 'Zero' },
-            { label: 'Legal Basis', value: 'ART Act' },
-            { label: 'Recovery', value: 'Same-day' },
+            { label: 'Biopsy Stage', value: 'Day 5–6' },
+            { label: 'Cells Taken', value: '5–10' },
+            { label: 'Results In', value: '1–2', unit: 'wks' },
+            { label: 'Embryo Impact', value: 'None' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'aTwR2M7pCMw',
         sections: [
             {
                 kind: 'text',
-                heading: 'What Artificial Insemination Involves',
+                heading: 'What Is PGT, Really?',
                 paragraphs: [
-                    'A semen sample is washed in the lab to concentrate the healthiest, most motile sperm, then placed into the uterus through a soft catheter, timed precisely to ovulation using ultrasound monitoring.'
+                    'PGT is a laboratory test performed on IVF embryos before transfer. A handful of cells are biopsied from the outer layer of a day 5–6 blastocyst — the layer that becomes the placenta, not the baby — and sent for genetic analysis while the embryo is safely frozen.',
+                    'Only embryos that come back genetically normal are thawed and transferred, in a cycle timed separately from the retrieval.'
                 ]
             },
             {
                 kind: 'points',
-                heading: 'Who Insemination Helps',
+                heading: 'The Three Types of PGT',
                 items: [
-                    { title: 'Mild male factor or timing issues', description: 'Couples with mild male factor or cervical mucus problems.' },
-                    { title: 'Difficulty with intercourse', description: 'Where intercourse is difficult for medical or anatomical reasons.' },
-                    { title: 'Donor sperm for azoospermia', description: 'A path to a pregnancy you carry and deliver yourselves.' },
-                    { title: 'As permitted under Indian law', description: 'Registered ART banks only, with full informed consent from both partners.' },
+                    { title: 'PGT-A', description: 'Screens for the correct number of chromosomes — the leading cause of miscarriage and failed implantation.' },
+                    { title: 'PGT-M', description: 'Tests for a specific single-gene disorder already known to run in the family.' },
+                    { title: 'PGT-SR', description: 'Checks for structural chromosome rearrangements when a parent carries a balanced translocation.' },
+                ]
+            },
+            {
+                kind: 'points',
+                heading: 'Who Genuinely Needs PGT',
+                items: [
+                    { title: 'Advanced maternal age', description: 'Chromosomal errors in eggs rise sharply after the mid-30s.' },
+                    { title: 'Recurrent pregnancy loss', description: 'When two or more miscarriages remain unexplained.' },
+                    { title: 'Repeated implantation failure', description: 'Good quality embryos that haven\'t implanted in prior cycles.' },
+                    { title: 'A known genetic condition', description: 'Carried by either partner or seen in a previous pregnancy.' },
                 ]
             },
         ],
-        benefits: ['Minimally invasive', 'Lower cost than IVF', 'Natural conception process', 'Strictly ART Act 2021 compliant'],
+        benefits: ['Lowers miscarriage risk from chromosomal causes', 'Identifies the embryo most likely to implant', 'Biopsy does not harm the embryo', 'Combines with ICSI and blastocyst culture'],
         faq: [
-            { q: 'Can we consult online before visiting Gurugram?', a: 'Yes. WhatsApp your reports to +91 88002 63884 for a preliminary review, and we can arrange a video consultation. Many outstation couples plan their entire protocol remotely and travel only for essential visits.' },
+            { q: 'Does the biopsy damage the embryo?', a: 'No. Cells are taken only from the trophectoderm, the outer layer that goes on to form the placenta, not the inner cell mass that becomes the baby.' },
+            { q: 'Do we need PGT for every IVF cycle?', a: 'No. It is recommended selectively — for advanced maternal age, recurrent loss, repeated implantation failure, or a known genetic condition — not as a routine add-on for every couple.' },
+            { q: 'Can PGT reveal the gender of the embryo?', a: 'PGT-A does examine sex chromosomes as part of counting the full chromosome set, but disclosure or selection based on gender is strictly prohibited under India\'s PCPNDT Act. We do not disclose or select embryos on that basis.' },
+            { q: 'What happens if all embryos test abnormal after PGT?', a: 'This is difficult news, but it means those specific embryos were unlikely to result in a healthy, ongoing pregnancy. We review your case and discuss whether another retrieval cycle, with an adjusted protocol, is worth attempting.' },
+            { q: 'Does PGT guarantee a successful pregnancy?', a: 'No. PGT improves your odds by ruling out chromosomally abnormal embryos, but implantation still depends on uterine receptivity and other factors. It raises the chance per transfer; it does not guarantee it.' },
+            { q: 'How long do we wait between embryo biopsy and transfer?', a: 'Typically 1 to 2 weeks while results come back from the genetics lab. The embryo stays safely frozen during this time, and we schedule the frozen transfer once your lining is ready.' },
         ],
         cta: {
-            heading: 'A Gentle Treatment Deserves a Careful Plan',
-            paragraph: 'Whether it\'s a partner cycle or donor insemination, start with one honest conversation.',
-            primary: 'Book a Free Consultation',
-            secondary: 'Read the Full IUI Guide',
+            heading: 'Find Out If PGT Fits Your Case',
+            paragraph: 'PGT is not right for every couple. Bring your history and we will tell you honestly whether it changes your odds.',
+            primary: 'Book a PGT Consultation',
+            secondary: 'WhatsApp Your Reports',
         },
     },
     'hsg': {
@@ -166,7 +185,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         benefits: ['Clear diagnostic imaging', 'Quick outpatient procedure', 'Can flush out minor blockages', 'Guides future treatment plans'],
         faq: [
             { q: 'Does an HSG hurt?', a: 'Some women experience mild to moderate cramping during the injection of the dye. Taking over-the-counter pain medication beforehand can help.' },
-            { q: 'When should an HSG be scheduled?', a: 'It is usually scheduled between days 6 and 11 of your menstrual cycle, after bleeding has stopped but before ovulation.' }
+            { q: 'When should an HSG be scheduled?', a: 'It is usually scheduled between days 6 and 11 of your menstrual cycle, after bleeding has stopped but before ovulation.' },
+            { q: 'Can I get pregnant naturally after an HSG?', a: 'Some women do. The dye flush can temporarily clear minor debris or mild blockages, giving a modest fertility boost in the two to three months immediately following the test.' },
+            { q: 'What does a blocked fallopian tube on HSG mean for treatment?', a: 'One blocked tube may still allow natural conception or IUI using the open side. Two blocked tubes usually mean IVF is needed, since it bypasses the tubes entirely.' },
+            { q: 'Is HSG done under anaesthesia?', a: 'No. It is a quick outpatient X-ray procedure. Taking a pain reliever an hour before your appointment is usually enough.' },
+            { q: 'Can I drive myself home after an HSG?', a: 'Yes. Since no sedation is used, most patients resume normal activities, including driving, the same day.' },
         ],
         cta: {
             heading: 'Start With a Clear Picture',
@@ -220,7 +243,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         benefits: ['Fertility-first surgical judgement', 'Minimally invasive, day-case surgery', 'Diagnoses and treats in one sitting', 'Faster recovery than open surgery'],
         faq: [
             { q: 'Will I need to stay in the hospital?', a: 'No, these are typically performed as day-case surgeries. Most patients go home the same day.' },
-            { q: 'How long is the recovery?', a: 'Recovery from a hysteroscopy is very fast (1-2 days). Laparoscopy may require a few days to a week of rest before returning to normal activities.' }
+            { q: 'How long is the recovery?', a: 'Recovery from a hysteroscopy is very fast (1-2 days). Laparoscopy may require a few days to a week of rest before returning to normal activities.' },
+            { q: 'Can hysteroscopy improve IVF success rates?', a: 'Yes, when it corrects a genuine structural problem like a polyp or septum affecting implantation. It is not recommended as a routine add-on without a specific finding on your scan.' },
+            { q: 'Is laparoscopy safe for women trying to conceive?', a: 'Yes, when performed with a fertility-first approach that preserves ovarian tissue. It is often the only way to accurately diagnose and treat endometriosis, which imaging alone can miss.' },
+            { q: 'How soon can we try to conceive after hysteroscopy or laparoscopy?', a: 'Usually after one full menstrual cycle for hysteroscopy, and one to two cycles for laparoscopy, to allow tissue to heal. We confirm the right timing for your specific procedure at your follow-up visit.' },
+            { q: 'What are the signs of a uterine septum affecting fertility?', a: 'A septum is often silent until repeated miscarriage or failed implantation prompts an ultrasound or hysteroscopy. It is one of the few structural causes that is fully correctable in a single day-case procedure.' },
         ],
         cta: {
             heading: 'Make Sure the Surgery Serves the Baby',
@@ -283,6 +310,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
         faq: [
             { q: 'What is the difference between IVF and ICSI?', a: 'In IVF, thousands of sperm are placed around each egg. In ICSI, a single sperm is injected directly into the egg. ICSI is standard when sperm numbers or quality are very low.' },
             { q: 'Do I need surgical sperm retrieval to have ICSI?', a: 'Only if your semen analysis shows azoospermia, zero sperm in the ejaculate. If sperm are present in your ejaculated sample, even in low numbers, we use that sample directly with ICSI. If not, we retrieve sperm surgically first — see our full guide to Surgical Sperm Retrieval.' },
+            { q: 'Does ICSI increase the risk of birth defects?', a: 'Large studies show only a small increase in risk, largely linked to the underlying male infertility itself rather than the ICSI procedure. We discuss this openly, and genetic counselling is available where relevant.' },
+            { q: 'Can ICSI be used with frozen sperm?', a: 'Yes. ICSI is often the preferred method with frozen or previously frozen sperm samples, since it only requires a single viable sperm per egg.' },
+            { q: 'What sperm count is too low for conventional IVF and needs ICSI?', a: 'There is no single cutoff — motility and morphology matter as much as count. We review your full semen analysis and recommend ICSI whenever conventional fertilisation looks unreliable.' },
+            { q: 'How many eggs are needed for a successful ICSI cycle?', a: 'More mature eggs improve the odds of at least one good embryo, but success has been achieved with as few as one or two. Your stimulation protocol is planned around your ovarian reserve.' },
         ],
         cta: {
             heading: 'Get a Second Opinion Built on Numbers',
@@ -345,6 +376,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
         faq: [
             { q: 'My husband has zero sperm count. Can we still have a biological child?', a: 'Often, yes. Through Surgical Sperm Retrieval techniques like PESA, TESA, or Micro TESE, we can safely extract sperm directly from the reproductive tract to use with ICSI.' },
             { q: 'What is the difference between obstructive and non-obstructive azoospermia?', a: 'In obstructive azoospermia, sperm production is normal but a blockage stops sperm reaching the ejaculate, so PESA or TESA usually succeed. In non-obstructive azoospermia, the testicles produce very little sperm, so Micro TESE, which examines tissue under a microscope to find isolated productive areas, is generally recommended.' },
+            { q: 'Is Micro TESE painful or does it require hospital admission?', a: 'It is performed under general or regional anaesthesia as day-case surgery. Most men experience mild scrotal discomfort for a few days, managed with routine pain relief.' },
+            { q: 'Can sperm retrieved surgically be frozen for future use?', a: 'Yes. Retrieved sperm is commonly frozen immediately, so a single successful retrieval can support more than one ICSI attempt without repeat surgery.' },
+            { q: 'What tests are done before recommending surgical sperm retrieval?', a: 'A hormonal profile (FSH, LH, testosterone), a physical examination, and often a genetic test for Y-chromosome microdeletions or karyotype abnormalities, to understand the cause and the realistic chance of finding sperm.' },
+            { q: 'What happens if no sperm is found during Micro TESE?', a: 'This happens in some non-obstructive cases despite the procedure\'s high yield. We discuss donor sperm options at that point, always led by what you and your partner decide.' },
         ],
         cta: {
             heading: 'Get a Second Opinion Built on Numbers',
@@ -390,6 +425,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         benefits: ['Cost-effective first step', 'Non-surgical, 10 minute procedure', 'Increases sperm concentration at the egg', 'Can be synced with ovulation medications'],
         faq: [
             { q: 'How many IUI cycles should we try before moving to IVF?', a: 'Evidence shows most IUI successes happen within the first 3 to 4 properly monitored cycles. Beyond that, the chance per cycle drops and IVF usually becomes a much wiser investment of your time and money.' },
+            { q: 'What is the success rate of IUI per cycle?', a: 'It varies with age, sperm parameters, and the underlying cause. We give you a case-specific estimate rather than a generic number, since averages can be misleading for any one couple.' },
+            { q: 'Is bed rest needed after IUI?', a: 'No. You can resume normal activities immediately. Some clinics suggest resting for 10 to 15 minutes afterward, but there is no evidence it changes the outcome.' },
+            { q: 'Can IUI be done with frozen sperm?', a: 'Yes, including donor sperm from a registered ART bank, which is always frozen and quarantined per ART Act 2021 requirements.' },
+            { q: 'What are the signs of a successful IUI before the pregnancy test?', a: 'There genuinely are not reliable early signs — implantation symptoms are too similar to normal premenstrual changes. We ask patients to wait for the blood test around day 14 rather than reading into symptoms.' },
+            { q: 'Does IUI work for unexplained infertility?', a: 'It is often the first treatment tried, since it is simple and non-invasive. If 3 to 4 well-timed cycles do not succeed, we move to a more definitive option like IVF.' },
         ],
         cta: {
             heading: 'Ready to Take the Gentle First Step?',
@@ -425,7 +465,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         benefits: ['Restores normal ovulation', 'Non-invasive PCOS management', 'Ultrasound and blood test monitoring', 'Optimizes timing for conception'],
         faq: [
             { q: 'What medications are used?', a: 'Common medications include Letrozole, Clomid, or injectable gonadotropins, tailored to your specific hormonal profile.' },
-            { q: 'Are there side effects?', a: 'Side effects are generally mild and may include hot flashes, mood swings, or bloating. We monitor you closely to ensure safety.' }
+            { q: 'Are there side effects?', a: 'Side effects are generally mild and may include hot flashes, mood swings, or bloating. We monitor you closely to ensure safety.' },
+            { q: 'How do I know if ovulation induction is working?', a: 'We track it directly with follicle-tracking ultrasounds and, where needed, a blood progesterone test after ovulation — rather than relying on ovulation predictor kits alone, which can be unreliable in PCOS.' },
+            { q: 'Can ovulation induction cause a multiple pregnancy?', a: 'There is a modest increase in twin risk with oral medication and a higher one with injectable gonadotropins, which is exactly why we monitor follicle growth closely and adjust or cancel a cycle if too many follicles develop.' },
+            { q: 'How many cycles of ovulation induction should we try?', a: 'Most pregnancies from ovulation induction happen within 3 to 6 monitored cycles. Beyond that, we re-evaluate rather than repeating the same approach indefinitely.' },
+            { q: 'Does PCOS affect how ovulation induction medication is dosed?', a: 'Yes. PCOS ovaries are more sensitive to stimulation, so we typically start at a lower dose and increase gradually to avoid overstimulation.' },
         ],
         cta: {
             heading: 'Often, This Is the Only Treatment You Need',
@@ -447,7 +491,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Setting', value: 'Outpatient' },
             { label: 'Result', value: 'Personalised Day' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'lQqd21cAGHE',
         sections: [
             {
                 kind: 'text',
@@ -468,6 +512,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         benefits: ['Personalised implantation window', 'Screens for chronic hidden infection', 'Reduces guesswork on transfer timing', 'Guides the next IVF attempt precisely'],
         faq: [
             { q: 'What is an ERA or Endometrial Biopsy used for?', a: 'If you have experienced repeated IVF transfer failures with good embryos, an Endometrial Biopsy or ERA helps us check for hidden inflammation and pinpoints the exact day your uterine lining is most receptive to an embryo.' },
+            { q: 'Is an ERA test painful?', a: 'It feels similar to an endometrial biopsy or a Pap smear — a brief cramping sensation during the sample collection, which resolves quickly. No anaesthesia is needed.' },
+            { q: 'When is ERA testing done in the cycle?', a: 'It is done in a mock cycle that mimics your actual embryo transfer protocol, so the endometrial lining is prepared exactly as it would be for a real transfer.' },
+            { q: 'How many embryo transfer failures before an ERA is recommended?', a: 'Typically after two or more transfers of good-quality embryos have failed to implant, since ERA is a targeted test rather than a routine first step.' },
+            { q: 'Does the ERA result change with every cycle?', a: 'No, the receptive window identified by ERA is generally stable for that patient and is used to plan future transfers without repeating the test each time.' },
+            { q: 'What is checked in an endometrial biopsy besides receptivity?', a: 'We also screen for chronic endometritis, a low-grade hidden infection that can silently interfere with implantation even when embryos are healthy.' },
         ],
         cta: {
             heading: 'Stop Guessing on Your Next Transfer',

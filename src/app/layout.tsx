@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "fertility clinic Gurgaon",
     "IVF centre Gurugram",
     "infertility treatment Gurugram",
-    "IVF doctor Delhi NCR",
+    "IVF doctor Sector 27 Gurugram",
   ],
   alternates: {
     canonical: "/",

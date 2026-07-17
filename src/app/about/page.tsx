@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 const TITLE = 'Dr. Rashmi Agrawal | IVF Specialist in Gurgaon | About';
-const DESCRIPTION = 'Meet Dr. Rashmi Agrawal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram and Delhi NCR.';
+const DESCRIPTION = 'Meet Dr. Rashmi Agrawal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram.';
 
 export const metadata: Metadata = {
     title: TITLE,

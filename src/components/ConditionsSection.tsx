@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Baby, TestTube, Syringe, Stethoscope, TestTube2, CalendarRange, FileSearch, ArrowUpRight } from 'lucide-react';
+import { Baby, Dna, Syringe, Stethoscope, TestTube2, CalendarRange, FileSearch, ArrowUpRight } from 'lucide-react';
 
 export default function ConditionsSection() {
     const conditions = [
@@ -12,11 +12,11 @@ export default function ConditionsSection() {
             chips: ['ICSI Add-on', 'Blastocyst Culture', 'PGT Available'],
         },
         {
-            href: '/treatments/insemination',
-            Icon: TestTube,
-            title: 'Insemination',
-            desc: 'Prepared sperm placed precisely, timed to ovulation, fully within ART Act guidelines.',
-            chips: ['ART Act Compliant', 'Donor Option', 'Partner Cycle'],
+            href: '/treatments/pgt',
+            Icon: Dna,
+            title: 'Preimplantation Genetic Testing (PGT)',
+            desc: 'Embryos screened for chromosomal and genetic conditions before a transfer is chosen.',
+            chips: ['PGT-A', 'PGT-M', 'PGT-SR'],
         },
         {
             href: '/treatments/surgical-sperm-retrieval',

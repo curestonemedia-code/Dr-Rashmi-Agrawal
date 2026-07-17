@@ -128,8 +128,8 @@ export default function DoctorProfileSection() {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em]">Primary Clinic Location</p>
-                                    <p className="text-sm font-bold text-slate-800 mt-1">Gurugram & Delhi NCR Hubs</p>
+                                    <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em]">Clinic Location</p>
+                                    <p className="text-sm font-bold text-slate-800 mt-1">Gurugram</p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ export default function DoctorProfileSection() {
                             </h4>
                             <div className="space-y-4">
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    Fellowship trained fertility specialist practising in Gurugram and Delhi NCR. Over 10 years guiding couples through everything from ovulation problems to repeated IVF failure.
+                                    Fellowship trained fertility specialist practising in Gurugram. Over 10 years guiding couples through everything from ovulation problems to repeated IVF failure.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
                                     She reviews every report herself, explains options in plain language, and stays personally involved from your first scan to early pregnancy.
