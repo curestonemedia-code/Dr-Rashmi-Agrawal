@@ -162,7 +162,7 @@ export default function FAQSection() {
                                 </div>
                                 <div>
                                     <div className="text-sm font-semibold text-slate-800">Verified Answers</div>
-                                    <div className="text-xs text-slate-500">By Dr. Rashmi Agarwal</div>
+                                    <div className="text-xs text-slate-500">By Dr. Rashmi Agrawal</div>
                                 </div>
                             </div>
                         </div>

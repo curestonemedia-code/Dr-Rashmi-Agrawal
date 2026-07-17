@@ -1,5 +1,5 @@
 export const SITE_URL = "https://drrashmiagrawal.com";
-export const SITE_NAME = "Dr. Rashmi Agarwal IVF Centre";
+export const SITE_NAME = "Dr. Rashmi Agrawal IVF Centre";
 export const CLINIC_PHONE = "+91 88002 63884";
 export const CLINIC_PHONE_INTL = "+918800263884";
 export const CLINIC_EMAIL = "Cure@thecurestone.com";
@@ -43,7 +43,7 @@ export const clinicSchema = {
     },
     founder: {
         "@type": "Physician",
-        name: "Dr. Rashmi Agarwal",
+        name: "Dr. Rashmi Agrawal",
         medicalSpecialty: "Reproductive Endocrinology",
         alumniOf: [
             "Indira Gandhi Government Medical College, Maharashtra",

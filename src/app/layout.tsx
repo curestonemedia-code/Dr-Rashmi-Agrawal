@@ -15,8 +15,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agarwal IVF Centre";
-const DESCRIPTION = "Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
+const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agrawal IVF Centre";
+const DESCRIPTION = "Dr. Rashmi Agrawal: MS OBGYN (Gold Medalist), FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: "/dr rashmi.jpg", width: 1200, height: 1500, alt: "Dr. Rashmi Agarwal" }],
+    images: [{ url: "/dr rashmi.jpg", width: 1200, height: 1500, alt: "Dr. Rashmi Agrawal" }],
   },
   twitter: {
     card: "summary_large_image",

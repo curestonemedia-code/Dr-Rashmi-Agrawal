@@ -43,7 +43,7 @@ export default function Preloader() {
             <span id="loader-text-inner" className="inline-block">
                 <img 
                     src="/logo_transparent.png" 
-                    alt="Dr. Rashmi Agarwal Logo" 
+                    alt="Dr. Rashmi Agrawal Logo" 
                     className="h-16 md:h-20 w-auto object-contain drop-shadow-lg"
                 />
             </span>

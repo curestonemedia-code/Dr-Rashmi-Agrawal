@@ -4,8 +4,8 @@ import { ChevronRight, MessageCircle } from "lucide-react";
 import FaqAccordion from "@/components/FaqAccordion";
 import { ALL_FAQS, FAQ_CATEGORIES } from "@/constants/faqs";
 
-const TITLE = 'Fertility and IVF FAQs | Dr. Rashmi Agarwal';
-const DESCRIPTION = 'Fertility questions answered by Dr. Rashmi Agarwal in Gurugram. IVF, IUI, ICSI, cost, pain, PCOS, and male infertility, explained in plain language.';
+const TITLE = 'Fertility and IVF FAQs | Dr. Rashmi Agrawal';
+const DESCRIPTION = 'Fertility questions answered by Dr. Rashmi Agrawal in Gurugram. IVF, IUI, ICSI, cost, pain, PCOS, and male infertility, explained in plain language.';
 
 export const metadata: Metadata = {
     title: TITLE,
@@ -51,7 +51,7 @@ export default function FaqsPage() {
                         Every question, honestly answered.
                     </h1>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto mb-10">
-                        Diagnosis, cost, pain, male infertility, PCOS — in plain language, by Dr. Rashmi Agarwal.
+                        Diagnosis, cost, pain, male infertility, PCOS — in plain language, by Dr. Rashmi Agrawal.
                     </p>
 
                     <nav aria-label="FAQ categories" className="flex flex-wrap justify-center gap-2">

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { Phone, MessageCircle, MapPin, Clock, Mail, AlertTriangle, ChevronRight } from 'lucide-react';
 import ContactForm from './ContactForm';
 
-const TITLE = 'Contact Dr. Rashmi Agarwal IVF Centre | Gurgaon';
-const DESCRIPTION = 'Contact Dr. Rashmi Agarwal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a free fertility consultation.';
+const TITLE = 'Contact Dr. Rashmi Agrawal IVF Centre | Gurgaon';
+const DESCRIPTION = 'Contact Dr. Rashmi Agrawal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a free fertility consultation.';
 
 export const metadata: Metadata = {
     title: TITLE,
@@ -39,7 +39,7 @@ export default function ContactPage() {
                     referrerPolicy="strict-origin-when-cross-origin"
                     tabIndex={-1}
                     aria-hidden="true"
-                    title="Dr. Rashmi Agarwal IVF Centre map background"
+                    title="Dr. Rashmi Agrawal IVF Centre map background"
                 />
                 <div className="container-x relative text-center">
                     <div className="cond-breadcrumb justify-center">
@@ -101,7 +101,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] mb-1">Clinic Location</p>
-                                    <p className="text-lg font-bold text-slate-900">Dr. Rashmi Agarwal IVF Centre</p>
+                                    <p className="text-lg font-bold text-slate-900">Dr. Rashmi Agrawal IVF Centre</p>
                                     <p className="text-slate-600 mt-1">Nova IVF, Plot No. 522, near Supermarket, Sector 27, Gurugram, Haryana 122009</p>
                                 </div>
                             </div>

@@ -48,7 +48,7 @@ export default function DoctorProfileSection() {
         {
             icon: Award,
             text: "High Success Rate IVF Treatments",
-            subtext: "By - Dr. Rashmi Agarwal"
+            subtext: "By - Dr. Rashmi Agrawal"
         },
         {
             icon: GraduationCap,
@@ -80,7 +80,7 @@ export default function DoctorProfileSection() {
                         </span>
                     </div>
                     <h2 className="display-sm text-slate-900 mb-6 font-black!">
-                        Meet Dr. Rashmi Agarwal, <br className="hidden sm:block" />
+                        Meet Dr. Rashmi Agrawal, <br className="hidden sm:block" />
                         <span className="text-pink-600">Your Fertility Specialist</span>
                     </h2>
                     <p className="body-lg text-slate-600 max-w-2xl mx-auto">
@@ -95,7 +95,7 @@ export default function DoctorProfileSection() {
                         <div className="dp-fade-up relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-200 shadow-2xl group">
                             <img
                                 src="/dr rashmi.jpg"
-                                alt="Dr. Rashmi Agarwal"
+                                alt="Dr. Rashmi Agrawal"
                                 className="w-full h-full object-cover object-top scale-[1.02] group-hover:scale-[1.05] transition-transform duration-700 ease-out"
                             />
                             {/* Visual Overlays */}
@@ -109,7 +109,7 @@ export default function DoctorProfileSection() {
                                     </div>
                                     <span className="text-white text-xs font-bold tracking-wider uppercase">4.9 Patient Rating</span>
                                 </div>
-                                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-2">Dr. Rashmi Agarwal</h3>
+                                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-2">Dr. Rashmi Agrawal</h3>
                                 <div className="flex flex-col gap-1">
                                     <p className="text-pink-200 text-sm font-bold">
                                         Senior IVF & Fertility Specialist

@@ -11,18 +11,18 @@ export default function Footer() {
               <Link href="/" className="inline-block bg-white px-4 py-2.5 rounded-2xl mb-2 hover:bg-slate-50 transition-colors">
                 <img 
                   src="/logo_transparent.png" 
-                  alt="Dr. Rashmi Agarwal Logo" 
+                  alt="Dr. Rashmi Agrawal Logo" 
                   className="h-10 w-auto object-contain"
                 />
               </Link>
               <p className="mt-6 max-w-sm" style={{ color: 'var(--on-dark-muted)', fontSize: '0.9rem', lineHeight: '1.65' }}>
-                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist in Gurgaon · Senior Consultant at Dr. Rashmi Agarwal IVF Centre, providing reproductive care across Gurugram and Delhi NCR.
+                MS OBGYN (Gold Medalist) · IVF & Fertility Specialist in Gurgaon · Senior Consultant at Dr. Rashmi Agrawal IVF Centre, providing reproductive care across Gurugram and Delhi NCR.
               </p>
             </div>
             
             <div className="md:col-span-3">
               <div className="eyebrow mb-4" style={{ color: 'var(--brand-light)' }}>Clinical Hub</div>
-              <div style={{ color: '#fff', fontWeight: 500 }}>Dr. Rashmi Agarwal IVF Centre</div>
+              <div style={{ color: '#fff', fontWeight: 500 }}>Dr. Rashmi Agrawal IVF Centre</div>
               <div className="mt-2" style={{ color: 'var(--on-dark-muted)', fontSize: '0.875rem', lineHeight: '1.65' }}>
                 NOVA IVF, Plot No 522, near Supermarket,<br/>Sector 27, Gurugram, Haryana 122009<br/>+91 88002 63884<br/>Cure@thecurestone.com
               </div>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
           
           <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style={{ color: 'var(--on-dark-muted)', fontSize: '0.8rem' }}>
-            <div>© 2026 Dr. Rashmi Agarwal · IVF Centre. All rights reserved.</div>
+            <div>© 2026 Dr. Rashmi Agrawal · IVF Centre. All rights reserved.</div>
             <div>Designed with ♥ by Gulshan Chawla</div>
           </div>
         </div>

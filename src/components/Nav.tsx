@@ -48,7 +48,7 @@ export default function Nav() {
     <nav id="navbar" className={scrolled || menuOpen ? 'scrolled' : ''}>
       <div className="nav-inner container-x edge">
         <Link href="/" className="brand-logo py-1">
-          <img src="/logo_transparent.png" alt="Dr. Rashmi Agarwal Logo" className="h-10 md:h-12 w-auto object-contain" />
+          <img src="/logo_transparent.png" alt="Dr. Rashmi Agrawal Logo" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

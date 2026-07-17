@@ -30,7 +30,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'IVF, done with total transparency.',
         seo: {
             title: 'IVF Treatment in Gurgaon',
-            description: 'IVF (in vitro fertilisation) in Gurugram with Dr. Rashmi Agarwal — embryology lab, ICSI support, and a written estimate before you begin. Book a free consultation.',
+            description: 'IVF (in vitro fertilisation) in Gurugram with Dr. Rashmi Agrawal — embryology lab, ICSI support, and a written estimate before you begin. Book a free consultation.',
         },
         heroDesc: 'One doctor at every step, an advanced embryology lab, and a written estimate before you begin. No surprises.',
         heroStats: [
@@ -98,7 +98,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'Insemination, explained simply.',
         seo: {
             title: 'Artificial Insemination in Gurgaon',
-            description: 'Partner and donor insemination in Gurugram, fully ART Act 2021 compliant. Learn how the procedure works and who it helps. Book a free consultation with Dr. Rashmi Agarwal.',
+            description: 'Partner and donor insemination in Gurugram, fully ART Act 2021 compliant. Learn how the procedure works and who it helps. Book a free consultation with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'Prepared sperm placed at exactly the right moment — partner or donor, always ART Act compliant.',
         heroStats: [
@@ -143,7 +143,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'See what\'s blocking conception.',
         seo: {
             title: 'HSG Test in Gurgaon',
-            description: 'Hysterosalpingography (HSG) in Gurugram checks for blocked fallopian tubes before IUI or IVF. A quick outpatient X-ray procedure with Dr. Rashmi Agarwal.',
+            description: 'Hysterosalpingography (HSG) in Gurugram checks for blocked fallopian tubes before IUI or IVF. A quick outpatient X-ray procedure with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'A quick X-ray test that maps your fallopian tubes and uterine cavity in one visit.',
         heroStats: [
@@ -179,7 +179,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'Keyhole surgery. Fertility-first.',
         seo: {
             title: 'Hysteroscopy & Laparoscopy Surgery in Gurgaon',
-            description: 'Fertility-focused hysteroscopy and laparoscopy in Gurugram for polyps, fibroids, endometriosis, and blocked tubes. Day-case surgery with Dr. Rashmi Agarwal.',
+            description: 'Fertility-focused hysteroscopy and laparoscopy in Gurugram for polyps, fibroids, endometriosis, and blocked tubes. Day-case surgery with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'Camera-guided surgery to diagnose and treat polyps, fibroids, cysts, and endometriosis in one sitting.',
         heroStats: [
@@ -234,7 +234,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'One sperm. One egg. Fertilised.',
         seo: {
             title: 'ICSI Treatment in Gurgaon',
-            description: 'ICSI (intracytoplasmic sperm injection) in Gurugram for severe male factor infertility — a single sperm injected directly into the egg. Book a consultation with Dr. Rashmi Agarwal.',
+            description: 'ICSI (intracytoplasmic sperm injection) in Gurugram for severe male factor infertility — a single sperm injected directly into the egg. Book a consultation with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'A single healthy sperm injected directly into the egg — built for severe male factor infertility.',
         heroStats: [
@@ -296,7 +296,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'Zero sperm count isn\'t the end.',
         seo: {
             title: 'Surgical Sperm Retrieval (PESA, TESA, Micro TESE) in Gurgaon',
-            description: 'Surgical sperm retrieval in Gurugram for azoospermia — PESA, TESA, and Micro TESE, coordinated with ICSI. Consult Dr. Rashmi Agarwal for a personalised evaluation.',
+            description: 'Surgical sperm retrieval in Gurugram for azoospermia — PESA, TESA, and Micro TESE, coordinated with ICSI. Consult Dr. Rashmi Agrawal for a personalised evaluation.',
         },
         heroDesc: 'PESA, TESA, and Micro TESE retrieve sperm directly from the reproductive tract for use with ICSI.',
         heroStats: [
@@ -358,7 +358,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'The gentle first step, done right.',
         seo: {
             title: 'IUI Treatment in Gurgaon',
-            description: 'Intrauterine insemination (IUI) in Gurugram for mild male factor, cervical issues, and unexplained infertility. A 10-minute procedure with Dr. Rashmi Agarwal.',
+            description: 'Intrauterine insemination (IUI) in Gurugram for mild male factor, cervical issues, and unexplained infertility. A 10-minute procedure with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'A 10-minute procedure that places prepared sperm exactly where — and when — it needs to be.',
         heroStats: [
@@ -403,7 +403,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'Often, the only treatment you need.',
         seo: {
             title: 'Ovulation Induction Treatment in Gurgaon',
-            description: 'Ovulation induction and cycle monitoring in Gurugram for PCOS and irregular ovulation. Medication and tracking scans with Dr. Rashmi Agarwal.',
+            description: 'Ovulation induction and cycle monitoring in Gurugram for PCOS and irregular ovulation. Medication and tracking scans with Dr. Rashmi Agrawal.',
         },
         heroDesc: 'Dosed medication and tracking scans pinpoint your exact fertile window, cycle after cycle.',
         heroStats: [
@@ -438,7 +438,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'Stop guessing your transfer day.',
         seo: {
             title: 'Endometrial Biopsy & ERA Test in Gurgaon',
-            description: 'Endometrial biopsy and ERA (endometrial receptivity analysis) in Gurugram after repeated IVF implantation failure. Consult Dr. Rashmi Agarwal.',
+            description: 'Endometrial biopsy and ERA (endometrial receptivity analysis) in Gurugram after repeated IVF implantation failure. Consult Dr. Rashmi Agrawal.',
         },
         heroDesc: 'Pinpoints your uterine lining\'s exact receptive window after repeated implantation failure.',
         heroStats: [

@@ -48,7 +48,7 @@ export default function LiveOTSection() {
                             Fertility treatments, explained.
                         </h2>
                         <p className="text-base md:text-lg text-slate-500 max-w-2xl leading-relaxed">
-                            Educational footage and treatment walkthroughs from Dr. Agarwal. Navigate to explore each procedure.
+                            Educational footage and treatment walkthroughs from Dr. Agrawal. Navigate to explore each procedure.
                         </p>
                     </div>
 

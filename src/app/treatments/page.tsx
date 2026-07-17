@@ -5,8 +5,8 @@ import {
     ArrowRight, MessageCircle, ChevronRight,
 } from 'lucide-react';
 
-const TITLE = 'Fertility Treatments in Gurgaon | Dr. Rashmi Agarwal';
-const DESCRIPTION = 'Fertility treatments in Gurugram: IVF, ICSI, surgical sperm retrieval, IUI, and laparoscopy under Dr. Rashmi Agarwal. Compare your options in one place.';
+const TITLE = 'Fertility Treatments in Gurgaon | Dr. Rashmi Agrawal';
+const DESCRIPTION = 'Fertility treatments in Gurugram: IVF, ICSI, surgical sperm retrieval, IUI, and laparoscopy under Dr. Rashmi Agrawal. Compare your options in one place.';
 
 export const metadata: Metadata = {
     title: TITLE,

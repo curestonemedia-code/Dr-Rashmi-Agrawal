@@ -80,12 +80,12 @@ export default function HeroSection() {
                             {/* Separation Line & Doctor Signature */}
                             <div className="flex items-center gap-3 mb-6 fade-up opacity-0 translate-y-4">
                                 <span className="w-12 h-0.5 bg-[#ef8b92] rounded-full"></span>
-                                <span className="text-sm font-bold uppercase tracking-wider text-slate-700">By Dr. Rashmi Agarwal</span>
+                                <span className="text-sm font-bold uppercase tracking-wider text-slate-700">By Dr. Rashmi Agrawal</span>
                             </div>
 
                             {/* Body Text */}
                             <p className="text-base md:text-lg text-slate-700 max-w-xl leading-relaxed mb-8 fade-up opacity-0 translate-y-4">
-                                Fertility care in Gurugram, led personally by Dr. Rashmi Agarwal. 9,000+ consultations, 3,000+ treatments — no conveyor belts, just careful medicine.
+                                Fertility care in Gurugram, led personally by Dr. Rashmi Agrawal. 9,000+ consultations, 3,000+ treatments — no conveyor belts, just careful medicine.
                             </p>
 
                             {/* CTA Button Actions */}

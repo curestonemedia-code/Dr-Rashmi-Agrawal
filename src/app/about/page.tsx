@@ -5,8 +5,8 @@ import {
     CalendarCheck2, MessageCircle, CheckCircle2, Building2, ChevronRight,
 } from 'lucide-react';
 
-const TITLE = 'Dr. Rashmi Agarwal | IVF Specialist in Gurgaon | About';
-const DESCRIPTION = 'Meet Dr. Rashmi Agarwal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram and Delhi NCR.';
+const TITLE = 'Dr. Rashmi Agrawal | IVF Specialist in Gurgaon | About';
+const DESCRIPTION = 'Meet Dr. Rashmi Agrawal: MS OBGYN (Gold Medalist), DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram and Delhi NCR.';
 
 export const metadata: Metadata = {
     title: TITLE,
@@ -31,7 +31,7 @@ const memberships = [
 ];
 
 const experience = [
-    { role: 'Chief IVF Specialist and Founder', place: 'Dr. Rashmi Agarwal IVF Centre, Gurugram' },
+    { role: 'Chief IVF Specialist and Founder', place: 'Dr. Rashmi Agrawal IVF Centre, Gurugram' },
     { role: 'Visiting Consultant, IVF and Fertility', place: 'Apollo Hospital, Delhi' },
     { role: 'Senior Consultant, IVF', place: 'Max Hospital, Shalimar Bagh, New Delhi' },
     { role: 'Consultant, OBGYN and Reproductive Medicine', place: 'Dr. RML Hospital and PGIMER, New Delhi' },
@@ -102,17 +102,17 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                         <div className="lg:col-span-5">
                             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-200 shadow-2xl max-w-lg mx-auto lg:mx-0">
-                                <img src="/dr rashmi.jpg" alt="Dr. Rashmi Agarwal at the Gurugram centre" className="w-full h-full object-cover object-top" />
+                                <img src="/dr rashmi.jpg" alt="Dr. Rashmi Agrawal at the Gurugram centre" className="w-full h-full object-cover object-top" />
                             </div>
                         </div>
                         <div className="lg:col-span-7">
-                            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-2">Dr. Rashmi Agarwal</h2>
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-2">Dr. Rashmi Agrawal</h2>
                             <p className="text-pink-600 font-bold text-sm uppercase tracking-wider mb-8">
                                 Senior IVF & Fertility Specialist — MBBS, MS (OBGY) Gold Medalist, DNB, FNB
                             </p>
                             <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed mb-12">
                                 <p>Fertility medicine is the one branch where the outcome isn&apos;t just a cured patient — it&apos;s a family changed forever. That shapes how she works, consults, and treats.</p>
-                                <p>She leads the Dr. Rashmi Agarwal IVF Centre in Gurugram: 9,000+ consultations, 3,000+ treatments, 5+ publications, and the Gold Medal in her MS.</p>
+                                <p>She leads the Dr. Rashmi Agrawal IVF Centre in Gurugram: 9,000+ consultations, 3,000+ treatments, 5+ publications, and the Gold Medal in her MS.</p>
                             </div>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 {stats.map((s, i) => (
