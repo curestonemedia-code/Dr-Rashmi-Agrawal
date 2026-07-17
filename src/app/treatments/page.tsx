@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
     Baby, Dna, Stethoscope, Syringe, TestTube2, CalendarRange, FileSearch,
-    ArrowRight, MessageCircle, ChevronRight, Play,
+    ArrowRight, MessageCircle, ChevronRight,
 } from 'lucide-react';
 
 const TITLE = 'Fertility Treatments in Gurgaon | Dr. Rashmi Agrawal';
@@ -20,7 +20,6 @@ const treatments = [
     {
         href: '/treatments/ivf',
         Icon: Baby,
-        videoId: 'h8pBhvxheVI',
         title: 'IVF (In Vitro Fertilisation)',
         recommended: 'Blocked tubes, low AMH, endometriosis, failed IUIs.',
         desc: 'Eggs and sperm combined in the lab; the healthy embryo transferred to the uterus.',
@@ -29,7 +28,6 @@ const treatments = [
     {
         href: '/treatments/pgt',
         Icon: Dna,
-        videoId: 'aTwR2M7pCMw',
         title: 'Preimplantation Genetic Testing (PGT)',
         recommended: 'Advanced maternal age, recurrent loss, repeated implantation failure.',
         desc: 'Embryos screened for chromosomal and genetic conditions before a transfer is chosen.',
@@ -38,7 +36,6 @@ const treatments = [
     {
         href: '/treatments/hysteroscopy-laparoscopy',
         Icon: Stethoscope,
-        videoId: '3XH4BmNM-Fo',
         title: 'Hysteroscopy and Laparoscopy Surgeries',
         recommended: 'Polyps, septum, adhesions, endometriosis, fibroids, blocked tubes.',
         desc: 'Minimally invasive keyhole surgery, protecting your ovarian reserve throughout.',
@@ -47,7 +44,6 @@ const treatments = [
     {
         href: '/treatments/icsi',
         Icon: Syringe,
-        videoId: 'YvvciOHrnec',
         title: 'ICSI (Intracytoplasmic Sperm Injection)',
         recommended: 'Low count, poor motility, or prior fertilisation failure.',
         desc: 'One healthy sperm injected directly into each mature egg under a microscope.',
@@ -56,7 +52,6 @@ const treatments = [
     {
         href: '/treatments/surgical-sperm-retrieval',
         Icon: Stethoscope,
-        videoId: 'ypvbBToaFY4',
         title: 'Surgical Sperm Retrieval (PESA, TESA, Micro TESE)',
         recommended: 'Azoospermia, confirmed on two semen analyses.',
         desc: 'Sperm retrieved directly from the reproductive tract for use with ICSI.',
@@ -65,7 +60,6 @@ const treatments = [
     {
         href: '/treatments/iui',
         Icon: TestTube2,
-        videoId: 'nmkvMS2at_0',
         title: 'IUI (Intrauterine Insemination)',
         recommended: 'Mild male factor, cervical issues, unexplained infertility.',
         desc: 'Concentrated sperm placed inside the uterus at the exact fertile window.',
@@ -74,7 +68,6 @@ const treatments = [
     {
         href: '/treatments/ovulation-induction',
         Icon: CalendarRange,
-        videoId: 'rux07h3arf0',
         title: 'Ovulation Induction and Cycle Monitoring',
         recommended: 'Irregular ovulation, PCOS, early in your journey.',
         desc: 'Medication plus tracking scans to pinpoint the exact fertile window.',
@@ -83,7 +76,6 @@ const treatments = [
     {
         href: '/treatments/endometrial-biopsy-era',
         Icon: FileSearch,
-        videoId: 'lQqd21cAGHE',
         title: 'Endometrial Biopsy and ERA',
         recommended: 'Repeated IVF implantation failure.',
         desc: 'Pinpoints the precise, personalised window of implantation for embryo transfer.',
@@ -134,40 +126,22 @@ export default function TreatmentsPage() {
             <section className="py-8 md:py-12 bg-slate-50/60 edge">
                 <div className="container-x">
                     <div className="grid md:grid-cols-2 gap-6">
-                        {treatments.map(({ href, Icon, videoId, title, recommended, desc, link }, i) => (
+                        {treatments.map(({ href, Icon, title, recommended, desc, link }, i) => (
                             <Link
                                 key={i}
                                 href={href}
-                                className="group block bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-pink-500/5 hover:border-pink-100 transition-all overflow-hidden"
+                                className="group bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-pink-500/5 hover:border-pink-100 transition-all"
                             >
-                                {/* Video Thumbnail */}
-                                <div className="relative aspect-video bg-slate-900 overflow-hidden">
-                                    <img
-                                        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                                        alt={`${title} — video overview`}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-pink-600 shadow-lg group-hover:scale-110 group-hover:bg-white transition-all">
-                                            <Play className="w-5 h-5 ml-0.5" fill="currentColor" />
-                                        </div>
-                                    </div>
+                                <div className="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center mb-6 text-pink-500 group-hover:text-pink-600 group-hover:bg-pink-100 transition-colors">
+                                    <Icon className="w-7 h-7" strokeWidth={1.4} />
                                 </div>
-
-                                <div className="p-8">
-                                    <div className="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center mb-6 text-pink-500 group-hover:text-pink-600 group-hover:bg-pink-100 transition-colors">
-                                        <Icon className="w-7 h-7" strokeWidth={1.4} />
-                                    </div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-3">{title}</h3>
-                                    <p className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-3">Recommended for</p>
-                                    <p className="text-sm text-slate-500 leading-relaxed mb-4">{recommended}</p>
-                                    <p className="text-slate-600 leading-relaxed mb-6">{desc}</p>
-                                    <span className="inline-flex items-center gap-2 text-sm font-bold text-pink-600 group-hover:gap-3 transition-all">
-                                        {link} <ArrowRight className="w-4 h-4" />
-                                    </span>
-                                </div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3">{title}</h3>
+                                <p className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-3">Recommended for</p>
+                                <p className="text-sm text-slate-500 leading-relaxed mb-4">{recommended}</p>
+                                <p className="text-slate-600 leading-relaxed mb-6">{desc}</p>
+                                <span className="inline-flex items-center gap-2 text-sm font-bold text-pink-600 group-hover:gap-3 transition-all">
+                                    {link} <ArrowRight className="w-4 h-4" />
+                                </span>
                             </Link>
                         ))}
                     </div>
