@@ -531,7 +531,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
                     <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                         <div className="lg:col-span-7">
                             <div className="chip mb-6"><span className="chip-dot"></span>{data.eyebrow}</div>
-                            <h1 className="display mb-6 font-black!">{data.title}</h1>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-black mb-6">{data.title}</h1>
                             <p className="body-lg max-w-2xl mb-8">{data.heroDesc}</p>
 
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

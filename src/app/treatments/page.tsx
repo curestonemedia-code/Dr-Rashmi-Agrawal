@@ -122,17 +122,6 @@ export default function TreatmentsPage() {
                 </div>
             </section>
 
-            {/* INTRODUCTION */}
-            <section className="section-tight edge">
-                <div className="container-x max-w-4xl">
-                    <h2 className="heading text-slate-900 mb-8 font-black!">How we choose your treatment</h2>
-                    <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
-                        <p>Not a menu — a decision that flows from your diagnosis. Age, ovarian reserve, and sperm parameters all shape the plan.</p>
-                        <p>Treatments sit on a ladder from simplest to advanced. We start at the lowest step that gives your case a genuine chance, and escalate only when it&apos;s needed.</p>
-                    </div>
-                </div>
-            </section>
-
             {/* TREATMENT DIRECTORY */}
             <section className="py-8 md:py-12 bg-slate-50/60 edge">
                 <div className="container-x">
