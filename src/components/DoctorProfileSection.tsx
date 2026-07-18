@@ -79,7 +79,7 @@ export default function DoctorProfileSection() {
                             Meet Your Specialist
                         </span>
                     </div>
-                    <h2 className="display-sm text-slate-900 mb-6 font-black!">
+                    <h2 className="display-sm text-slate-900 mb-6 font-black! max-md:leading-11!">
                         Meet Dr. Rashmi Agrawal, <br className="hidden sm:block" />
                         <span className="text-pink-600">Your Fertility Specialist</span>
                     </h2>
@@ -213,11 +213,7 @@ export default function DoctorProfileSection() {
                                 <MessageCircle className="w-5 h-5 text-green-600" />
                                 WhatsApp Report
                             </a>
-                            <Link href="/about" className="flex-1 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 text-sm font-black rounded-full hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-[0.98]">
-                                Read Dr. Rashmi&apos;s Full Story
-                            </Link>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -22,7 +22,16 @@ const CONDITIONS = [
   { value: "other", label: "General Consult / Second Opinion" },
 ];
 
-type FormField = "fullName" | "phone" | "condition" | "email" | "description";
+const INDIAN_STATES = [
+  "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+  "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa",
+  "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka",
+  "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+  "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+  "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+];
+
+type FormField = "fullName" | "phone" | "state" | "condition" | "email" | "description";
 type FormErrors = Partial<Record<FormField, string>>;
 
 const baseFieldClass =
@@ -70,6 +79,7 @@ export default function BookingForm() {
     const data = {
       name: cleanText(fd.get("fullName")),
       phone,
+      state: cleanText(fd.get("state")),
       condition: cleanText(fd.get("condition")),
       email: cleanText(fd.get("email")),
       description: cleanText(fd.get("description")),
@@ -78,6 +88,7 @@ export default function BookingForm() {
     const nextErrors: FormErrors = {
       fullName: validateName(data.name),
       phone: validateIndianPhone(phone),
+      state: validateSelect(data.state, INDIAN_STATES, "State"),
       condition: validateSelect(data.condition, CONDITIONS.map((c) => c.value), "Condition"),
       email: validateOptionalEmail(data.email),
       description: validateOptionalDescription(data.description),
@@ -97,10 +108,14 @@ export default function BookingForm() {
     try {
       const conditionLabel = CONDITIONS.find((c) => c.value === data.condition)?.label || "General Fertility Consult";
       const result = await sendCrmLead({
-        form_type: "get_estimate",
+        form_type: "book_appointment",
         name: data.name,
         phone,
+        state: data.state,
+        stoneSize: "Not Applicable",
         consultationType: conditionLabel,
+        email: data.email || undefined,
+        description: data.description || "No description",
       });
       setPatientId(result.patient_id || null);
       setSubmitted(true);
@@ -175,21 +190,39 @@ export default function BookingForm() {
         </div>
       </div>
 
-      <div>
-        <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">What brings you here? *</label>
-        <select
-          name="condition"
-          required
-          defaultValue={preselectedCondition}
-          aria-invalid={Boolean(errors.condition)}
-          className={getFieldClass("condition", errors, "mt-1.5 appearance-none")}
-        >
-          <option value="">Select a condition</option>
-          {CONDITIONS.map((c) => (
-            <option key={c.value} value={c.value}>{c.label}</option>
-          ))}
-        </select>
-        <FieldError message={errors.condition} />
+      <div className="grid md:grid-cols-2 gap-5">
+        <div>
+          <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">What brings you here? *</label>
+          <select
+            name="condition"
+            required
+            defaultValue={preselectedCondition}
+            aria-invalid={Boolean(errors.condition)}
+            className={getFieldClass("condition", errors, "mt-1.5 appearance-none")}
+          >
+            <option value="">Select a condition</option>
+            {CONDITIONS.map((c) => (
+              <option key={c.value} value={c.value}>{c.label}</option>
+            ))}
+          </select>
+          <FieldError message={errors.condition} />
+        </div>
+        <div>
+          <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">State *</label>
+          <select
+            name="state"
+            required
+            defaultValue=""
+            aria-invalid={Boolean(errors.state)}
+            className={getFieldClass("state", errors, "mt-1.5 appearance-none")}
+          >
+            <option value="">Select State</option>
+            {INDIAN_STATES.map((s) => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
+          <FieldError message={errors.state} />
+        </div>
       </div>
 
       <div>

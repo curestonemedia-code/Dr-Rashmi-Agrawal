@@ -73,12 +73,21 @@ export default function ContactForm() {
         ].filter(Boolean).join('\n');
         setWhatsappHref(`https://wa.me/918800263884?text=${encodeURIComponent(whatsappText)}`);
 
+        const description = [
+            data.message || null,
+            data.callback ? `Preferred callback: ${data.callback}` : null,
+        ].filter(Boolean).join(' | ') || 'No description';
+
         try {
             await sendCrmLead({
-                form_type: 'get_estimate',
+                form_type: 'book_appointment',
                 name: data.name,
                 phone,
-                consultationType: data.city ? `General Enquiry — ${data.city}` : 'General Enquiry (Contact Page)',
+                state: data.city || 'Not Specified',
+                stoneSize: 'Not Applicable',
+                consultationType: 'General Enquiry (Contact Page)',
+                email: data.email || undefined,
+                description,
             });
             setSubmitted(true);
         } catch {
