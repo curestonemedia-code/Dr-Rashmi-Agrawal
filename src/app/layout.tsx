@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import HashLinkFix from "@/components/HashLinkFix";
 import { SITE_URL, SITE_NAME, clinicSchema } from "@/constants/site";
 
 const poppins = Poppins({
@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agrawal IVF Centre";
-const DESCRIPTION = "Dr. Rashmi Agrawal: MS OBGYN (Gold Medalist), FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
+const DESCRIPTION = "Dr. Rashmi Agrawal: MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -79,15 +79,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema).replace(/</g, "\\u003c") }}
         />
-        <SmoothScroll>
-          <ScrollProgress />
-          <Preloader />
-          <Nav />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </SmoothScroll>
+        <HashLinkFix />
+        <ScrollProgress />
+        <Preloader />
+        <Nav />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

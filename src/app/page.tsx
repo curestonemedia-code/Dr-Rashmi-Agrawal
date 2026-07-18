@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as Icons from 'lucide-react';
 import LiveOTSection from '../components/LiveOTSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import GoogleReviewsSection from '../components/GoogleReviewsSection';
 import FAQSection from '../components/FAQSection';
 import HeroSection from '../components/HeroSection';
 import ConditionsSection from '../components/ConditionsSection';
@@ -162,8 +163,6 @@ export default function Home() {
                 /* Reveal mask for hero lines */
                 .reveal-mask { overflow: hidden; }
 
-                /* Smooth scroll (handled by Lenis) */
-
                 /* Pathway card initial for gsap */
                 .pathway-card { opacity: 0; }
 
@@ -234,6 +233,9 @@ export default function Home() {
 
             {/* ── PATIENT TESTIMONIALS ── */}
             <TestimonialsSection />
+
+            {/* ── GOOGLE REVIEWS ── */}
+            <GoogleReviewsSection />
 
             {/* ── FAQ ── */}
             <FAQSection />

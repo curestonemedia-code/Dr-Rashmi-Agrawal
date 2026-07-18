@@ -62,7 +62,7 @@ export default function HeroSection() {
                             {/* Blue badge */}
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50/80 border border-pink-100/50 mb-6 fade-up opacity-0 translate-y-4 w-fit">
                                 <span className="w-2 h-2 rounded-full bg-pink-600 animate-pulse"></span>
-                                <span className="text-[11px] font-bold uppercase tracking-wider text-pink-600">MS OBGYN (Gold Medalist)</span>
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-pink-600">MBBS (Gold Medalist)</span>
                             </div>
 
                             {/* Headline */}
@@ -86,7 +86,7 @@ export default function HeroSection() {
                             </div>
 
                             {/* Body Text */}
-                            <p className="text-base md:text-lg text-slate-700 max-w-xl leading-relaxed mb-8 fade-up opacity-0 translate-y-4">
+                            <p className="text-base md:text-lg text-slate-700 max-w-xl leading-relaxed mb-8 fade-up opacity-0 translate-y-4 text-justify">
                                 Fertility care in Gurugram, led personally by Dr. Rashmi Agrawal. 9,000+ consultations, 3,000+ treatments — no conveyor belts, just careful medicine.
                             </p>
 
@@ -143,12 +143,12 @@ export default function HeroSection() {
                 <div className="container-x edge">
                     <div className="flex flex-wrap items-center justify-center md:justify-between gap-y-4 gap-x-8 text-[10px] font-bold uppercase tracking-wider text-slate-500">
                         {[
-                            { Icon: Award, text: 'MS OBGYN Gold Medalist' },
+                            { Icon: Award, text: 'MBBS Gold Medalist' },
                             { Icon: ShieldCheck, text: '10+ Years in Reproductive Medicine' },
                             { Icon: Activity, text: '9,000+ Consultations' },
                             { Icon: Zap, text: 'ICSI & Surgical Sperm Retrieval' },
                             { Icon: Medal, text: 'PESA, TESA, Micro TESE' },
-                            { Icon: HeartPulse, text: '4.9/5 Patient Rating' },
+                            { Icon: HeartPulse, text: '5/5 Patient Rating' },
                         ].map((item, i) => (
                             <span key={i} className="flex items-center gap-2 hover:text-slate-700 transition-colors">
                                 <item.Icon className="text-pink-600" style={{ width: '16px', height: '16px' }} />

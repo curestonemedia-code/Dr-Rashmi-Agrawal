@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const contactCards = [
     { icon: Phone, label: 'Call', value: '+91 88002 63884', href: 'tel:+918800263884' },
     { icon: MessageCircle, label: 'WhatsApp', value: 'Message Us', href: 'https://wa.me/918800263884', external: true },
-    { icon: Mail, label: 'Email', value: 'Cure@thecurestone.com', href: 'mailto:Cure@thecurestone.com' },
+    { icon: Mail, label: 'Email', value: 'care@thecurestone.com', href: 'mailto:care@thecurestone.com' },
 ];
 
 const steps = [
@@ -114,18 +114,6 @@ export default function ContactPage() {
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] mb-1">Clinic Hours</p>
                                     <p className="text-slate-900 font-bold">Monday – Saturday, 10:00 AM to 6:00 PM</p>
                                     <p className="text-slate-600 mt-1">Sunday: Closed (emergencies handled on WhatsApp)</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-white shrink-0">
-                                    <AlertTriangle size={22} />
-                                </div>
-                                <div>
-                                    <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] mb-1">Urgent or After Hours Concerns</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
-                                        Active patients: message WhatsApp for cycle-related symptoms. For a life-threatening emergency, call 112 first.
-                                    </p>
                                 </div>
                             </div>
                         </div>

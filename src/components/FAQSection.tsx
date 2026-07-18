@@ -131,7 +131,7 @@ export default function FAQSection() {
                             <div className="flex items-center gap-2 mb-5">
                                 <span className="w-2 h-2 rounded-full bg-pink-600"></span>
                                 <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-slate-400">
-                                    06 / Questions
+                                    07 / Questions
                                 </span>
                             </div>
                             

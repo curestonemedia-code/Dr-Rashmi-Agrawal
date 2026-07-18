@@ -2,7 +2,7 @@ export const SITE_URL = "https://drrashmiagrawal.com";
 export const SITE_NAME = "Dr. Rashmi Agrawal IVF Centre";
 export const CLINIC_PHONE = "+91 88002 63884";
 export const CLINIC_PHONE_INTL = "+918800263884";
-export const CLINIC_EMAIL = "Cure@thecurestone.com";
+export const CLINIC_EMAIL = "care@thecurestone.com";
 export const CLINIC_ADDRESS = {
     streetAddress: "Nova IVF, Plot No. 522, near Supermarket, Sector 27",
     addressLocality: "Gurugram",
@@ -10,6 +10,14 @@ export const CLINIC_ADDRESS = {
     postalCode: "122009",
     addressCountry: "IN",
 };
+
+// Best-effort Maps search link (no Place ID on hand). If you have the exact
+// "get more reviews" short link from your Google Business Profile dashboard
+// (looks like g.page/r/XXXXXXXX/review), swap it in here for a precise link
+// straight to your listing instead of a name/address search.
+export const GOOGLE_REVIEWS_URL =
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(`${SITE_NAME}, ${CLINIC_ADDRESS.streetAddress}, ${CLINIC_ADDRESS.addressLocality}, ${CLINIC_ADDRESS.addressRegion} ${CLINIC_ADDRESS.postalCode}`);
 
 export const clinicSchema = {
     "@context": "https://schema.org",
@@ -38,22 +46,22 @@ export const clinicSchema = {
     },
     aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "1000",
+        ratingValue: "5",
+        reviewCount: "8",
     },
     founder: {
         "@type": "Physician",
         name: "Dr. Rashmi Agrawal",
         medicalSpecialty: "Reproductive Endocrinology",
         alumniOf: [
-            "Indira Gandhi Government Medical College, Maharashtra",
-            "Government Medical College, Maharashtra",
+            "Indira Gandhi Government Medical College, Nagpur",
+            "Government Medical College, Nagpur",
+            "Sir Ganga Ram Hospital, New Delhi",
         ],
         memberOf: [
             "Federation of Obstetric and Gynaecological Societies of India (FOGSI)",
-            "Association of Obstetricians and Gynaecologists of Delhi (AOGD)",
+            "Indian Society of Assisted Reproduction (ISAR)",
             "Indian Fertility Society (IFS)",
-            "Delhi Medical Association (DMA)",
         ],
     },
 };

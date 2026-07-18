@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,11 +86,12 @@ export default function ZoomSceneSection() {
                     className="absolute inset-0 w-full h-full overflow-hidden bg-slate-900"
                 >
                     <div ref={imgRef} className="absolute inset-0 w-full h-full will-change-transform">
-                        <iframe
-                            src="https://www.youtube.com/embed/yJONw4bEcNw?autoplay=1&mute=1&controls=0&loop=1&playlist=yJONw4bEcNw&modestbranding=1&playsinline=1&rel=0"
-                            className="absolute top-1/2 left-1/2 w-[150vw] h-[150vh] min-w-[100vw] min-h-[100vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-70"
-                            allow="autoplay; encrypted-media"
-                            frameBorder="0"
+                        <Image
+                            src="/the_record.png"
+                            alt="Operating theatre"
+                            fill
+                            sizes="100vw"
+                            className="object-cover will-change-transform"
                         />
                     </div>
                     {/* Gradient Overlays */}

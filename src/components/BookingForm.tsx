@@ -51,10 +51,10 @@ export default function BookingForm() {
   const [patientId, setPatientId] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
 
-  // Lenis (smooth-scroll) plus GSAP ScrollTrigger pinning elsewhere on the page
-  // can throw off the browser's native #book hash-jump on load, since both
-  // recalculate scroll height after this component mounts. Re-assert the
-  // scroll target once things settle for links like /?interest=...#book.
+  // GSAP ScrollTrigger pinning elsewhere on the page can throw off the
+  // browser's native #book hash-jump on load, since it recalculates scroll
+  // height after this component mounts. Re-assert the scroll target once
+  // things settle for links like /?interest=...#book.
   useEffect(() => {
     if (window.location.hash !== "#book") return;
     const timer = setTimeout(() => {

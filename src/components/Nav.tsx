@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Calendar, Menu, X } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const NAV_LINKS = [
   { href: '/treatments', label: 'Treatments' },
@@ -28,20 +26,18 @@ export default function Nav() {
     setMenuOpen(false);
   }
 
+  // A plain scroll listener rather than a GSAP ScrollTrigger: Nav lives in the
+  // root layout and never remounts on client-side navigation, so a
+  // ScrollTrigger's cached start/end (computed once, for whichever page
+  // happened to be mounted first) would go stale on any other page with a
+  // different height — flipping `scrolled` back to false mid-scroll and
+  // making the navbar background disappear. Reading live scrollY has no
+  // stale state to go wrong.
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-        ScrollTrigger.create({
-          start: 'top -40',
-          end: 'max',
-          onToggle: (self) => setScrolled(self.isActive),
-        });
-    });
-
-    return () => {
-      ctx.revert();
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { Award, GraduationCap, ShieldCheck, Star, Users, BookOpen, Trophy, History, Stethoscope, MapPin, CalendarCheck2, MessageCircle } from 'lucide-react';
+import { Award, GraduationCap, Star, Users, BookOpen, Trophy, Stethoscope, MapPin, CalendarCheck2, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -28,10 +28,10 @@ export default function DoctorProfileSection() {
     }, []);
 
     const stats = [
-        { label: "Consultations", value: "9K+", icon: Users },
+        { label: "Consultations", value: "9,000+", icon: Users },
         { label: "Publications", value: "5+", icon: BookOpen },
-        { label: "Awards Won", value: "10+", icon: Trophy },
-        { label: "Years Experience", value: "10+", icon: History },
+        { label: "Awards", value: "10+", icon: Trophy },
+        { label: "Years Experience", value: "10+", icon: Award },
     ];
 
     const expertises = [
@@ -47,23 +47,23 @@ export default function DoctorProfileSection() {
     const achievements = [
         {
             icon: Award,
-            text: "High Success Rate IVF Treatments",
-            subtext: "By - Dr. Rashmi Agrawal"
+            text: "Dainik Jagran Health Icon Award 2024",
+            subtext: "Reproductive Medicine"
         },
         {
             icon: GraduationCap,
-            text: "Gold Medalist in MS OBGYN",
-            subtext: "Pt. B.D. Sharma, PGIMS"
+            text: "Gold Medalist in MBBS",
+            subtext: "Indira Gandhi Government Medical College, Nagpur"
         },
         {
-            icon: ShieldCheck,
-            text: "Pioneer of Advanced ICSI",
-            subtext: "Leading fertility center providing comprehensive care."
+            icon: Trophy,
+            text: "1st Rank, IFS Fellowship Entrance Exam",
+            subtext: "Indian Fertility Society, 2017"
         },
         {
             icon: Star,
-            text: "4.9/5 Patient Satisfaction",
-            subtext: "Based on 1,000+ verified patient reviews on Google & Practo"
+            text: "5/5 Patient Satisfaction",
+            subtext: "Verified patient reviews on Google"
         },
     ];
 
@@ -107,7 +107,7 @@ export default function DoctorProfileSection() {
                                     <div className="flex text-amber-400">
                                         {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
                                     </div>
-                                    <span className="text-white text-xs font-bold tracking-wider uppercase">4.9 Patient Rating</span>
+                                    <span className="text-white text-xs font-bold tracking-wider uppercase">5.0 Patient Rating</span>
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-2">Dr. Rashmi Agrawal</h3>
                                 <div className="flex flex-col gap-1">
@@ -115,7 +115,7 @@ export default function DoctorProfileSection() {
                                         Senior IVF & Fertility Specialist
                                     </p>
                                     <p className="text-slate-300 text-xs font-medium leading-relaxed">
-                                        MBBS MS(OBGY) DNB, FNB Reproductive Medicine
+                                        MBBS (Gold Medalist), MS (OBGY), DNB, FNB Reproductive Medicine
                                     </p>
                                 </div>
                             </div>
@@ -129,7 +129,9 @@ export default function DoctorProfileSection() {
                                 </div>
                                 <div>
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em]">Clinic Location</p>
-                                    <p className="text-sm font-bold text-slate-800 mt-1">Gurugram</p>
+                                    <Link href={'https://maps.app.goo.gl/iASSY9GwRZZTEoR27'} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold text-slate-800 hover:text-pink-600 transition-all">
+                                    <p className="text-sm font-bold text-slate-800 mt-1 underline">Gurugram</p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -147,12 +149,12 @@ export default function DoctorProfileSection() {
                                 <Stethoscope className="w-6 h-6 text-pink-600" />
                                 Expert Overview
                             </h4>
-                            <div className="space-y-4">
+                            <div className="space-y-4 text-justify">
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    Fellowship trained fertility specialist practising in Gurugram. Over 10 years guiding couples through everything from ovulation problems to repeated IVF failure.
+                                    Fertility medicine is the one branch where the outcome isn&apos;t just a cured patient — it&apos;s a family changed forever. That shapes how she works, consults, and treats.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    She reviews every report herself, explains options in plain language, and stays personally involved from your first scan to early pregnancy.
+                                    She leads the Dr. Rashmi Agrawal IVF Centre in Gurugram: 9,000+ consultations, 3,000+ treatments, 5+ publications, and the Gold Medal in her MBBS.
                                 </p>
                             </div>
                         </div>

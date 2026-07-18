@@ -1,14 +1,19 @@
 const CRM_WEBHOOK_URL =
   "https://crm.thecurestone.com/api/webhook/website-leads?wh_token=a219235a3e0bca4bafac34581d23d4c3d64643b5e1e2eda329e9a7ff4670d57b";
 
-// This booking form collects name, phone and a condition/procedure interest
-// but not state or stone size, so it maps to the CRM's "get_estimate" shape
-// rather than "book_appointment" (which requires those extra fields).
+// Uses the shared Cure Stone CRM's "book_appointment" shape, identical to the
+// other Cure Stone sites, so leads land in the same pipeline. Fields that don't
+// apply to a fertility clinic (e.g. stoneSize) are still sent so the payload
+// shape matches what the webhook handler expects — passed as "Not Applicable".
 export type CrmLeadPayload = {
-  form_type: "get_estimate";
+  form_type: "book_appointment";
   name: string;
   phone: string;
+  state: string;
+  stoneSize: string;
   consultationType: string;
+  email?: string;
+  description: string;
 };
 
 export type CrmLeadResponse = {
