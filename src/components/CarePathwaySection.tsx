@@ -8,7 +8,7 @@ export default function CarePathwaySection() {
             phase: 'Evaluation',
             title: 'Consultation and Diagnosis',
             desc: 'An unhurried first visit — history, reports, ultrasound, and only the tests you actually need.',
-            img: '/consultation.jpg',
+            img: '/1.jpeg',
             alt: 'Diagnostics',
             stats: [
                 { val: 'USG', label: 'Modality' },
@@ -22,7 +22,7 @@ export default function CarePathwaySection() {
             phase: 'The Plan',
             title: 'Your Personalised Plan',
             desc: 'A clear, written plan — treatment path, realistic expectations, and full cost in writing.',
-            img: '/personalized_plan.png',
+            img: '/2.jpeg',
             alt: 'Personalised plan',
             stats: [
                 { val: 'Written', label: 'Plan' },
@@ -36,7 +36,7 @@ export default function CarePathwaySection() {
             phase: 'Treatment',
             title: 'Supervised Treatment',
             desc: 'Every scan, dose, and procedure performed directly by Dr. Rashmi — start to finish.',
-            img: '/supervised_treatment.jpg',
+            img: '/3.jpeg',
             alt: 'Supervised treatment',
             stats: [
                 { val: 'IVF & ICSI', label: 'Protocols' },
@@ -50,7 +50,7 @@ export default function CarePathwaySection() {
             phase: 'Support',
             title: 'Continuous Care and Support',
             desc: 'WhatsApp access throughout your cycle, plus early pregnancy scans before a safe handover.',
-            img: '/continuous_care.jpg',
+            img: '/4.jpeg',
             alt: 'Continuous support',
             stats: [
                 { val: 'Close', label: 'Monitoring' },
