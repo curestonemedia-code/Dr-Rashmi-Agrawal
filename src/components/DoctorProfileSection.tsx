@@ -115,7 +115,7 @@ export default function DoctorProfileSection() {
                                         Senior IVF & Fertility Specialist
                                     </p>
                                     <p className="text-slate-300 text-xs font-medium leading-relaxed">
-                                        MBBS (Gold Medalist), MS (OBGY), DNB, FNB Reproductive Medicine
+                                        MBBS (Gold Medalist), MS (OBGY) DNB, FNB Reproductive Medicine
                                     </p>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ export default function DoctorProfileSection() {
                                     Fertility medicine is the one branch where the outcome isn&apos;t just a cured patient — it&apos;s a family changed forever. That shapes how she works, consults, and treats.
                                 </p>
                                 <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                                    She leads the Dr. Rashmi Agrawal IVF Centre in Gurugram: 9,000+ consultations, 3,000+ treatments, 5+ publications, and the Gold Medal in her MBBS.
+                                    Her practice in Gurugram spans 9,000+ consultations, 3,000+ treatments, and 5+ publications — alongside the Gold Medal earned in her MBBS.
                                 </p>
                             </div>
                         </div>
@@ -207,9 +207,9 @@ export default function DoctorProfileSection() {
                         <div className="dp-fade-up flex flex-col sm:flex-row gap-4 pt-4">
                             <a href="/contact" className="flex-1 px-8 py-4 bg-pink-600 text-white text-sm font-black rounded-full hover:bg-pink-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-pink-600/20 active:scale-[0.98]">
                                 <CalendarCheck2 className="w-5 h-5" />
-                                Book Consultation Free
+                                Book Free Consultation
                             </a>
-                            <a href="https://wa.me/918800263884" target="_blank" rel="noreferrer" className="flex-1 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 text-sm font-black rounded-full hover:border-green-500 hover:bg-green-50 hover:text-green-700 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-[0.98]">
+                            <a href="https://wa.me/919811775369" target="_blank" rel="noreferrer" className="flex-1 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 text-sm font-black rounded-full hover:border-green-500 hover:bg-green-50 hover:text-green-700 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-[0.98]">
                                 <MessageCircle className="w-5 h-5 text-green-600" />
                                 WhatsApp Report
                             </a>

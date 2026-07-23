@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 const contactCards = [
-    { icon: Phone, label: 'Call', value: '+91 88002 63884', href: 'tel:+918800263884' },
-    { icon: MessageCircle, label: 'WhatsApp', value: 'Message Us', href: 'https://wa.me/918800263884', external: true },
+    { icon: Phone, label: 'Call', value: '+91 98117 75369', href: 'tel:+919811775369' },
+    { icon: MessageCircle, label: 'WhatsApp', value: 'Message Us', href: 'https://wa.me/919811775369', external: true },
     { icon: Mail, label: 'Email', value: 'care@thecurestone.com', href: 'mailto:care@thecurestone.com' },
 ];
 
@@ -165,11 +165,11 @@ export default function ContactPage() {
                         A diagnosis, a treatment plan, and a written cost estimate — all in one visit.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
-                        <a href="tel:+918800263884" className="btn btn-white btn-lg">
-                            <Phone className="w-4 h-4" /> Call: +91 88002 63884
+                        <a href="tel:+919811775369" className="btn btn-white btn-lg">
+                            <Phone className="w-4 h-4" /> Call: +91 98117 75369
                         </a>
                         <a
-                            href="https://wa.me/918800263884"
+                            href="https://wa.me/919811775369"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-lg"

@@ -97,7 +97,7 @@ export default function HeroSection() {
                                     className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#ef8b92] text-white text-sm font-semibold hover:bg-pink-700 transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-600/20 active:scale-95"
                                 >
                                     <Calendar style={{ width: '18px', height: '18px' }} />
-                                    <span>Book a Free Consultation</span>
+                                    <span>Book Free Consultation</span>
                                 </Link>
                                 <Link
                                     href="/treatments"

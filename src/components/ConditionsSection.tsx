@@ -151,7 +151,7 @@ export default function ConditionsSection() {
                         href="/?interest=other#book"
                         className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#ef8b92] text-white text-sm font-semibold hover:bg-pink-700 transition-all hover:scale-105"
                     >
-                        Book a Free Consultation
+                        Book Free Consultation
                     </Link>
                 </div>
             </div>

@@ -20,7 +20,7 @@ export default function KidneyStonesCTA() {
                     <Calendar style={{ width: '18px', height: '18px' }} />
                     Book a Consultation
                 </Link>
-                <a href="https://wa.me/918800263884" className="btn btn-lg" style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}>
+                <a href="https://wa.me/919811775369" className="btn btn-lg" style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}>
                     <MessageCircle style={{ width: '18px', height: '18px' }} />
                     WhatsApp Reports
                 </a>

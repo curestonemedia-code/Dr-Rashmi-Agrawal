@@ -1,7 +1,7 @@
 export const SITE_URL = "https://drrashmiagrawal.com";
 export const SITE_NAME = "Dr. Rashmi Agrawal IVF Centre";
-export const CLINIC_PHONE = "+91 88002 63884";
-export const CLINIC_PHONE_INTL = "+918800263884";
+export const CLINIC_PHONE = "+91 98117 75369";
+export const CLINIC_PHONE_INTL = "+919811775369";
 export const CLINIC_EMAIL = "care@thecurestone.com";
 export const CLINIC_ADDRESS = {
     streetAddress: "Nova IVF, Plot No. 522, near Supermarket, Sector 27",

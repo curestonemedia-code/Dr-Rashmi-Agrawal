@@ -50,7 +50,7 @@ export default function CarePathwaySection() {
             phase: 'Support',
             title: 'Continuous Care and Support',
             desc: 'WhatsApp access throughout your cycle, plus early pregnancy scans before a safe handover.',
-            img: '/4.jpeg',
+            img: '/4.png',
             alt: 'Continuous support',
             stats: [
                 { val: 'Close', label: 'Monitoring' },
@@ -89,7 +89,7 @@ export default function CarePathwaySection() {
 
                 {/* Cards Grid */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-                    {steps.map((step) => (
+                    {steps.map((step, i) => (
                         <div
                             key={step.num}
                             className={`group relative min-h-[480px] md:min-h-[520px] flex flex-col justify-end overflow-hidden rounded-3xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 cursor-pointer
@@ -102,7 +102,7 @@ export default function CarePathwaySection() {
                             <img
                                 src={step.img}
                                 alt={step.alt}
-                                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105
+                                className={`absolute inset-0 w-full h-full ${i == 3 ? "" : "object-cover"} transition-all duration-700 group-hover:scale-105
                                     ${step.theme === 'dark'
                                         ? 'opacity-85 group-hover:opacity-45'
                                         : 'opacity-100  group-hover:opacity-35'

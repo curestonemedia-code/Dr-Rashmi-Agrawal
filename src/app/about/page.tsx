@@ -165,9 +165,9 @@ export default function AboutPage() {
                   forever. That shapes how she works, consults, and treats.
                 </p>
                 <p>
-                  She leads the Dr. Rashmi Agrawal IVF Centre in Gurugram:
-                  9,000+ consultations, 3,000+ treatments, 5+ publications, and
-                  the Gold Medal in her MBBS.
+                  Her practice in Gurugram spans 9,000+ consultations, 3,000+
+                  treatments, and 5+ publications — alongside the Gold Medal
+                  earned in her MBBS.
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
@@ -284,7 +284,7 @@ export default function AboutPage() {
               <CalendarCheck2 className="w-4 h-4" /> Book Your Free Consultation
             </Link>
             <a
-              href="https://wa.me/918800263884"
+              href="https://wa.me/919811775369"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-lg"

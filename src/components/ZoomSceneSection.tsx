@@ -149,7 +149,7 @@ export default function ZoomSceneSection() {
                                 Gold<span className="text-pink-500 font-semibold text-2xl md:text-3xl ml-2">Medal</span>
                             </p>
                             <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mt-3 md:mt-4">
-                                MS OBGYN
+                                MBBS
                             </p>
                         </div>
                     </div>

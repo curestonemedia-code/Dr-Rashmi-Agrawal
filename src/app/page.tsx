@@ -247,8 +247,8 @@ export default function Home() {
                         <div className="chip mb-6 mx-auto"><span className="chip-dot"></span>Book a Consultation</div>
                         <h2 className="display-sm split-words font-black!">Take Your First Step With Clarity Today.</h2>
                         <p className="body-lg mt-6">Replace confusion and midnight internet research with a clear, written, professional plan. First time clinical consultation enquiries are always reviewed, and our dedicated team confirms bookings on WhatsApp promptly.</p>
-                        <a href="https://wa.me/918800263884" target="_blank" rel="noreferrer" className="btn btn-ghost mt-6 inline-flex">
-                            <Icons.MessageCircle style={{ width: '16px', height: '16px' }} /> WhatsApp Your Reports: +91 88002 63884
+                        <a href="https://wa.me/919811775369" target="_blank" rel="noreferrer" className="btn btn-ghost mt-6 inline-flex">
+                            <Icons.MessageCircle style={{ width: '16px', height: '16px' }} /> WhatsApp Your Reports: +91 98117 75369
                         </a>
                     </div>
 

@@ -94,7 +94,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             heading: 'Ready for Real Answers About IVF?',
             paragraph: 'Bring your reports and leave with a personalised protocol, a realistic estimate, and a complete written cost.',
             primary: 'Book a Free IVF Consultation',
-            secondary: 'WhatsApp Reports: +91 88002 63884',
+            secondary: 'WhatsApp Reports: +91 98117 75369',
         },
     },
     'pgt': {
@@ -703,7 +703,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
                                             {data.cta.primary}
                                         </a>
                                         {data.cta.secondary && (
-                                            <a href="https://wa.me/918800263884" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-4 bg-white/10 hover:bg-white/15 text-white rounded-xl font-bold transition-colors">
+                                            <a href="https://wa.me/919811775369" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-4 bg-white/10 hover:bg-white/15 text-white rounded-xl font-bold transition-colors">
                                                 <MessageCircle className="w-4 h-4" />
                                                 {data.cta.secondary}
                                             </a>

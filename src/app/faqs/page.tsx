@@ -99,7 +99,7 @@ export default function FaqsPage() {
                             Book Free Consultation
                         </Link>
                         <a
-                            href="https://wa.me/918800263884"
+                            href="https://wa.me/919811775369"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-lg"

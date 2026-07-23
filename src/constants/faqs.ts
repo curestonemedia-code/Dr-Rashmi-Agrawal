@@ -32,7 +32,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Can we consult online before visiting Gurugram?",
-        a: "Yes. WhatsApp your reports to +91 88002 63884 for a preliminary review, and we can arrange a video consultation. Many outstation couples plan their entire protocol remotely and travel only for essential visits.",
+        a: "Yes. WhatsApp your reports to +91 98117 75369 for a preliminary review, and we can arrange a video consultation. Many outstation couples plan their entire protocol remotely and travel only for essential visits.",
       },
     ],
   },

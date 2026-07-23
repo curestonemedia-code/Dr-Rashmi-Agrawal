@@ -115,7 +115,7 @@ export default function TreatmentsPage() {
                         <Link href="/contact" className="btn btn-primary btn-lg">
                             Book Free Consultation
                         </Link>
-                        <a href="https://wa.me/918800263884" target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">
+                        <a href="https://wa.me/919811775369" target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">
                             <MessageCircle className="w-4 h-4 text-green-600" /> WhatsApp Your Reports
                         </a>
                     </div>

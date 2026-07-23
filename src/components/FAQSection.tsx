@@ -104,7 +104,7 @@ export default function FAQSection() {
         },
         {
             q: 'Can we consult online before visiting Gurugram?',
-            a: 'Yes. You can send your previous medical reports and scans through WhatsApp at +91 88002 63884 for a preliminary review. From there, we can set up a video consultation to discuss your options before you travel to the clinic.'
+            a: 'Yes. You can send your previous medical reports and scans through WhatsApp at +91 98117 75369 for a preliminary review. From there, we can set up a video consultation to discuss your options before you travel to the clinic.'
         },
         {
             q: 'Is IVF a painful procedure?',
@@ -145,7 +145,7 @@ export default function FAQSection() {
 
                             {/* WhatsApp CTA */}
                             <a 
-                                href="https://wa.me/918800263884" 
+                                href="https://wa.me/919811775369" 
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2.5 mt-8 px-6 py-3.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 hover:border-slate-300 hover:shadow-md hover:shadow-slate-200/50 transition-all duration-300 group animate-none"
