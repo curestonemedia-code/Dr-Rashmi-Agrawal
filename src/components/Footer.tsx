@@ -19,7 +19,7 @@ export default function Footer() {
                 />
               </Link>
               <p className="mt-6 max-w-sm" style={{ color: 'var(--on-dark-muted)', fontSize: '0.9rem', lineHeight: '1.65' }}>
-                MBBS (Gold Medalist), MS OBGYN · IVF &amp; Fertility Specialist in Gurgaon · Senior IVF Consultant at Nova IVF Fertility, Sector 27, Gurugram.
+                MBBS (Gold Medalist), MS OBGYN · IVF &amp; Fertility Specialist in Gurgaon · Senior IVF & Fertility Specialist, Sector 27, Gurugram.
               </p>
 
               <a
@@ -41,7 +41,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-[1.03]"
                   style={{ background: 'var(--brand-light)', color: '#0f172a' }}
                 >
-                  Book Consultation
+                  Book Free Consultation
                 </Link>
                 <a
                   href={`https://wa.me/${CLINIC_PHONE_INTL.replace('+', '')}`}
