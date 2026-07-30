@@ -15,6 +15,7 @@ import DoctorProfileSection from '../components/DoctorProfileSection';
 import ExperienceAndMemberships from '../components/ExperienceAndMemberships';
 import BookingForm from '../components/BookingForm';
 import { wrapWords } from '../utils/text';
+import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
 export default function Home() {
     // Guard against React Strict Mode's double-invoke of effects.
@@ -140,6 +141,15 @@ export default function Home() {
 
     return (
         <>
+            <script {...jsonLdProps(graph([
+                webPage({
+                    path: '/',
+                    name: 'Dr. Rashmi Agrawal IVF Centre',
+                    description: 'IVF, ICSI and IUI in Gurgaon with Dr. Rashmi Agrawal — MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine.',
+                    medical: true,
+                }),
+                breadcrumb([{ name: 'Home', path: '/' }]),
+            ]))} />
             {/* ── Global style fixes injected inline ── */}
             <style>{`
                 /* FAQ toggle rotation */

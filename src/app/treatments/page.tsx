@@ -4,16 +4,19 @@ import {
     Baby, Dna, Stethoscope, Syringe, TestTube2, CalendarRange, FileSearch,
     ArrowRight, MessageCircle, ChevronRight,
 } from 'lucide-react';
+import { OG_IMAGE, SITE_URL } from '@/constants/site';
+import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
-const TITLE = 'Fertility Treatments in Gurgaon | Dr. Rashmi Agrawal';
+// Bare title — the root layout template appends the centre name.
+const TITLE = 'Fertility Treatments';
 const DESCRIPTION = 'Fertility treatments in Gurugram: IVF, ICSI, surgical sperm retrieval, IUI, and laparoscopy under Dr. Rashmi Agrawal. Compare your options in one place.';
 
 export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: '/treatments' },
-    openGraph: { title: TITLE, description: DESCRIPTION, url: '/treatments', type: 'website' },
-    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/treatments', type: 'website', images: [OG_IMAGE] },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE.url] },
 };
 
 const treatments = [
@@ -58,6 +61,14 @@ const treatments = [
         link: 'Full Guide: Surgical Sperm Retrieval',
     },
     {
+        href: '/treatments/hsg',
+        Icon: FileSearch,
+        title: 'HSG (Hysterosalpingography)',
+        recommended: 'Checking whether the fallopian tubes are open, before IUI or IVF.',
+        desc: 'A 15-minute outpatient X-ray that maps the uterine cavity and tubes. No anaesthesia.',
+        link: 'Full Guide: HSG Test',
+    },
+    {
         href: '/treatments/iui',
         Icon: TestTube2,
         title: 'IUI (Intrauterine Insemination)',
@@ -91,8 +102,29 @@ const comparisons = [
 ];
 
 export default function TreatmentsPage() {
+    const doc = graph([
+        webPage({ path: '/treatments', name: TITLE, description: DESCRIPTION, medical: true }),
+        breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Treatments', path: '/treatments' },
+        ]),
+        {
+            '@type': 'ItemList',
+            '@id': `${SITE_URL}/treatments#list`,
+            name: TITLE,
+            numberOfItems: treatments.length,
+            itemListElement: treatments.map((t, i) => ({
+                '@type': 'ListItem',
+                position: i + 1,
+                name: t.title,
+                url: `${SITE_URL}${t.href}`,
+            })),
+        },
+    ]);
+
     return (
         <>
+            <script {...jsonLdProps(doc)} />
             {/* HERO */}
             <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
                 <div className="cond-hero-bg"></div>

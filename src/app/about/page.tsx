@@ -13,10 +13,13 @@ import {
   MapPin,
 } from "lucide-react";
 import ExperienceAndMemberships from "@/components/ExperienceAndMemberships";
+import { OG_IMAGE } from '@/constants/site';
+import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
-const TITLE = "Dr. Rashmi Agrawal | IVF Specialist in Gurgaon | About";
+// Bare title — the root layout template appends "| Dr. Rashmi Agrawal IVF Centre".
+const TITLE = "About Dr. Rashmi Agrawal";
 const DESCRIPTION =
-  "Meet Dr. Rashmi Agrawal: MBBS (Gold Medalist), MS OBGYN, DNB, FNB Reproductive Medicine. 10+ years of experience, 9,000+ consultations, 5+ publications. Fertility doctor in Gurugram.";
+  "Dr. Rashmi Agrawal: MBBS (Gold Medalist), MS OBGYN, DNB, FNB Reproductive Medicine. 10+ years, 9,000+ consultations. Fertility doctor in Gurugram.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -27,11 +30,13 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: "/about",
     type: "profile",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
 };
 
@@ -83,8 +88,19 @@ const expertises = [
 ];
 
 export default function AboutPage() {
+  // physician() is already emitted once in the root layout; webPage's
+  // medical:true links reviewedBy to that same @id rather than repeating it.
+  const doc = graph([
+    webPage({ path: '/about', name: TITLE, description: DESCRIPTION, medical: true }),
+    breadcrumb([
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+    ]),
+  ]);
+
   return (
     <>
+      <script {...jsonLdProps(doc)} />
       {/* HERO */}
       <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
         <div className="cond-hero-bg"></div>

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Calendar, CheckCircle2, MessageCircle, ChevronRight } from 'lucide-react';
 import FaqAccordion from '@/components/FaqAccordion';
+import { graph, jsonLdProps, breadcrumb, webPage, faqPage, medicalProcedure } from '@/lib/schema';
+import { OG_IMAGE } from '@/constants/site';
 
 type TextSection = { kind: 'text'; heading: string; paragraphs: string[] };
 type PointsSection = { kind: 'points'; heading: string; items: { title: string; description: string }[] };
@@ -261,7 +263,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'One sperm. One egg. Fertilised.',
         seo: {
             title: 'ICSI Treatment in Gurgaon',
-            description: 'ICSI (intracytoplasmic sperm injection) in Gurugram for severe male factor infertility — a single sperm injected directly into the egg. Book a consultation with Dr. Rashmi Agrawal.',
+            description: 'ICSI in Gurugram for severe male factor infertility — one sperm injected directly into the egg, 70–85% fertilisation. Consult Dr. Rashmi Agrawal.',
         },
         heroDesc: 'A single healthy sperm injected directly into the egg — built for severe male factor infertility.',
         heroStats: [
@@ -545,12 +547,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: data.seo.title,
             description: data.seo.description,
             url: `/treatments/${slug}`,
-            type: 'website',
+            type: 'article',
+            images: [OG_IMAGE],
         },
         twitter: {
             card: 'summary_large_image',
             title: data.seo.title,
             description: data.seo.description,
+            images: [OG_IMAGE.url],
         },
     };
 }
@@ -563,8 +567,29 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
         notFound();
     }
 
+    const path = `/treatments/${slug}`;
+    const doc = graph([
+        webPage({ path, name: data.seo.title, description: data.seo.description, medical: true }),
+        breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Treatments', path: '/treatments' },
+            { name: data.eyebrow, path },
+        ]),
+        medicalProcedure({
+            name: data.eyebrow,
+            description: data.heroDesc,
+            path,
+            howPerformed: data.sections
+                .filter((sec): sec is StepsSection => sec.kind === 'steps')
+                .flatMap((sec) => sec.items.map((it) => `${it.title}: ${it.description}`))
+                .join(' ') || undefined,
+        }),
+        faqPage(data.faq, path),
+    ]);
+
     return (
         <main className="min-h-screen bg-slate-50">
+            <script {...jsonLdProps(doc)} />
             {/* HERO SECTION */}
             <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
                 <div className="cond-hero-bg"></div>
@@ -720,20 +745,6 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
             {/* FAQ SECTION */}
             {data.faq.length > 0 && (
                 <section className="section-tight edge" data-bg="#f5f7ff" data-theme="light">
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{
-                            __html: JSON.stringify({
-                                '@context': 'https://schema.org',
-                                '@type': 'FAQPage',
-                                mainEntity: data.faq.map((f) => ({
-                                    '@type': 'Question',
-                                    name: f.q,
-                                    acceptedAnswer: { '@type': 'Answer', text: f.a },
-                                })),
-                            }).replace(/</g, '\\u003c'),
-                        }}
-                    />
                     <div className="container-x">
                         <div className="max-w-3xl mb-10">
                             <div className="chip mb-4"><span className="chip-dot"></span>Questions</div>

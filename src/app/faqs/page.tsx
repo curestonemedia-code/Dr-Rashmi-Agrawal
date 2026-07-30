@@ -3,38 +3,34 @@ import Link from "next/link";
 import { ChevronRight, MessageCircle } from "lucide-react";
 import FaqAccordion from "@/components/FaqAccordion";
 import { ALL_FAQS, FAQ_CATEGORIES } from "@/constants/faqs";
+import { OG_IMAGE } from '@/constants/site';
+import { graph, jsonLdProps, breadcrumb, webPage, faqPage } from '@/lib/schema';
 
-const TITLE = 'Fertility and IVF FAQs | Dr. Rashmi Agrawal';
+// Bare title — the root layout template appends the centre name.
+const TITLE = 'Fertility and IVF FAQs';
 const DESCRIPTION = 'Fertility questions answered by Dr. Rashmi Agrawal in Gurugram. IVF, IUI, ICSI, cost, pain, PCOS, and male infertility, explained in plain language.';
 
 export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: '/faqs' },
-    openGraph: { title: TITLE, description: DESCRIPTION, url: '/faqs', type: 'website' },
-    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: ALL_FAQS.map((faq) => ({
-    "@type": "Question",
-    name: faq.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.a,
-    },
-  })),
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/faqs', type: 'website', images: [OG_IMAGE] },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE.url] },
 };
 
 export default function FaqsPage() {
+    const doc = graph([
+        webPage({ path: '/faqs', name: TITLE, description: DESCRIPTION }),
+        breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'FAQs', path: '/faqs' },
+        ]),
+        faqPage(ALL_FAQS, '/faqs'),
+    ]);
+
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
-            />
+            <script {...jsonLdProps(doc)} />
 
             <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
                 <div className="cond-hero-bg"></div>

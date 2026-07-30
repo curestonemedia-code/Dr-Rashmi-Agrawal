@@ -2,16 +2,19 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, MessageCircle, MapPin, Clock, Mail, AlertTriangle, ChevronRight } from 'lucide-react';
 import ContactForm from './ContactForm';
+import { MAP_EMBED_URL, OG_IMAGE } from '@/constants/site';
+import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
-const TITLE = 'Contact Dr. Rashmi Agrawal IVF Centre | Gurgaon';
+// Bare title — the root layout template appends the centre name.
+const TITLE = 'Contact Us in Gurgaon';
 const DESCRIPTION = 'Contact Dr. Rashmi Agrawal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a free fertility consultation.';
 
 export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: '/contact' },
-    openGraph: { title: TITLE, description: DESCRIPTION, url: '/contact', type: 'website' },
-    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
+    openGraph: { title: TITLE, description: DESCRIPTION, url: '/contact', type: 'website', images: [OG_IMAGE] },
+    twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: [OG_IMAGE.url] },
 };
 
 const contactCards = [
@@ -28,12 +31,21 @@ const steps = [
 ];
 
 export default function ContactPage() {
+    const doc = graph([
+        webPage({ path: '/contact', name: TITLE, description: DESCRIPTION }),
+        breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+        ]),
+    ]);
+
     return (
         <>
+            <script {...jsonLdProps(doc)} />
             {/* HERO */}
             <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
                 <iframe
-                    src="https://maps.google.com/maps?q=Nova%20IVF%2C%20Plot%20No.%20522%2C%20Sector%2027%2C%20Gurugram%2C%20Haryana%20122009&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src={MAP_EMBED_URL}
                     className="pointer-events-none absolute inset-0 h-full w-full scale-110 border-0 opacity-15 grayscale"
                     loading="lazy"
                     referrerPolicy="strict-origin-when-cross-origin"
@@ -90,7 +102,7 @@ export default function ContactPage() {
                                         allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="strict-origin-when-cross-origin"
-                                        src="https://maps.google.com/maps?q=Nova%20IVF%2C%20Plot%20No.%20522%2C%20Sector%2027%2C%20Gurugram%2C%20Haryana%20122009&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                        src={MAP_EMBED_URL}
                                     />
                                 </div>
                             </div>
@@ -102,7 +114,7 @@ export default function ContactPage() {
                                 <div>
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em] mb-1">Clinic Location</p>
                                     <p className="text-lg font-bold text-slate-900">Dr. Rashmi Agrawal IVF Centre</p>
-                                    <p className="text-slate-600 mt-1">Nova IVF, Plot No. 522, near Supermarket, Sector 27, Gurugram, Haryana 122009</p>
+                                    <p className="text-slate-600 mt-1">Plot No. 522, near Supermarket, Sector 27, Gurugram, Haryana 122009</p>
                                 </div>
                             </div>
 

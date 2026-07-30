@@ -8,7 +8,8 @@ import ScrollProgress from "@/components/ScrollProgress";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import HashLinkFix from "@/components/HashLinkFix";
-import { SITE_URL, SITE_NAME, clinicSchema } from "@/constants/site";
+import { SITE_URL, SITE_NAME, OG_IMAGE, clinicSchema } from "@/constants/site";
+import { graph, jsonLdProps, physician } from "@/lib/schema";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -17,7 +18,7 @@ const poppins = Poppins({
 });
 
 const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agrawal IVF Centre";
-const DESCRIPTION = "Dr. Rashmi Agrawal: MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine. IVF, ICSI, and IUI at our fertility clinic in Gurgaon, with 9,000+ consultations. Book your free consultation today.";
+const DESCRIPTION = "IVF, ICSI and IUI in Gurgaon with Dr. Rashmi Agrawal — MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine. 9,000+ consultations. Book free.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -46,13 +47,15 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: "/dr rashmi.jpg", width: 1200, height: 1500, alt: "Dr. Rashmi Agrawal" }],
+    // The old "/dr rashmi.jpg" was declared 1200x1500 but is actually 330x456 —
+    // far below the size social platforms require for a card.
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/dr rashmi.jpg"],
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: [
@@ -75,14 +78,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${poppins.variable} h-full antialiased bg-gradient-primary`}
     >
       <body className="min-h-full flex flex-col transition-colors duration-500 ease-in-out bg-white text-gray-900">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema).replace(/</g, "\\u003c") }}
-        />
+        {/* Site-wide entities. Page-level JSON-LD references these by @id
+            (clinic, doctor) rather than repeating them. */}
+        <script {...jsonLdProps(graph([clinicSchema, physician()]))} />
         <HashLinkFix />
         <ScrollProgress />
         <Preloader />
