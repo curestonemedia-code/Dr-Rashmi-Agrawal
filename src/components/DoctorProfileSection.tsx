@@ -46,6 +46,16 @@ export default function DoctorProfileSection() {
 
     const achievements = [
         {
+            icon: Trophy,
+            text: "National 7th IVF Summit Award",
+            subtext: "Excellence in Male Infertility"
+        },
+        {
+            icon: Award,
+            text: "IFS Achiever's Award",
+            subtext: "Indian Fertility Society, 2025"
+        },
+        {
             icon: Award,
             text: "Dainik Jagran Health Icon Award 2024",
             subtext: "Reproductive Medicine"

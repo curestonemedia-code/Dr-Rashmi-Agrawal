@@ -41,6 +41,8 @@ export const metadata: Metadata = {
 };
 
 const awards = [
+  "National 7th IVF Summit Award for Excellence in Male Infertility",
+  "Indian Fertility Society Achiever's Award 2025",
   "Topper in MBBS; winner of multiple subject quizzes",
   "Best Student Award, IGGMC MBBS Batch 2006",
   "1st Rank, IFS Reproductive Medicine Fellowship Entrance Exam 2017",
@@ -55,6 +57,16 @@ const stats = [
 ];
 
 const achievements = [
+  {
+    icon: Trophy,
+    text: "National 7th IVF Summit Award",
+    subtext: "Excellence in Male Infertility",
+  },
+  {
+    icon: Award,
+    text: "IFS Achiever's Award",
+    subtext: "Indian Fertility Society, 2025",
+  },
   {
     icon: Award,
     text: "Dainik Jagran Health Icon Award 2024",
