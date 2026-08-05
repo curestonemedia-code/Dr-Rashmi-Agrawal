@@ -52,6 +52,12 @@ export default function ExperienceAndMemberships() {
             alt: 'Nova IVF Fertility'
         },
         {
+            src: '/ganga-logo.png',
+            title: 'FNB, Reproductive Medicine',
+            location: 'Sir Ganga Ram Hospital, New Delhi',
+            alt: 'Sir Ganga Ram Hospital'
+        },
+        {
             src: 'https://i.pinimg.com/474x/88/5d/8a/885d8ac1a17ac7f1f1c9759c573bc8f4.jpg',
             title: 'Senior Resident: Obstetrics & Gynaecology',
             location: 'Dr. RML Hospital & PGIMER, New Delhi',
@@ -62,6 +68,12 @@ export default function ExperienceAndMemberships() {
             title: 'Assistant Professor: Obstetrics & Gynaecology',
             location: 'SRTR Medical College, Ambajogai',
             alt: 'SRTR Medical College'
+        },
+        {
+            src: '/government-nagpur.png',
+            title: 'MS, Obstetrics & Gynaecology',
+            location: 'Government Medical College, Nagpur',
+            alt: 'Government Medical College, Nagpur'
         },
     ];
 
