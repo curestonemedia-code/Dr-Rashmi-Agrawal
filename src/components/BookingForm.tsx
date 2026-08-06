@@ -12,7 +12,7 @@ import {
   validateOptionalEmail,
   validateSelect,
 } from "@/utils/formValidation";
-import { sendCrmLead } from "@/utils/crmWebhook";
+import { sendCrmLead, preconnectCrm } from "@/utils/crmWebhook";
 
 const CONDITIONS = [
   { value: "ivf", label: "IVF Treatment" },
@@ -72,6 +72,12 @@ export default function BookingForm() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Warm the CRM connection as soon as this form is on the page, not at
+  // submit time — see preconnectCrm()'s doc comment.
+  useEffect(() => {
+    preconnectCrm();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
@@ -108,11 +114,11 @@ export default function BookingForm() {
     try {
       const conditionLabel = CONDITIONS.find((c) => c.value === data.condition)?.label || "General Fertility Consult";
       const result = await sendCrmLead({
-        form_type: "book_appointment",
+        form_type: "book_appointment_infertility",
         name: data.name,
         phone,
         state: data.state,
-        stoneSize: "Not Applicable",
+        tryingDuration: "Not Provided",
         consultationType: conditionLabel,
         email: data.email || undefined,
         description: data.description || "No description",

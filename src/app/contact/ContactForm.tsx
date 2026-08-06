@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import {
     cleanText,
@@ -9,7 +9,7 @@ import {
     validateOptionalDescription,
     validateOptionalEmail,
 } from '@/utils/formValidation';
-import { sendCrmLead } from '@/utils/crmWebhook';
+import { sendCrmLead, preconnectCrm } from '@/utils/crmWebhook';
 
 type FormField = 'name' | 'phone' | 'email' | 'message';
 type FormErrors = Partial<Record<FormField, string>>;
@@ -31,6 +31,12 @@ export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<FormErrors>({});
     const [whatsappHref, setWhatsappHref] = useState('');
+
+    // Warm the CRM connection as soon as this form is on the page, not at
+    // submit time — see preconnectCrm()'s doc comment.
+    useEffect(() => {
+        preconnectCrm();
+    }, []);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -80,11 +86,11 @@ export default function ContactForm() {
 
         try {
             await sendCrmLead({
-                form_type: 'book_appointment',
+                form_type: 'book_appointment_infertility',
                 name: data.name,
                 phone,
                 state: data.city || 'Not Specified',
-                stoneSize: 'Not Applicable',
+                tryingDuration: 'Not Provided',
                 consultationType: 'General Enquiry (Contact Page)',
                 email: data.email || undefined,
                 description,
