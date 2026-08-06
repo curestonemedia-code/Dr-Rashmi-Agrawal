@@ -12,7 +12,12 @@ import {
   validateOptionalEmail,
   validateSelect,
 } from "@/utils/formValidation";
-import { sendCrmLead, preconnectCrm } from "@/utils/crmWebhook";
+
+// A Google Apps Script web app deployment URL — see
+// google-apps-script/Code.gs in the Cure Infertility repo for the receiving
+// script (this site posts the same "book_appointment_infertility" shape it
+// expects). Storage only, no email is sent.
+const SCRIPT_URL = process.env.NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL || "";
 
 const CONDITIONS = [
   { value: "ivf", label: "IVF Treatment" },
@@ -57,7 +62,6 @@ export default function BookingForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [patientId, setPatientId] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
 
   // GSAP ScrollTrigger pinning elsewhere on the page can throw off the
@@ -70,12 +74,6 @@ export default function BookingForm() {
       document.getElementById("book")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 400);
     return () => clearTimeout(timer);
-  }, []);
-
-  // Warm the CRM connection as soon as this form is on the page, not at
-  // submit time — see preconnectCrm()'s doc comment.
-  useEffect(() => {
-    preconnectCrm();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -111,19 +109,31 @@ export default function BookingForm() {
     setErrors({});
     setLoading(true);
 
+    const conditionLabel = CONDITIONS.find((c) => c.value === data.condition)?.label || "General Fertility Consult";
+    const payload = {
+      form_type: "book_appointment_infertility",
+      name: data.name,
+      phone,
+      state: data.state,
+      tryingDuration: "Not Provided",
+      consultationType: conditionLabel,
+      email: data.email || undefined,
+      description: data.description || "No description",
+    };
+
+    // The Apps Script webhook (see google-apps-script/Code.gs in the Cure
+    // Infertility repo) is the sole lead pipeline — storage only, no email.
     try {
-      const conditionLabel = CONDITIONS.find((c) => c.value === data.condition)?.label || "General Fertility Consult";
-      const result = await sendCrmLead({
-        form_type: "book_appointment_infertility",
-        name: data.name,
-        phone,
-        state: data.state,
-        tryingDuration: "Not Provided",
-        consultationType: conditionLabel,
-        email: data.email || undefined,
-        description: data.description || "No description",
-      });
-      setPatientId(result.patient_id || null);
+      if (SCRIPT_URL) {
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      } else {
+        console.warn("NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL is not set — form data was not sent anywhere.", payload);
+      }
       setSubmitted(true);
     } catch {
       alert("There was a connection issue. Please try again or call us directly.");
@@ -140,7 +150,7 @@ export default function BookingForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-3xl font-black text-slate-900 mb-3">Booking Received{patientId ? `, Ref. ${patientId}` : "!"}</h3>
+        <h3 className="text-3xl font-black text-slate-900 mb-3">Booking Received!</h3>
         <p className="text-slate-500 font-medium mb-8 max-w-md mx-auto">
           Our coordinator will call you within 15 minutes to confirm your consultation slot.
         </p>

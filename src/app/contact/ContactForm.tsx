@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import {
     cleanText,
@@ -9,7 +9,12 @@ import {
     validateOptionalDescription,
     validateOptionalEmail,
 } from '@/utils/formValidation';
-import { sendCrmLead, preconnectCrm } from '@/utils/crmWebhook';
+
+// A Google Apps Script web app deployment URL — see
+// google-apps-script/Code.gs in the Cure Infertility repo for the receiving
+// script (this site posts the same "book_appointment_infertility" shape it
+// expects). Storage only, no email is sent.
+const SCRIPT_URL = process.env.NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL || '';
 
 type FormField = 'name' | 'phone' | 'email' | 'message';
 type FormErrors = Partial<Record<FormField, string>>;
@@ -31,12 +36,6 @@ export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<FormErrors>({});
     const [whatsappHref, setWhatsappHref] = useState('');
-
-    // Warm the CRM connection as soon as this form is on the page, not at
-    // submit time — see preconnectCrm()'s doc comment.
-    useEffect(() => {
-        preconnectCrm();
-    }, []);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -84,17 +83,31 @@ export default function ContactForm() {
             data.callback ? `Preferred callback: ${data.callback}` : null,
         ].filter(Boolean).join(' | ') || 'No description';
 
+        const payload = {
+            form_type: 'book_appointment_infertility',
+            name: data.name,
+            phone,
+            state: data.city || 'Not Specified',
+            tryingDuration: 'Not Provided',
+            consultationType: 'General Enquiry (Contact Page)',
+            email: data.email || undefined,
+            description,
+        };
+
+        // The Apps Script webhook (see google-apps-script/Code.gs in the
+        // Cure Infertility repo) is the sole lead pipeline — storage only,
+        // no email.
         try {
-            await sendCrmLead({
-                form_type: 'book_appointment_infertility',
-                name: data.name,
-                phone,
-                state: data.city || 'Not Specified',
-                tryingDuration: 'Not Provided',
-                consultationType: 'General Enquiry (Contact Page)',
-                email: data.email || undefined,
-                description,
-            });
+            if (SCRIPT_URL) {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+            } else {
+                console.warn('NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL is not set — form data was not sent anywhere.', payload);
+            }
             setSubmitted(true);
         } catch {
             alert('There was a connection issue. Please try again or call us directly.');
