@@ -123,17 +123,22 @@ export default function BookingForm() {
 
     // The Apps Script webhook (see google-apps-script/Code.gs in the Cure
     // Infertility repo) is the sole lead pipeline — storage only, no email.
+    // If it isn't configured, fail loudly rather than showing a fake success
+    // screen for a lead that never actually went anywhere.
+    if (!SCRIPT_URL) {
+      console.error("NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL is not set — form was not submitted.", payload);
+      alert("Sorry, this form isn't accepting submissions right now. Please call us directly.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      if (SCRIPT_URL) {
-        await fetch(SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      } else {
-        console.warn("NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL is not set — form data was not sent anywhere.", payload);
-      }
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
       setSubmitted(true);
     } catch {
       alert("There was a connection issue. Please try again or call us directly.");
