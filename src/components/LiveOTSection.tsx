@@ -1,6 +1,28 @@
 'use client';
 import { useRef } from 'react';
 
+// Exported so the home page (page.tsx) can build VideoObject JSON-LD for
+// these — the videos live in a horizontally-scrolling carousel that
+// Googlebot won't scroll through, so structured data is what actually
+// gets them indexed as video content for this page.
+export const LIVE_OT_CASES = [
+    {
+        vid: 'h8pBhvxheVI', label: 'Treatment 01 · IVF',
+        title: 'Different steps Of IVF Process | Explanation of IVF Steps | IVF के विभिन्न चरण  Dr. Rashmi Agrawal',
+        stats: [{ v: 'Step-by-step', l: 'Guide' }, { v: 'High', l: 'Success Rate' }, { v: 'Advanced', l: 'Care', accent: true }],
+    },
+    {
+        vid: 'YvvciOHrnec', label: 'Treatment 02 · ICSI',
+        title: 'ICSI Step by Step 🧬 IVF का Advanced Process Explained in Hindi',
+        stats: [{ v: 'Targeted', l: 'Precision' }, { v: 'Male', l: 'Factor' }, { v: 'Effective', l: 'Solution', accent: true }],
+    },
+    {
+        vid: 'nmkvMS2at_0', label: 'Treatment 03 · IUI',
+        title: 'Is IUI and IVF two different process? | IVF ya IUI क्या फरक है - Dr. Rashmi Agrawal #ivfindia #ivf',
+        stats: [{ v: 'Accessible', l: 'First Step' }, { v: 'Minimally', l: 'Invasive' }, { v: 'Quick', l: 'Recovery', accent: true }],
+    },
+];
+
 export default function LiveOTSection() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -12,24 +34,6 @@ export default function LiveOTSection() {
             behavior: 'smooth',
         });
     };
-
-    const cases = [
-        {
-            vid: 'h8pBhvxheVI', label: 'Treatment 01 · IVF',
-            title: 'Different steps Of IVF Process | Explanation of IVF Steps | IVF के विभिन्न चरण  Dr. Rashmi Agrawal',
-            stats: [{ v: 'Step-by-step', l: 'Guide' }, { v: 'High', l: 'Success Rate' }, { v: 'Advanced', l: 'Care', accent: true }],
-        },
-        {
-            vid: 'YvvciOHrnec', label: 'Treatment 02 · ICSI',
-            title: 'ICSI Step by Step 🧬 IVF का Advanced Process Explained in Hindi',
-            stats: [{ v: 'Targeted', l: 'Precision' }, { v: 'Male', l: 'Factor' }, { v: 'Effective', l: 'Solution', accent: true }],
-        },
-        {
-            vid: 'nmkvMS2at_0', label: 'Treatment 03 · IUI',
-            title: 'Is IUI and IVF two different process? | IVF ya IUI क्या फरक है - Dr. Rashmi Agrawal #ivfindia #ivf',
-            stats: [{ v: 'Accessible', l: 'First Step' }, { v: 'Minimally', l: 'Invasive' }, { v: 'Quick', l: 'Recovery', accent: true }],
-        },
-    ];
 
     return (
         <section id="cases" className="py-12 md:py-20 relative bg-slate-50" data-bg="#f8fafc" data-theme="light">
@@ -82,7 +86,7 @@ export default function LiveOTSection() {
                 className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none px-6 md:px-12 lg:px-20 pb-6"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {cases.map(({ vid, label, title, stats }) => (
+                {LIVE_OT_CASES.map(({ vid, label, title, stats }) => (
                     <div
                         key={label}
                         className="w-[85vw] md:w-[640px] lg:w-[720px] xl:w-[780px] flex-shrink-0 snap-center bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.02)]"

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Calendar, CheckCircle2, MessageCircle, ChevronRight } from 'lucide-react';
 import FaqAccordion from '@/components/FaqAccordion';
-import { graph, jsonLdProps, breadcrumb, webPage, faqPage, medicalProcedure } from '@/lib/schema';
+import { graph, jsonLdProps, breadcrumb, webPage, faqPage, medicalProcedure, videoObject } from '@/lib/schema';
 import { OG_IMAGE } from '@/constants/site';
 
 type TextSection = { kind: 'text'; heading: string; paragraphs: string[] };
@@ -585,6 +585,15 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
                 .join(' ') || undefined,
         }),
         faqPage(data.faq, path),
+        // The hero video's <iframe> is always server-rendered, but without
+        // VideoObject markup Google has no reliable signal to index it as
+        // video content rather than just an embedded element on the page.
+        videoObject({
+            ytId: data.videoId,
+            name: `${data.eyebrow} — Overview`,
+            description: data.heroDesc,
+            uploadDate: '2026-01-01',
+        }),
     ]);
 
     return (

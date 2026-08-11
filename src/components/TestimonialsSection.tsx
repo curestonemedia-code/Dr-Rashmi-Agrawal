@@ -96,32 +96,37 @@ function TestimonialCard({
     );
 }
 
+// Exported so the home page (page.tsx) can build VideoObject JSON-LD for
+// these — the actual <iframe> is click-gated behind a play button (see
+// TestimonialCard above), so structured data is the only way Google
+// reliably associates these videos with the page.
+export const TESTIMONIAL_VIDEOS = [
+    {
+        vid: 'nOiQspt6VWI',
+        name: 'Har Jagah Se Nirasha Mili, Phir IVF Se Mila Twins Ka Sukh! ✨ | Cure Infertility #ivf',
+    },
+    {
+        vid: 'SxTcuQ7KL1c',
+        name: '5 Saal Ka Intezaar Khatam! 😍 | IVF Success Story with Positive Results | Dr. Rashmi Agrawal #ivf',
+    },
+    {
+        vid: 'K_KZMhaL9dY',
+        name: '4 साल बाद मिला माँ बनने का सुख! | IVF Success Story with Dr. Rashmi Agrawal #ivf',
+    },
+    {
+        vid: 'PaH8yCIq29Y',
+        name: '9 Years बाद मिली Parents बनने की खुशी! Chennai to Gurgaon',
+    },
+    {
+        vid: 'me6DoNl7tsk',
+        name: 'IVF ने 6 साल का सपना पूरा किया | 6 साल का इंतजार खत्म | IVF Success Story #ivf #fertlity',
+    },
+];
+
 // ── MAIN SECTION ──
 export default function TestimonialsSection() {
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    const testimonials = [
-        {
-            vid: 'nOiQspt6VWI',
-            name: 'Har Jagah Se Nirasha Mili, Phir IVF Se Mila Twins Ka Sukh! ✨ | Cure Infertility #ivf',
-        },
-        {
-            vid: 'SxTcuQ7KL1c',
-            name: '5 Saal Ka Intezaar Khatam! 😍 | IVF Success Story with Positive Results | Dr. Rashmi Agrawal #ivf',
-        },
-        {
-            vid: 'K_KZMhaL9dY',
-            name: '4 साल बाद मिला माँ बनने का सुख! | IVF Success Story with Dr. Rashmi Agrawal #ivf',
-        },
-        {
-            vid: 'PaH8yCIq29Y',
-            name: '9 Years बाद मिली Parents बनने की खुशी! Chennai to Gurgaon',
-        },
-        {
-            vid: 'me6DoNl7tsk',
-            name: 'IVF ने 6 साल का सपना पूरा किया | 6 साल का इंतजार खत्म | IVF Success Story #ivf #fertlity',
-        },
-    ];
+    const testimonials = TESTIMONIAL_VIDEOS;
 
     const scroll = (direction: 'left' | 'right') => {
         if (!scrollRef.current) return;

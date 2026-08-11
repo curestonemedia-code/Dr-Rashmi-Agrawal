@@ -3,8 +3,8 @@ import { useEffect, useRef, Suspense } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as Icons from 'lucide-react';
-import LiveOTSection from '../components/LiveOTSection';
-import TestimonialsSection from '../components/TestimonialsSection';
+import LiveOTSection, { LIVE_OT_CASES } from '../components/LiveOTSection';
+import TestimonialsSection, { TESTIMONIAL_VIDEOS } from '../components/TestimonialsSection';
 import GoogleReviewsSection from '../components/GoogleReviewsSection';
 import FAQSection from '../components/FAQSection';
 import HeroSection from '../components/HeroSection';
@@ -15,7 +15,7 @@ import DoctorProfileSection from '../components/DoctorProfileSection';
 import ExperienceAndMemberships from '../components/ExperienceAndMemberships';
 import BookingForm from '../components/BookingForm';
 import { wrapWords } from '../utils/text';
-import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
+import { graph, jsonLdProps, breadcrumb, webPage, videoObject } from '@/lib/schema';
 
 export default function Home() {
     // Guard against React Strict Mode's double-invoke of effects.
@@ -139,6 +139,18 @@ export default function Home() {
         };
     }, []);
 
+    // LIVE_OT_CASES and TESTIMONIAL_VIDEOS don't share any ytIds today, but
+    // dedupe by ytId anyway so the graph never risks two VideoObject nodes
+    // with the same @id if that changes.
+    const homeVideos = Array.from(
+        new Map(
+            [
+                ...LIVE_OT_CASES.map((v) => ({ ytId: v.vid, title: v.title })),
+                ...TESTIMONIAL_VIDEOS.map((v) => ({ ytId: v.vid, title: v.name })),
+            ].map((v) => [v.ytId, v])
+        ).values()
+    );
+
     return (
         <>
             <script {...jsonLdProps(graph([
@@ -149,6 +161,17 @@ export default function Home() {
                     medical: true,
                 }),
                 breadcrumb([{ name: 'Home', path: '/' }]),
+                // LiveOTSection's carousel and TestimonialsSection's
+                // click-gated players never got structured data — this is
+                // what actually gets them indexed as video content.
+                ...homeVideos.map((v) =>
+                    videoObject({
+                        ytId: v.ytId,
+                        name: v.title,
+                        description: `${v.title} — from Dr. Rashmi Agrawal, IVF Centre, Gurgaon.`,
+                        uploadDate: '2026-01-01',
+                    })
+                ),
             ]))} />
             {/* ── Global style fixes injected inline ── */}
             <style>{`

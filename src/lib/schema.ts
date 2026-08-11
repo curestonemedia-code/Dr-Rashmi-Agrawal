@@ -109,6 +109,33 @@ export function medicalProcedure({
     };
 }
 
+export function videoObject({
+    ytId,
+    name,
+    description,
+    uploadDate,
+    duration,
+}: {
+    ytId: string;
+    name: string;
+    description: string;
+    uploadDate: string;
+    duration?: string;
+}): Json {
+    return {
+        "@type": "VideoObject",
+        "@id": `https://www.youtube.com/watch?v=${ytId}#video`,
+        name,
+        description,
+        thumbnailUrl: `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`,
+        uploadDate,
+        embedUrl: `https://www.youtube.com/embed/${ytId}`,
+        contentUrl: `https://www.youtube.com/watch?v=${ytId}`,
+        publisher: { "@id": CLINIC_ID },
+        ...(duration ? { duration } : {}),
+    };
+}
+
 export function jsonLdProps(doc: Json) {
     return {
         type: "application/ld+json" as const,
