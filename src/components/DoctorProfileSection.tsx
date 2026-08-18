@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Award, GraduationCap, Star, Users, BookOpen, Trophy, Stethoscope, MapPin, CalendarCheck2, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MAP_SHARE_URL } from '@/constants/site';
 
 export default function DoctorProfileSection() {
     useEffect(() => {
@@ -139,7 +140,7 @@ export default function DoctorProfileSection() {
                                 </div>
                                 <div>
                                     <p className="text-[11px] font-black text-slate-400 uppercase tracking-[0.15em]">Clinic Location</p>
-                                    <Link href={'https://maps.app.goo.gl/iASSY9GwRZZTEoR27'} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold text-slate-800 hover:text-pink-600 transition-all">
+                                    <Link href={MAP_SHARE_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold text-slate-800 hover:text-pink-600 transition-all">
                                     <p className="text-sm font-bold text-slate-800 mt-1 underline">Gurugram</p>
                                     </Link>
                                 </div>

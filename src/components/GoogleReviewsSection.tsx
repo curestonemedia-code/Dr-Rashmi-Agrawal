@@ -14,22 +14,10 @@ const GoogleLogo = () => (
 
 const reviews = [
     {
-        name: 'Nikita Shrivastava',
-        meta: '8 reviews',
-        time: '2 months ago',
-        text: 'We came to Nova IVF Fertility seeking help to conceive, and the experience has been truly wonderful. We received both financial and medical counselling from the experts, which helped us feel informed and supported throughout the journey. Dr. Rashmi and the staff were incredibly helpful, caring, and supportive at every step. With their efforts and by God’s grace, we were finally able to receive the good news we had been hoping for. Thank you, Nova IVF Fertility, for making this possible.',
-    },
-    {
         name: 'Ankit Alekh',
         meta: 'Local Guide · 134 reviews',
         time: '2 months ago',
         text: 'I would like to sincerely thank Dr. Rashmi for her incredible support throughout our fertility journey. She explained everything clearly, stayed patient, and gave us the right guidance when we needed it the most. Highly recommend her to anyone facing similar challenges.',
-    },
-    {
-        name: 'Rabi Gidado',
-        meta: '1 review',
-        time: '1 month ago',
-        text: 'Nova IVF Fertility Center Gurugram — I came from my country to India for fertility treatments. My experience with Nova is fantastic, they are so professional. My thanks goes to Dr. Rashmi, she always gave me courage and helped me throughout my fertility journey. Alhamdulillah, I am now pregnant with my baby. I thank all the wonderful staff at Nova, I love you all.',
     },
     {
         name: 'Latika Pant',
@@ -44,22 +32,16 @@ const reviews = [
         text: 'It was 10 years of my marriage and I had consulted many doctors during this period but did not get any positive response. Somehow I came to know about Dr. Rashmi Agrawal Ma’am and her treatment gave my life’s greatest happiness in my first IVF cycle.',
     },
     {
-        name: 'Shikkha Tanejaa',
-        meta: '1 review',
-        time: '1 year ago',
-        text: 'I wholeheartedly recommend Dr. Rashmi Ji for her exceptional expertise and compassionate approach to infertility treatment. Under her guidance at Nova IVF, Gurgaon, we experienced top-quality care, clear transparency in treatment costs, and unwavering support throughout our journey. Thank you, Dr. Rashmi Ji, for bringing happiness into our lives!',
-    },
-    {
-        name: 'Kanika Sharma',
-        meta: '2 reviews',
-        time: '1 month ago',
-        text: 'A great experience and a positive result! Thank you ma’am and all the support staff at Nova.',
-    },
-    {
         name: 'Utkarsha Gupta',
         meta: '10 reviews · 2 photos',
         time: '10 months ago',
         text: 'I am deeply grateful to Dr. Rashmi and her wonderful team for their constant support, guidance, and care throughout my journey. After experiencing 3 heartbreaking miscarriages, I finally received my positive pregnancy under their treatment. Forever grateful to Dr. Rashmi and the entire team for helping me reach this milestone that once felt impossible.',
+    },
+    {
+        name: 'Sneha Jain',
+        meta: 'Google review',
+        time: '1 month ago',
+        text: 'Dr Rashmi is one of the best in the area. We had a very positive and extremely good experience with her. The team and staff is also very helpful and supportive. Very smooth expeince in all appointments and every visit',
     },
 ];
 

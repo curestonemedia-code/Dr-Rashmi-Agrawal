@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MessageCircle, Phone, Mail, MapPin, Clock, Star, ArrowRight } from 'lucide-react';
-import { CLINIC_PHONE, CLINIC_PHONE_INTL, CLINIC_EMAIL, CLINIC_ADDRESS, GOOGLE_REVIEWS_URL } from '@/constants/site';
+import { CLINIC_PHONE, CLINIC_PHONE_INTL, CLINIC_EMAIL, CLINIC_ADDRESS, GOOGLE_REVIEWS_URL, MAP_SHARE_URL } from '@/constants/site';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -60,7 +60,7 @@ export default function Footer() {
               <div style={{ color: '#fff', fontWeight: 500 }}>Dr. Rashmi Agrawal IVF Centre</div>
               <div className="mt-4 flex flex-col gap-3" style={{ fontSize: '0.875rem' }}>
                 <a
-                  href="https://maps.app.goo.gl/iASSY9GwRZZTEoR27"
+                  href={MAP_SHARE_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-start gap-3 hover:text-white transition"

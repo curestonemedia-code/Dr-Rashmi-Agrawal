@@ -26,7 +26,7 @@ export const CLINIC_ADDRESS = {
 export const MAP_EMBED_URL =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4914.880330019039!2d77.08229692405504!3d28.458774579279687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e3377a5b4e0a3%3A0xee951a9501bf2159!2sDr.%20Rashmi%20Agrawal!5e0!3m2!1sen!2sin!4v1785238076791!5m2!1sen!2sin";
 
-export const MAP_SHARE_URL = "https://share.google/OCgiB2XtH14Rap2TW";
+export const MAP_SHARE_URL = "https://maps.app.goo.gl/mGv5DhiUGLsThhZm9";
 
 // Points at the listing itself, which is where reviews are read and left.
 // If you pull the "get more reviews" short link from your Google Business

@@ -13,7 +13,7 @@ import {
   MapPin,
 } from "lucide-react";
 import ExperienceAndMemberships from "@/components/ExperienceAndMemberships";
-import { OG_IMAGE } from '@/constants/site';
+import { OG_IMAGE, MAP_SHARE_URL } from '@/constants/site';
 import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
 // Bare title — the root layout template appends "| Dr. Rashmi Agrawal IVF Centre".
@@ -165,7 +165,7 @@ export default function AboutPage() {
                       Clinic Location
                     </p>
                     <Link
-                      href="https://maps.app.goo.gl/iASSY9GwRZZTEoR27"
+                      href={MAP_SHARE_URL}
                       target="_blank"
                       rel="noreferrer"
                       className="text-sm font-bold text-slate-800 hover:text-pink-600 transition-all underline"
