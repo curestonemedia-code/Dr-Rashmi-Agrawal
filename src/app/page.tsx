@@ -34,37 +34,18 @@ export default function Home() {
 
         const ctx = gsap.context(() => {
 
-            /* ── Hero parallax ── */
-            gsap.to('#hero-img', {
-                yPercent: 25, scale: 2.08, ease: 'none',
-                scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true },
-            });
+            /* The hero animates itself too — HeroSection.tsx runs .hero-line
+               and .fade-up from its own scoped context. The copies that used to
+               live here fought it for the same elements, and the parallax
+               alongside them targeted #hero-img, an ID that component does not
+               render. */
 
-            /* ── Hero entrance animations ── */
-            const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            heroTl
-                .to('.fade-up', { opacity: 1, y: 0, duration: 0.8, stagger: 0.15 }, 0.3)
-                .fromTo('.hero-line', { y: '140%' }, { y: '0%', duration: 1.1, stagger: 0.12 }, 0.1);
-
-            /* ── Zoom scene: CSS sticky handles pinning, GSAP drives animation ── */
-            if (document.getElementById('zoom-scene')) {
-                const zoomTl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '#zoom-scene',
-                        start: 'top top',
-                        end: '+=180%',
-                        scrub: 1,
-                        // No GSAP pin — .zoom-pin uses CSS sticky (no DOM mutation)
-                        invalidateOnRefresh: true,
-                    },
-                });
-                zoomTl
-                    .to('#zoom-img-wrap', { width: '100vw', height: '100vh', borderRadius: 0, ease: 'none' }, 0)
-                    .fromTo('#zoom-text', { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, ease: 'power2.out' }, 0)
-                    .to('#zoom-text', { opacity: 0, scale: 1.08, ease: 'power2.in' }, 0.85);
-            }
-
-
+            /* The zoom scene animates itself — see ZoomSceneSection.tsx, which
+               drives it from refs inside its own scoped gsap.context (and owns
+               the only GSAP pin on the site). The duplicate timeline that used
+               to live here targeted #zoom-img-wrap / #zoom-text, IDs that
+               component no longer renders, so every homepage load logged
+               "GSAP target not found" for selectors that could never match. */
 
             /* ── Section background theming ── */
             document.querySelectorAll('[data-bg]').forEach(section => {
@@ -111,29 +92,35 @@ export default function Home() {
                 });
             });
 
-            /* ── Condition cards stagger ── */
-            gsap.fromTo('.condition-card', { opacity: 0, y: 40 }, {
-                opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
-                scrollTrigger: { trigger: '#conditions', start: 'top 75%' },
-            });
-
-            /* ── Care pathway cards ── */
-            gsap.fromTo('.pathway-card', { opacity: 0, y: 50 }, {
-                opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-                scrollTrigger: { trigger: '#pathway', start: 'top 75%' },
-            });
+            /* ConditionsSection and CarePathwaySection stopped rendering the
+               .condition-card / .pathway-card classes these two staggers
+               targeted, and neither component uses GSAP at all now — the
+               tweens matched nothing and only produced console warnings. Both
+               sections still animate in via the generic .fade-in-scroll pass
+               above. */
 
         });
 
         return () => {
-            // kill(true) physically removes GSAP pin-spacer divs from the DOM
-            // BEFORE React runs its removeChild during reconciliation.
-            // kill(false) would leave spacers → React can't find #cases / .zoom-pin
-            // in its expected parent → NotFoundError: removeChild.
             try {
-                ScrollTrigger.getAll().forEach(st => st.kill(true));
-                ScrollTrigger.clearScrollMemory();
+                // ctx.revert() kills only the ScrollTriggers this context
+                // created, and unwinds any pin spacers among them before React
+                // reconciles — which is what the old NotFoundError: removeChild
+                // guard was really after. It used to call
+                // ScrollTrigger.getAll().kill(true), which reached outside this
+                // component and tore down ZoomSceneSection's pinned trigger too;
+                // that component owns the only pin on the site and already
+                // reverts its own scoped context on unmount.
                 ctx.revert();
+                ScrollTrigger.clearScrollMemory();
+
+                // applySectionTheme() toggles this class and paints the body
+                // directly. The class is a plain DOM mutation, so gsap has no
+                // record of it and revert() cannot undo it — leaving the site
+                // stuck in dark mode on the next page if the visitor happened
+                // to be at the footer when they navigated away.
+                document.body.classList.remove('on-dark');
+                document.body.style.removeProperty('background-color');
             } catch (_) { /* swallow any residual race */ }
             initialized.current = false; // allow re-init if component truly remounts
         };

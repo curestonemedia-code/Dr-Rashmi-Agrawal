@@ -28,10 +28,26 @@ export default function Preloader() {
           .to(preloader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '+=0.1')
           .add(() => {
             preloader.style.display = 'none';
-          })
-          .from('#top', { scale: 1.04, duration: 1.4, ease: 'power3.out', transformOrigin: 'center top' }, '-=0.6')
-          .to('.hero-line', { y: '0%', duration: 1.1, stagger: 0.1, ease: 'power3.out' }, '-=1.2')
-          .to('.fade-up', { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'power2.out' }, '-=0.9');
+          });
+
+        // This component renders from the root layout, so it runs on every
+        // route — but the reveal below is choreographed against the homepage
+        // hero. On /blog, /about and the rest those selectors match nothing,
+        // and gsap logs a "target not found" warning for each one. Only append
+        // the hero beats when the hero is actually on the page.
+        const heroSection = document.getElementById('top');
+        const heroLines = document.querySelectorAll('.hero-line');
+        const fadeUps = document.querySelectorAll('.fade-up');
+
+        if (heroSection) {
+          tl.from(heroSection, { scale: 1.04, duration: 1.4, ease: 'power3.out', transformOrigin: 'center top' }, '-=0.6');
+        }
+        if (heroLines.length) {
+          tl.to(heroLines, { y: '0%', duration: 1.1, stagger: 0.1, ease: 'power3.out' }, '-=1.2');
+        }
+        if (fadeUps.length) {
+          tl.to(fadeUps, { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'power2.out' }, '-=0.9');
+        }
     });
     
     return () => ctx.revert();

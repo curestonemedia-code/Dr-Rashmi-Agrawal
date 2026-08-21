@@ -109,6 +109,61 @@ export function medicalProcedure({
     };
 }
 
+/**
+ * Blog dates may arrive as human strings; schema.org wants ISO 8601. Falls
+ * back to the raw value if unparseable rather than emitting an invalid date.
+ */
+export function toIsoDate(value: string): string {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return value;
+    // Read local date parts, not toISOString() — the string parses as local
+    // midnight, and converting to UTC would roll the date back a day in IST.
+    const y = parsed.getFullYear();
+    const m = String(parsed.getMonth() + 1).padStart(2, "0");
+    const d = String(parsed.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+}
+
+export function blogPosting({
+    path,
+    headline,
+    description,
+    image,
+    datePublished,
+    dateModified,
+    author,
+    section,
+}: {
+    path: string;
+    headline: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified?: string;
+    author: string;
+    section: string;
+}): Json {
+    return {
+        "@type": "BlogPosting",
+        "@id": `${SITE_URL}${path}#article`,
+        headline,
+        description,
+        image: image.startsWith("http") ? image : `${SITE_URL}${image}`,
+        datePublished: toIsoDate(datePublished),
+        dateModified: toIsoDate(dateModified || datePublished),
+        articleSection: section,
+        inLanguage: "en-IN",
+        // Posts here are the doctor's own; anything else is attributed to the
+        // clinic rather than inventing a person entity.
+        author: author.toLowerCase().includes("rashmi")
+            ? { "@id": DOCTOR_ID }
+            : { "@type": "Organization", "@id": CLINIC_ID, name: author },
+        publisher: { "@id": CLINIC_ID },
+        isPartOf: { "@id": `${SITE_URL}/blog#blog` },
+        mainEntityOfPage: { "@id": `${SITE_URL}${path}#webpage` },
+    };
+}
+
 export function videoObject({
     ytId,
     name,
