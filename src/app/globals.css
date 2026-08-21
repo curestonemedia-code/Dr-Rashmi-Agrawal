@@ -75,6 +75,23 @@ html { scrollbar-width: none; }
 
 a { text-decoration: none; color: inherit; }
 
+/* Blog post body links.
+   The `a` rule above is unlayered, and unlayered CSS beats anything in a
+   cascade layer regardless of specificity — so Tailwind's `text-pink-600`
+   (which lives in @layer utilities, via @import "tailwindcss") silently lost
+   to `color: inherit`, and in-article links rendered bold grey instead of
+   pink. This rule is unlayered too and more specific, so it actually wins. */
+.blog-main-content a {
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in srgb, var(--brand) 40%, transparent);
+}
+.blog-main-content a:hover {
+    color: var(--brand-deep);
+    text-decoration-color: var(--brand-deep);
+}
+
 /* ---- Scroll progress bar ---- */
 #scroll-progress {
     position: fixed; top: 0; left: 0;

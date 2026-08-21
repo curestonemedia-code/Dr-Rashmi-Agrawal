@@ -115,19 +115,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
                 <div className="cond-hero-bg"></div>
                 <div className="container-x relative">
-                    <div className="cond-breadcrumb">
-                        <Link href="/">Home</Link>
-                        <ChevronRight style={{ width: '14px', height: '14px' }} />
-                        <Link href="/blog">Blog</Link>
-                        {primaryCategory && (
-                            <>
-                                <ChevronRight style={{ width: '14px', height: '14px' }} />
-                                <Link href={`/blog?category=${primaryCategory.slug}`}>{primaryCategory.title}</Link>
-                            </>
-                        )}
-                    </div>
+                    {/* Breadcrumb and header share the article's own 3xl column
+                        and centring, so the title lines up with the cover image
+                        and body below instead of sitting flush against the
+                        1400px container's left edge. */}
+                    <div className="mx-auto max-w-3xl">
+                        <div className="cond-breadcrumb">
+                            <Link href="/">Home</Link>
+                            <ChevronRight style={{ width: '14px', height: '14px' }} />
+                            <Link href="/blog">Blog</Link>
+                            {primaryCategory && (
+                                <>
+                                    <ChevronRight style={{ width: '14px', height: '14px' }} />
+                                    <Link href={`/blog?category=${primaryCategory.slug}`}>{primaryCategory.title}</Link>
+                                </>
+                            )}
+                        </div>
 
-                    <div className="max-w-3xl">
                         {primaryCategory && (
                             <div className="chip mb-6 w-fit">
                                 <span className="chip-dot"></span>
