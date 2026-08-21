@@ -1,11 +1,14 @@
 import { cleanText, sanityFetch } from "./sanity";
 
-// Categories, tags and authors are shared with thecureinfertility.com's blog
-// (one Sanity Studio, one taxonomy) — only blogPost documents are
-// site-specific, via this field. Every query below scopes to it so the two
-// sites' posts never leak into each other's blog index, category counts, or
-// related-posts lists.
-const SITE = "dr-rashmi";
+// This dataset is shared with thecureinfertility.com — one Studio, one
+// taxonomy. Categories, tags and authors are common to both; only blogPost
+// documents are site-specific, via `siteId`. Every query below scopes to it so
+// the two sites' posts never leak into each other's blog index, category
+// counts, or related-posts lists.
+//
+// No coalesce() here, unlike the Cure Infertility side: a missing `siteId`
+// resolves to Cure Infertility, so this site matches the explicit value only.
+const SITE_MATCH = `siteId == "dr-rashmi"`;
 
 export const BLOGS_PER_PAGE = 12;
 
@@ -134,7 +137,7 @@ const cardFields = `
 
 const baseFilter = `
   _type == "blogPost" &&
-  site == "${SITE}" &&
+  ${SITE_MATCH} &&
   defined(slug.current) &&
   isPublished != false &&
   ($category == null || references(*[_type == "category" && slug.current == $category][0]._id)) &&
@@ -167,7 +170,7 @@ export async function getBlogIndex(filters: BlogFilters) {
         title,
         "slug": slug.current,
         description,
-        "count": count(*[_type == "blogPost" && site == "${SITE}" && isPublished != false && references(^._id)])
+        "count": count(*[_type == "blogPost" && ${SITE_MATCH} && isPublished != false && references(^._id)])
       }`,
     }),
   ]);
@@ -184,7 +187,7 @@ export async function getBlogIndex(filters: BlogFilters) {
 export async function getBlogPost(slug: string) {
   const slugCandidates = getSlugCandidates(slug);
   const post = await sanityFetch<BlogPost | null>({
-    query: `*[_type == "blogPost" && site == "${SITE}" && slug.current in $slugs && isPublished != false][0]{
+    query: `*[_type == "blogPost" && ${SITE_MATCH} && slug.current in $slugs && isPublished != false][0]{
       ${cardFields},
       body[]{
         ...,
@@ -211,7 +214,7 @@ export async function getRelatedBlogs(post: BlogPost, limit = 3) {
   const related = await sanityFetch<BlogCard[]>({
     query: `*[
       _type == "blogPost" &&
-      site == "${SITE}" &&
+      ${SITE_MATCH} &&
       _id != $id &&
       isPublished != false &&
       count((categories[]._ref)[@ in $categoryIds]) > 0

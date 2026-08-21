@@ -29,7 +29,7 @@ type BlogSlugEntry = {
 async function getBlogSlugs(): Promise<BlogSlugEntry[]> {
     try {
         return await sanityFetch<BlogSlugEntry[]>({
-            query: `*[_type == "blogPost" && site == "dr-rashmi" && defined(slug.current) && isPublished != false]{
+            query: `*[_type == "blogPost" && siteId == "dr-rashmi" && defined(slug.current) && isPublished != false]{
                 "slug": slug.current,
                 publishedAt,
                 updatedAt
