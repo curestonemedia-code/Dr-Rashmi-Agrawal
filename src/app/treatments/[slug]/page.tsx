@@ -173,7 +173,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
             { label: 'Anaesthesia', value: 'Zero' },
             { label: 'Setting', value: 'Outpatient' },
         ],
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'vCpsAUiHm38',
         sections: [
             {
                 kind: 'text',
