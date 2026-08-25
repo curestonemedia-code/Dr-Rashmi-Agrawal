@@ -47,8 +47,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'What Is IVF, Really?',
                 paragraphs: [
-                    'IVF moves the most fragile step of conception into the lab. Eggs are retrieved, fertilised with sperm, and grown for 3 to 5 days before the healthiest embryo is placed in your uterus.',
-                    'A child conceived through IVF is fully your biological child — the lab only helps at the meeting point.'
+                    'IVF moves the single most fragile step of conception — the meeting of egg and sperm — out of the body and into a controlled laboratory. Instead of relying on one egg released each month finding its way down a fallopian tube, we stimulate the ovaries to mature several eggs at once, collect them in a short daycare procedure, and fertilise them in the lab. The resulting embryos are grown under monitored temperature, humidity and gas conditions for three to five days before the healthiest one is placed into the uterus.',
+                    'That controlled environment is the entire point. It lets us see things that are otherwise invisible: whether the eggs are mature, whether fertilisation actually happens, whether embryos divide normally, and which one has the best chance of implanting. Couples who have spent years with unexplained infertility often get their first real answer during their first IVF cycle, simply because the process is finally observable.',
+                    'A common fear deserves answering directly: a child conceived through IVF is fully and genetically your own. The egg is yours, the sperm is your partner\'s, and the laboratory only assists at the point of fertilisation. Nothing about the child\'s genetics, development or health is altered by where conception took place. Decades of follow-up data on IVF-conceived children support this.',
+                    'IVF is also not a single fixed protocol. Stimulation drugs, doses, trigger timing, whether to transfer fresh or freeze all embryos, and whether to add ICSI or genetic testing are all decisions made from your own AMH, antral follicle count, age, and any previous cycle response. Two women the same age can be given quite different plans, and that is deliberate rather than inconsistent.',
                 ]
             },
             {
@@ -119,8 +121,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'What Is PGT, Really?',
                 paragraphs: [
-                    'PGT is a laboratory test performed on IVF embryos before transfer. A handful of cells are biopsied from the outer layer of a day 5–6 blastocyst — the layer that becomes the placenta, not the baby — and sent for genetic analysis while the embryo is safely frozen.',
-                    'Only embryos that come back genetically normal are thawed and transferred, in a cycle timed separately from the retrieval.'
+                    'Preimplantation Genetic Testing examines an embryo\'s chromosomes before it is ever transferred. On day five or six of culture, a few cells are removed from the trophectoderm — the outer layer that goes on to form the placenta, not the baby — and analysed while the embryo is safely vitrified. Only embryos with the expected chromosome count are chosen for transfer.',
+                    'This matters because chromosomal abnormality is the single largest cause of embryos failing to implant and of early miscarriage. An embryo can look flawless under the microscope, grade beautifully, and still carry an extra or missing chromosome that makes ongoing pregnancy impossible. Appearance alone cannot detect this; only genetic analysis can.',
+                    'The proportion of embryos affected rises steadily with maternal age, which is why PGT is discussed most often for women in their late thirties and forties, for couples with recurrent pregnancy loss, and for those whose good-looking embryos have repeatedly failed to implant. It is also used where a specific inherited condition runs in the family.',
+                    'It is important to be clear about what PGT does and does not do. It does not improve an embryo — it only tells us which existing embryos are worth transferring. It cannot create a normal embryo where none exists, and if every embryo in a cycle tests abnormal, no transfer takes place. What it reliably does is reduce wasted transfers, shorten the time to a viable pregnancy, and lower the risk of a miscarriage you would otherwise have had to live through.',
                 ]
             },
             {
@@ -179,8 +183,35 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'Overview',
                 paragraphs: [
-                    'An HSG uses a contrast dye and X-ray to map your uterus and check whether the fallopian tubes are open — a key step before IUI.',
-                    'Flushing the tubes with the dye can sometimes boost fertility for the following few months.'
+                    'A hysterosalpingogram, almost always shortened to HSG, is an X-ray study that maps the inside of the uterus and shows whether the fallopian tubes are open. A fine catheter is passed through the cervix and an iodine-based contrast dye is slowly instilled. Because the dye is visible on X-ray, we can watch in real time as it fills the uterine cavity and then spills out of each tube into the abdomen.',
+                    'Two questions get answered in that one short study. First, the shape of the uterine cavity — whether there is a septum, adhesions, polyps or fibroids distorting the space an embryo would need to implant in. Second, tubal patency, meaning whether sperm and egg can physically meet at all. Blocked tubes are a common and completely silent cause of infertility; there are no symptoms, and nothing on an ultrasound will reveal them.',
+                    'The test is timed deliberately to days six to eleven of the cycle: after bleeding has finished, so the view is clear, but before ovulation, so there is no risk of disturbing an early pregnancy. The whole appointment takes about fifteen minutes, needs no anaesthesia, and you can drive yourself home afterwards.',
+                    'Most women feel cramping similar to strong period pain during the moments the dye is injected, easing within minutes. A simple painkiller taken about an hour beforehand makes a noticeable difference. Light spotting for a day or two afterwards is normal and expected.',
+                    'There is a well-documented and welcome side effect. The pressure of the dye can flush out mucus plugs and minor debris, and studies have consistently shown a modest rise in natural conception rates in the two to three months immediately following an HSG — particularly when oil-based contrast is used. It is a diagnostic test that occasionally treats the problem it was sent to find.',
+                ]
+            },
+            {
+                kind: 'steps',
+                heading: 'What Happens During the Test',
+                items: [
+                    { step: '01', title: 'Timing and Preparation', description: 'Booked for day 6 to 11 of your cycle. Take a simple painkiller about an hour before you arrive.' },
+                    { step: '02', title: 'Positioning', description: 'You lie on an X-ray table much as you would for a routine smear. A speculum is passed to visualise the cervix.' },
+                    { step: '03', title: 'Catheter Placement', description: 'A very fine catheter is guided just inside the cervical canal. No incision and no anaesthesia are involved.' },
+                    { step: '04', title: 'Contrast Injection', description: 'Iodine-based dye is instilled slowly. This is the point at which cramping is felt, and it lasts under a minute.' },
+                    { step: '05', title: 'Live Imaging', description: 'X-ray images are taken as the dye outlines the cavity and then spills from each tube into the abdomen.' },
+                    { step: '06', title: 'Going Home', description: 'The speculum is removed and you rest briefly. No sedation is used, so you can drive yourself home.' },
+                ]
+            },
+            {
+                kind: 'points',
+                heading: 'What the Results Actually Mean',
+                items: [
+                    { title: 'Both tubes open', description: 'Sperm and egg can meet. Attention shifts to ovulation, sperm quality, or the uterine lining.' },
+                    { title: 'One tube blocked', description: 'Natural conception and IUI remain possible through the open side, often with timed monitoring.' },
+                    { title: 'Both tubes blocked', description: 'IVF is the clear route, because it bypasses the tubes completely rather than trying to repair them.' },
+                    { title: 'Hydrosalpinx', description: 'A fluid-filled, swollen tube. This fluid lowers IVF success and is usually treated before any transfer.' },
+                    { title: 'Filling defect in the cavity', description: 'Suggests a polyp, fibroid or adhesion. Hysteroscopy both confirms and treats it in one sitting.' },
+                    { title: 'Uterine septum or abnormal shape', description: 'A congenital variation in cavity shape, which may be correctable surgically where it affects implantation.' },
                 ]
             },
         ],
@@ -219,7 +250,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'Surgery Rethought for Fertility',
                 paragraphs: [
-                    'Endometriosis, adhesions, cysts, and fibroids often hide beyond what a scan can show. Dr. Rashmi operates with a fertility-first mindset, preserving as much healthy tissue as possible.'
+                    'Both of these are keyhole procedures, and both use a camera — but they look at different things. A hysteroscopy passes a thin telescope through the cervix to inspect the inside of the uterine cavity, with no cuts at all. A laparoscopy uses small abdominal incisions to view the outside of the uterus, the ovaries, the tubes and the pelvis. They are frequently done in the same sitting, because between them they cover nearly everything an ultrasound cannot.',
+                    'The distinction that matters in fertility surgery is intent. General gynaecological surgery aims to remove disease. Fertility surgery aims to remove disease while protecting every bit of ovarian reserve and healthy tissue, because that reserve is the raw material of any future pregnancy. Removing an endometriotic cyst carelessly can strip away normal ovarian tissue along with it and leave a woman with fewer eggs than she started with. The technique used, the energy settings, and how tissue planes are handled all change the outcome.',
+                    'The other major advantage is that diagnosis and treatment happen together. A polyp seen on hysteroscopy is removed in the same procedure. Adhesions found on laparoscopy are divided then and there. Endometriosis is staged and excised in one anaesthetic rather than being confirmed in one operation and treated in another.',
+                    'These are day-case procedures. Most patients arrive in the morning, go home the same evening, and are back to routine activity within one to seven days depending on what was done. Recovery from a diagnostic hysteroscopy is usually a matter of hours; a laparoscopy for extensive endometriosis takes longer.',
                 ]
             },
             {
@@ -278,7 +312,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'What Is ICSI, Really?',
                 paragraphs: [
-                    'In standard IVF, sperm must fertilise the egg unassisted. In ICSI, our embryologist selects one healthy sperm under a microscope and injects it directly into the egg — a technique used worldwide since 1992.'
+                    'In conventional IVF, prepared sperm and eggs are placed together in a dish and fertilisation is left to happen on its own. ICSI removes that uncertainty entirely. An embryologist selects one healthy, motile sperm, immobilises it, and injects it directly into the centre of a mature egg using a glass needle finer than a human hair, under high magnification.',
+                    'The reason this exists is simple: fertilisation involves several steps where sperm can fail. It must reach the egg, bind to the outer shell, penetrate it, and fuse with the inner membrane. When sperm count is very low, motility is poor, or shape is abnormal, one or more of those steps may never happen — and in a conventional IVF dish the result is no fertilised eggs at all, discovered only the following morning.',
+                    'ICSI bypasses every one of those hurdles. It is why azoospermic men whose sperm has to be retrieved surgically can still father genetically their own children: even a handful of viable sperm cells is enough, because only one is needed per egg.',
+                    'It is worth setting expectations honestly. ICSI reliably solves the fertilisation step, and typically achieves fertilisation in around seven to eight of every ten mature eggs injected. What it does not do is improve egg quality or guarantee a good embryo. A fertilised egg still has to divide correctly and reach blastocyst. ICSI is a precise answer to a specific problem — sperm failing to fertilise — not a general upgrade to IVF, and it is recommended when there is a reason for it rather than by default.',
                 ]
             },
             {
@@ -344,7 +381,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'When Surgical Retrieval Is Needed',
                 paragraphs: [
-                    'Azoospermia falls into two categories: obstructive, where sperm production is normal but blocked, and non-obstructive, where the testicles produce very little. A hormonal and genetic workup tells us which — and which procedure is right for your case.'
+                    'Azoospermia means no sperm at all in the ejaculate. It affects roughly one per cent of men and around ten to fifteen per cent of men presenting with infertility, and for most it comes as a complete shock — there are no symptoms, and sexual function is usually entirely normal. The diagnosis should never be made on a single sample; it requires at least two properly centrifuged semen analyses.',
+                    'The critical distinction is between obstructive and non-obstructive azoospermia, because they are different problems with different solutions. In obstructive azoospermia the testes produce sperm perfectly well, but the pathway out is blocked — by a previous vasectomy, infection, injury, or congenital absence of the vas deferens. In non-obstructive azoospermia the plumbing is open, but sperm production itself is impaired.',
+                    'That distinction is what decides the technique. Where there is an obstruction, sperm can usually be collected easily from the epididymis or testis with a needle, and success rates are very high. Where production is the problem, sperm may still exist in isolated pockets within the testis, and finding them requires microsurgical exploration of the tissue under an operating microscope.',
+                    'Before any surgery, a proper workup is essential: hormone profile including FSH, testosterone and prolactin, testicular volume assessment, scrotal ultrasound, and karyotype with Y-chromosome microdeletion screening where indicated. These results predict both the likelihood of finding sperm and whether a genetic cause exists that should be discussed before conception.',
                 ]
             },
             {
@@ -370,7 +410,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'Coordinating Retrieval With ICSI',
                 paragraphs: [
-                    'Retrieved sperm is always used with ICSI. It can be timed with your partner\'s egg collection, or frozen in advance to avoid the pressure of same-day timing and repeat surgery.'
+                    'Surgically retrieved sperm is never numerous and is often immotile or immature, which means it can only be used with ICSI — a single sperm injected directly into each egg. That makes timing between the andrology and IVF sides of the process critical rather than incidental.',
+                    'There are two workable approaches. Retrieval can be scheduled on the same day as the female partner\'s egg collection, so fresh sperm meets fresh eggs. Or sperm can be retrieved in advance and cryopreserved, which is often the better choice: it confirms sperm actually exists before committing the female partner to a full stimulation cycle, and it avoids the distressing scenario of eggs being collected on the day only to find nothing to fertilise them with.',
+                    'Recovery from retrieval itself is straightforward. It is a daycare procedure under short anaesthesia, and most men return to desk work within two to three days, with scrotal support and avoidance of heavy lifting for about a week. Mild swelling and discomfort for a few days is normal.',
+                    'One point deserves emphasis for couples arriving after being told nothing can be done. A diagnosis of azoospermia is not, by itself, a diagnosis of sterility. With the right workup and the right retrieval technique, a substantial proportion of these men go on to have genetically their own children.',
                 ]
             },
         ],
@@ -410,7 +453,10 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'The Most Misunderstood Treatment',
                 paragraphs: [
-                    'IUI is often overused past the point it can help, and underused for problems it could solve cheaply. Washed sperm is placed inside the uterus through a soft catheter, timed to ovulation.'
+                    'Intrauterine insemination is often described as a gentler alternative to IVF, which sets the wrong expectation from the start. IUI is not a weaker IVF. It is a different intervention solving a different problem, and understanding that distinction saves couples a great deal of time and money.',
+                    'What IUI actually does is shorten the journey sperm has to make and improve its quality on arrival. A semen sample is washed and concentrated in the laboratory, removing seminal fluid, dead sperm and debris, and the resulting concentrated preparation of motile sperm is placed directly into the uterine cavity with a fine catheter at the precise moment of ovulation. The cervix, which filters out the large majority of sperm in natural intercourse, is bypassed completely.',
+                    'What IUI cannot do is equally important. It cannot fix blocked fallopian tubes, because sperm and egg still have to meet inside the tube. It cannot compensate for severely low sperm counts, because it concentrates what is there rather than creating more. And it cannot overcome poor egg quality. For those situations IUI is not a gentler first step — it is simply the wrong tool, and attempting it delays effective treatment.',
+                    'The evidence on how many cycles to attempt is consistent and worth taking seriously. The great majority of IUI successes occur within the first three to four properly monitored cycles. Beyond that the per-cycle chance falls off sharply, and continuing becomes a poor use of both time and money. A candid conversation at that point about moving to IVF is not a failure of the treatment; it is the treatment working as intended, having ruled out what it could.',
                 ]
             },
             {
@@ -421,6 +467,19 @@ const treatmentData: Record<string, TreatmentEntry> = {
                     { title: 'Cervical factor issues', description: 'Where mucus blocks natural sperm progression.' },
                     { title: 'Ovulation problems', description: 'Combined with induction medicines for perfect timing.' },
                     { title: 'Unexplained infertility', description: 'Especially early in the journey for younger couples.' },
+                ]
+            },
+            {
+                kind: 'steps',
+                heading: 'What an IUI Cycle Involves',
+                items: [
+                    { step: '01', title: 'Confirm It Is Appropriate', description: 'At least one open tube on HSG and an adequate motile sperm count. Without both, IUI is the wrong treatment.' },
+                    { step: '02', title: 'Cycle Preparation', description: 'Either a natural tracked cycle, or mild stimulation with tablets to recruit one or two mature follicles.' },
+                    { step: '03', title: 'Follicular Monitoring', description: 'Scans track follicle growth so the insemination lands on the day of ovulation rather than near it.' },
+                    { step: '04', title: 'Trigger', description: 'An injection sets ovulation to a predictable point, usually about 36 hours ahead.' },
+                    { step: '05', title: 'Sperm Preparation', description: 'The sample is washed and concentrated in the lab on the day, isolating the most motile fraction.' },
+                    { step: '06', title: 'The Insemination', description: 'A soft catheter places the prepared sperm into the uterus. It takes minutes, needs no anaesthesia, and feels much like a smear.' },
+                    { step: '07', title: 'Review After 3 to 4 Cycles', description: 'If IUI has not worked within that window, an honest reassessment matters more than repeating it further.' },
                 ]
             },
         ],
@@ -460,7 +519,35 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'Overview',
                 paragraphs: [
-                    'Hormonal medication stimulates the ovaries to release a mature egg — mainly for women who don\'t ovulate regularly, like those with PCOS. Scans and blood tests track follicle growth to pinpoint your exact fertile window.'
+                    'Ovulation induction is the simplest fertility treatment there is, and for the right patient it is the only one needed. Its purpose is narrow and specific: to help the ovaries release a mature egg in women who are not ovulating reliably, or at all. Where absent ovulation is the whole problem, restoring it restores fertility.',
+                    'Irregular or absent ovulation is one of the most common causes of infertility, and polycystic ovary syndrome accounts for a large share of it. Cycles that are consistently longer than thirty-five days, wildly unpredictable, or absent for months are the usual clue. Some women ovulate occasionally rather than never, which is why conception sometimes happens spontaneously but takes far longer than expected.',
+                    'Treatment usually begins with tablets taken for five days early in the cycle — letrozole or clomiphene citrate — which prompt the pituitary to drive follicle development. Letrozole has become the preferred first choice in PCOS, with better ovulation and live birth rates and a thinner effect on the endometrium than clomiphene. If tablets alone do not produce a response, low-dose injectable gonadotropins are the next step.',
+                    'The part that genuinely matters, and the part most often skipped, is monitoring. Serial ultrasound scans track how many follicles are developing and how large they are, so that intercourse or IUI can be timed to the mature follicle rather than to a calendar. Monitoring also guards against the two real risks of stimulating ovaries: over-response, which can lead to ovarian hyperstimulation, and multiple pregnancy from several follicles maturing at once. Unmonitored ovulation induction is where most avoidable complications come from.',
+                    'Expect this to be given a fair but finite trial. Most successes occur within the first three to six ovulatory cycles. If ovulation is being achieved consistently and pregnancy still has not happened, that itself is useful information — it means something beyond ovulation needs investigating.',
+                ]
+            },
+            {
+                kind: 'points',
+                heading: 'Who This Genuinely Helps',
+                items: [
+                    { title: 'PCOS', description: 'The single most common indication. Ovaries hold many small follicles but rarely release a mature egg.' },
+                    { title: 'Irregular cycles', description: 'Cycles consistently beyond 35 days, or unpredictable enough that timing intercourse is guesswork.' },
+                    { title: 'Absent periods', description: 'No bleeding for months, once pregnancy, thyroid and prolactin causes have been excluded.' },
+                    { title: 'Luteal phase concerns', description: 'Ovulation happens but the second half of the cycle is too short to support implantation.' },
+                    { title: 'Unexplained infertility', description: 'Used with IUI to recruit slightly more than one follicle and improve per-cycle odds.' },
+                    { title: 'Not suitable for', description: 'Blocked tubes or severe male factor. Inducing ovulation cannot help if egg and sperm still cannot meet.' },
+                ]
+            },
+            {
+                kind: 'steps',
+                heading: 'How a Monitored Cycle Runs',
+                items: [
+                    { step: '01', title: 'Baseline Scan', description: 'A scan on day 2 or 3 confirms no residual cyst and that the lining has shed properly before starting.' },
+                    { step: '02', title: 'Tablets Begin', description: 'Letrozole or clomiphene is taken for five days, typically from day 2 to day 6 of the cycle.' },
+                    { step: '03', title: 'Follicular Tracking', description: 'Scans from around day 9 measure how many follicles are growing and how fast, adjusting expectations in real time.' },
+                    { step: '04', title: 'Trigger Injection', description: 'Once a follicle reaches roughly 18 to 20 mm, an injection triggers release about 36 hours later.' },
+                    { step: '05', title: 'Timed Intercourse or IUI', description: 'Intercourse or insemination is scheduled to that 36-hour window rather than to a calendar estimate.' },
+                    { step: '06', title: 'Luteal Support and Test', description: 'Progesterone support where indicated, then a blood test about two weeks later to confirm the result.' },
                 ]
             },
         ],
@@ -499,7 +586,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
                 kind: 'text',
                 heading: 'Overview',
                 paragraphs: [
-                    'If good-quality embryos haven\'t implanted, an Endometrial Biopsy or ERA checks for hidden inflammation and pinpoints the exact day your lining is most receptive to a transfer.'
+                    'The endometrium is only receptive to an embryo for a short span of time each cycle, commonly called the window of implantation. Standard practice assumes that window falls at the same point for everyone and schedules the transfer accordingly. For most women that assumption holds. For a minority it does not, and their window is shifted earlier or later by a day or more — which means a perfectly good embryo can be transferred into a uterus that simply is not ready for it.',
+                    'Endometrial Receptivity Analysis is designed to find those cases. A small sample of endometrial tissue is taken in a mock cycle that exactly mimics the hormonal preparation of a real frozen embryo transfer. The sample is analysed for the expression pattern of a large panel of genes involved in implantation, and the result reports whether the endometrium was receptive at the moment of biopsy, or whether it was pre-receptive or post-receptive.',
+                    'If the window is shifted, the fix is precise rather than dramatic: the next transfer is moved forward or back by the number of hours the test indicates. This is called a personalised embryo transfer, and it converts an educated guess about timing into a measured one.',
+                    'The biopsy itself is a brief outpatient procedure needing no anaesthesia, comparable to an IUD insertion, with cramping for a short period afterwards. Because the sample must be taken in a mock cycle, it does add one cycle before the transfer that follows.',
+                    'This test is not part of routine IVF, and should not be. It is aimed at a specific group: women with repeated implantation failure — good-quality embryos transferred into a normal-looking cavity that have nonetheless not implanted — once the more common explanations have been excluded. Offering it to everyone adds cost and delay without benefit, and it is worth being told plainly whether your history actually fits the indication.',
                 ]
             },
             {
@@ -621,7 +712,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
                                 {data.heroStats.map((stat, i) => (
                                     <div key={i} className="card" style={{ padding: '1.25rem' }}>
                                         <div className="body-sm">{stat.label}</div>
-                                        <div className="text-3xl font-semibold mt-1" style={{ letterSpacing: '-0.02em' }}>
+                                        <div className="text-lg md:text-xl font-semibold mt-1 text-balance" style={{ letterSpacing: '-0.02em' }}>
                                             {stat.value}<span className="mark">{stat.unit}</span>
                                         </div>
                                     </div>
