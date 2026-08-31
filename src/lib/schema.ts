@@ -1,4 +1,5 @@
 import { SITE_URL, SITE_NAME } from "@/constants/site";
+import { VIDEO_UPLOAD_DATES } from '@/constants/videoUploadDates';
 
 // The clinic node declared in the root layout uses this @id; every other node
 // references it rather than repeating the organization.
@@ -164,6 +165,12 @@ export function blogPosting({
     };
 }
 
+/** A valid schema.org datetime needs a time and an offset, not just a date. */
+function resolveUploadDate(ytId: string, provided?: string): string | undefined {
+  if (provided && provided.includes("T")) return provided;
+  return VIDEO_UPLOAD_DATES[ytId];
+}
+
 export function videoObject({
     ytId,
     name,
@@ -174,7 +181,7 @@ export function videoObject({
     ytId: string;
     name: string;
     description: string;
-    uploadDate: string;
+    uploadDate?: string;
     duration?: string;
 }): Json {
     return {
@@ -183,7 +190,11 @@ export function videoObject({
         name,
         description,
         thumbnailUrl: `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`,
-        uploadDate,
+        // Google rejects a bare date here ("missing a time zone" / "invalid
+        // datetime value"). Use a fully-qualified ISO 8601 timestamp, falling
+        // back to the video's real upload date; emit nothing at all rather
+        // than something invalid.
+        ...(resolveUploadDate(ytId, uploadDate) ? { uploadDate: resolveUploadDate(ytId, uploadDate) } : {}),
         embedUrl: `https://www.youtube.com/embed/${ytId}`,
         contentUrl: `https://www.youtube.com/watch?v=${ytId}`,
         publisher: { "@id": CLINIC_ID },

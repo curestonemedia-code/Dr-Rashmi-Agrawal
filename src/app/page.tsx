@@ -156,7 +156,12 @@ export default function Home() {
                         ytId: v.ytId,
                         name: v.title,
                         description: `${v.title} — from Dr. Rashmi Agrawal, IVF Centre, Gurgaon.`,
-                        uploadDate: '2026-01-01',
+                        // No uploadDate passed: videoObject() resolves the
+                        // video's real upload date from
+                        // constants/videoUploadDates.ts by ytId. A hardcoded
+                        // placeholder here previously failed Search Console
+                        // validation ("missing a time zone" / "invalid
+                        // datetime value").
                     })
                 ),
             ]))} />

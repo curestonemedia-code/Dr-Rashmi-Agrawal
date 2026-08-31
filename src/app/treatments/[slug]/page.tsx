@@ -683,7 +683,10 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
             ytId: data.videoId,
             name: `${data.eyebrow} — Overview`,
             description: data.heroDesc,
-            uploadDate: '2026-01-01',
+            // No uploadDate passed: videoObject() resolves the video's real
+            // upload date from constants/videoUploadDates.ts by videoId. A
+            // hardcoded placeholder here previously failed Search Console
+            // validation ("missing a time zone" / "invalid datetime value").
         }),
     ]);
 
