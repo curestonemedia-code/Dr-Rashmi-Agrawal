@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { Calendar, MessageCircle } from "lucide-react";
 import {
   cleanText,
@@ -18,6 +19,16 @@ import {
 // script (this site posts the same "book_appointment_infertility" shape it
 // expects). Storage only, no email is sent.
 const SCRIPT_URL = process.env.NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL || "";
+
+// Cloudflare Turnstile site key — public by design (unlike SCRIPT_URL above,
+// this is meant to be embedded in client-side JS). One widget covers both
+// thecureinfertility.com and drrashmiagrawal.com, so the same key is a safe
+// hardcoded fallback; override via env only if this site ever gets its own
+// widget. The matching secret key lives only in google-apps-script/Code.gs
+// (in the Cure Infertility repo), which is what actually rejects
+// submissions without a valid token.
+const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAE-k3tb3q312pM13";
 
 const CONDITIONS = [
   { value: "ivf", label: "IVF Treatment" },
@@ -63,6 +74,8 @@ export default function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileError, setTurnstileError] = useState<string | null>(null);
 
   // GSAP ScrollTrigger pinning elsewhere on the page can throw off the
   // browser's native #book hash-jump on load, since it recalculates scroll
@@ -80,6 +93,9 @@ export default function BookingForm() {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const phone = normalizeIndianPhone(fd.get("phone"));
+    // Honeypot — real users never see or fill this field. A bot that blindly
+    // fills every input on the page trips it; Code.gs rejects silently.
+    const honeypot = String(fd.get("website") || "");
     const data = {
       name: cleanText(fd.get("fullName")),
       phone,
@@ -106,7 +122,13 @@ export default function BookingForm() {
       return;
     }
 
+    if (!turnstileToken) {
+      setTurnstileError("Please complete the verification checkbox below.");
+      return;
+    }
+
     setErrors({});
+    setTurnstileError(null);
     setLoading(true);
 
     const conditionLabel = CONDITIONS.find((c) => c.value === data.condition)?.label || "General Fertility Consult";
@@ -119,6 +141,8 @@ export default function BookingForm() {
       consultationType: conditionLabel,
       email: data.email || undefined,
       description: data.description || "No description",
+      website: honeypot,
+      turnstileToken,
     };
 
     // The Apps Script webhook (see google-apps-script/Code.gs in the Cure
@@ -272,8 +296,26 @@ export default function BookingForm() {
         <FieldError message={errors.description} />
       </div>
 
+      {/* Honeypot — hidden from real users (off-screen, not display:none —
+          some bots skip display:none fields), never tabbable, never
+          autofilled. Code.gs rejects anything that fills it in. */}
+      <div className="absolute -left-[9999px] top-0" aria-hidden="true">
+        <label htmlFor="bf-website">Website</label>
+        <input id="bf-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      <div>
+        <Turnstile
+          siteKey={TURNSTILE_SITE_KEY}
+          onSuccess={(token) => { setTurnstileToken(token); setTurnstileError(null); }}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => setTurnstileToken(null)}
+        />
+        <FieldError message={turnstileError || undefined} />
+      </div>
+
       <button
-        disabled={loading}
+        disabled={loading || !turnstileToken}
         type="submit"
         className="w-full py-4 bg-[#ef8b92] text-white font-black rounded-xl shadow-xl shadow-pink-600/20 hover:bg-pink-700 hover:scale-[1.01] active:scale-95 disabled:opacity-70 transition-all flex items-center justify-center gap-2"
       >

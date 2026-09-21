@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import {
     cleanText,
@@ -15,6 +16,16 @@ import {
 // script (this site posts the same "book_appointment_infertility" shape it
 // expects). Storage only, no email is sent.
 const SCRIPT_URL = process.env.NEXT_PUBLIC_APPOINTMENT_FORM_SHEET_URL || '';
+
+// Cloudflare Turnstile site key — public by design (unlike SCRIPT_URL above,
+// this is meant to be embedded in client-side JS). One widget covers both
+// thecureinfertility.com and drrashmiagrawal.com, so the same key is a safe
+// hardcoded fallback; override via env only if this site ever gets its own
+// widget. The matching secret key lives only in google-apps-script/Code.gs
+// (in the Cure Infertility repo), which is what actually rejects
+// submissions without a valid token.
+const TURNSTILE_SITE_KEY =
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAE-k3tb3q312pM13';
 
 type FormField = 'name' | 'phone' | 'email' | 'message';
 type FormErrors = Partial<Record<FormField, string>>;
@@ -36,11 +47,17 @@ export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<FormErrors>({});
     const [whatsappHref, setWhatsappHref] = useState('');
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+    const [turnstileError, setTurnstileError] = useState<string | null>(null);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const phone = normalizeIndianPhone(form.get('phone'));
+        // Honeypot — real users never see or fill this field. A bot that
+        // blindly fills every input on the page trips it; Code.gs rejects
+        // silently.
+        const honeypot = String(form.get('website') || '');
         const data = {
             name: cleanText(form.get('name')),
             phone,
@@ -64,7 +81,13 @@ export default function ContactForm() {
             return;
         }
 
+        if (!turnstileToken) {
+            setTurnstileError('Please complete the verification checkbox below.');
+            return;
+        }
+
         setErrors({});
+        setTurnstileError(null);
         setLoading(true);
 
         const whatsappText = [
@@ -92,6 +115,8 @@ export default function ContactForm() {
             consultationType: 'General Enquiry (Contact Page)',
             email: data.email || undefined,
             description,
+            website: honeypot,
+            turnstileToken,
         };
 
         // The Apps Script webhook (see google-apps-script/Code.gs in the
@@ -176,8 +201,28 @@ export default function ContactForm() {
                 <label htmlFor="callback" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Preferred time for callback</label>
                 <input id="callback" name="callback" type="text" placeholder="e.g. Weekdays after 5 PM" className={baseFieldClass + ' border-slate-200'} />
             </div>
+
+            {/* Honeypot — hidden from real users (off-screen, not
+                display:none — some bots skip display:none fields), never
+                tabbable, never autofilled. Code.gs rejects anything that
+                fills it in. */}
+            <div className="absolute -left-[9999px] top-0" aria-hidden="true">
+                <label htmlFor="cf-website">Website</label>
+                <input id="cf-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
+            <div>
+                <Turnstile
+                    siteKey={TURNSTILE_SITE_KEY}
+                    onSuccess={(token) => { setTurnstileToken(token); setTurnstileError(null); }}
+                    onExpire={() => setTurnstileToken(null)}
+                    onError={() => setTurnstileToken(null)}
+                />
+                <FieldError message={turnstileError || undefined} />
+            </div>
+
             <button
-                disabled={loading}
+                disabled={loading || !turnstileToken}
                 type="submit"
                 className="w-full inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[#ef8b92] text-white text-sm font-bold hover:bg-pink-700 disabled:opacity-70 transition-all"
             >
