@@ -87,7 +87,9 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: {
 
 // ── MAIN SECTION ──
 export default function FAQSection() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    // A set, so several answers can stay open at once — each question
+    // toggles independently rather than closing the others.
+    const [openItems, setOpenItems] = useState<Set<number>>(() => new Set([0]));
 
     const faqs = [
         {
@@ -113,7 +115,12 @@ export default function FAQSection() {
     ];
 
     const toggleFAQ = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
+        setOpenItems((prev) => {
+            const next = new Set(prev);
+            if (next.has(index)) next.delete(index);
+            else next.add(index);
+            return next;
+        });
     };
 
     return (
@@ -131,7 +138,7 @@ export default function FAQSection() {
                             <div className="flex items-center gap-2 mb-5">
                                 <span className="w-2 h-2 rounded-full bg-pink-600"></span>
                                 <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-slate-400">
-                                    07 / Questions
+                                    {String(faqs.length).padStart(2, '0')} / Questions
                                 </span>
                             </div>
                             
@@ -177,7 +184,7 @@ export default function FAQSection() {
                                     index={index}
                                     question={faq.q}
                                     answer={faq.a}
-                                    isOpen={openIndex === index}
+                                    isOpen={openItems.has(index)}
                                     onToggle={() => toggleFAQ(index)}
                                 />
                             ))}
