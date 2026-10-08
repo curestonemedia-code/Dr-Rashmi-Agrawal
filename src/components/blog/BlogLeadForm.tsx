@@ -166,10 +166,12 @@ export default function BlogLeadForm({ postTitle, onSuccess }: { postTitle: stri
         <input id={`${idPrefix}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      {/* Default (normal) size, matching Turnstile elsewhere on this site
+          (BookingForm) - "compact" rendered as a small fixed-width box that
+          looked cramped next to the full-width inputs above it. */}
       <div>
         <Turnstile
           siteKey={TURNSTILE_SITE_KEY}
-          options={{ size: "compact" }}
           onSuccess={(token) => {
             setTurnstileToken(token);
             setTurnstileError(null);
