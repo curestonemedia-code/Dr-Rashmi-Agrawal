@@ -5,6 +5,7 @@ import { ArrowRight, CalendarDays, ChevronRight, Clock3, MessageCircle, UserRoun
 import PortableTextRenderer, { getYouTubeId } from '@/components/blog/PortableTextRenderer';
 import SanityImage from '@/components/blog/SanityImage';
 import BlogPostCard from '@/components/blog/BlogPostCard';
+import BlogPostAside from '@/components/blog/BlogPostAside';
 import {
     formatDate,
     getBlogPost,
@@ -137,15 +138,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <>
             <script {...jsonLdProps(doc)} />
 
-            {/* HEADER */}
-            <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light">
-                <div className="cond-hero-bg"></div>
-                <div className="container-x relative">
+            {/* HEADER + COVER + BODY share one section so the sidebar can stay
+                sticky beside the whole article. position:sticky is constrained
+                by ANY non-visible overflow on an ancestor (clip included, not
+                just hidden), so this section stays overflow:visible and the
+                hero glow is capped to its own height instead (it's a sibling
+                of the sticky aside, not an ancestor, so that doesn't affect
+                stickiness). */}
+            <section className="cond-hero edge" data-bg="#f8fafc" data-theme="light" style={{ overflow: 'visible', paddingBottom: '3rem' }}>
+                <div className="cond-hero-bg" style={{ bottom: 'auto', height: '26rem' }}></div>
+                <div className="container-x relative lg:grid lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_24rem]">
+                <article className="min-w-0">
+                    <header>
                     {/* Breadcrumb and header share the article's own 3xl column
                         and centring, so the title lines up with the cover image
                         and body below instead of sitting flush against the
-                        1400px container's left edge. */}
-                    <div className="mx-auto max-w-3xl">
+                        article column's left edge. */}
+                    <div className="max-w-3xl">
+                        <nav className="mb-6 flex gap-2 text-sm font-bold text-[#ef8b92] lg:hidden">
+                            <a href="tel:+919811775369" className="flex-1 rounded-xl border-2 border-[#ef8b92] py-3 text-center">
+                                Call Us
+                            </a>
+                            <a href="#blog-enquiry" className="flex-1 rounded-xl bg-[#ef8b92] py-3 text-center text-white">
+                                Book Free Consult
+                            </a>
+                        </nav>
                         <div className="cond-breadcrumb">
                             <Link href="/">Home</Link>
                             <ChevronRight style={{ width: '14px', height: '14px' }} />
@@ -182,30 +199,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </span>
                         </div>
                     </div>
-                </div>
-            </section>
+                    </header>
 
-            {/* COVER IMAGE — no fixed ratio; capped height, never cropped. */}
-            {post.coverImage?.asset?.url && (
-                <div className="container-x mt-10">
-                    <div className="flex justify-center">
-                        <SanityImage
-                            image={post.coverImage}
-                            alt={post.title}
-                            width={post.coverImage.asset?.metadata?.dimensions?.width || 1600}
-                            height={post.coverImage.asset?.metadata?.dimensions?.height || 900}
-                            priority
-                            sizes="(min-width: 1024px) 1100px, 100vw"
-                            className="h-auto max-h-[520px] w-auto max-w-full"
-                        />
-                    </div>
-                </div>
-            )}
+                    {/* COVER IMAGE — no fixed ratio; capped height, never cropped. */}
+                    {post.coverImage?.asset?.url && (
+                        <div className="mt-10">
+                            <div className="flex justify-start">
+                                <SanityImage
+                                    image={post.coverImage}
+                                    alt={post.title}
+                                    width={post.coverImage.asset?.metadata?.dimensions?.width || 1600}
+                                    height={post.coverImage.asset?.metadata?.dimensions?.height || 900}
+                                    priority
+                                    sizes="(min-width: 1024px) 1100px, 100vw"
+                                    className="h-auto max-h-[520px] w-auto max-w-full"
+                                />
+                            </div>
+                        </div>
+                    )}
 
-            {/* BODY */}
-            <section className="py-12 md:py-16 edge">
-                <div className="container-x">
-                    <div className="mx-auto max-w-3xl">
+                    {/* BODY */}
+            <div className="max-w-3xl py-10 lg:py-12">
                         <PortableTextRenderer value={post.body} />
 
                         {post.tags?.length ? (
@@ -236,6 +250,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </Link>
                         </div>
                     </div>
+                </article>
+                <BlogPostAside postTitle={post.title} />
                 </div>
             </section>
 
