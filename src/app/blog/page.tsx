@@ -124,7 +124,7 @@ export default async function BlogListPage({ searchParams }: BlogListPageProps) 
                                             : 'New articles are on the way — in the meantime, book a consultation and ask directly.'}
                                     </p>
                                     <Link href="/contact" className="btn btn-primary mt-6 inline-flex">
-                                        Book Free Consultation
+                                        Book Consultation
                                     </Link>
                                 </div>
                             )}
@@ -148,7 +148,7 @@ export default async function BlogListPage({ searchParams }: BlogListPageProps) 
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/contact" className="btn btn-primary btn-lg">
-                            Book Free Consultation
+                            Book Consultation
                         </Link>
                         <a
                             href="https://wa.me/919811775369"

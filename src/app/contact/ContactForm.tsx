@@ -226,7 +226,7 @@ export default function ContactForm() {
                 type="submit"
                 className="w-full inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[#ef8b92] text-white text-sm font-bold hover:bg-pink-700 disabled:opacity-70 transition-all"
             >
-                {loading ? 'Sending...' : (<><Send className="w-4 h-4" /> Request Free Consultation</>)}
+                {loading ? 'Sending...' : (<><Send className="w-4 h-4" /> Request a Consultation</>)}
             </button>
         </form>
     );

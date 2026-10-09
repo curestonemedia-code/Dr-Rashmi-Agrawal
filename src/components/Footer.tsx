@@ -41,7 +41,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-[1.03]"
                   style={{ background: 'var(--brand-light)', color: '#0f172a' }}
                 >
-                  Book Free Consultation
+                  Book Consultation
                 </Link>
                 <a
                   href={`https://wa.me/${CLINIC_PHONE_INTL.replace('+', '')}`}

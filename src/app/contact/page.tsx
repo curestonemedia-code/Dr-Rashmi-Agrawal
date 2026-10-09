@@ -7,7 +7,7 @@ import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
 // Bare title — the root layout template appends the centre name.
 const TITLE = 'Contact Us in Gurgaon';
-const DESCRIPTION = 'Contact Dr. Rashmi Agrawal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a free fertility consultation.';
+const DESCRIPTION = 'Contact Dr. Rashmi Agrawal IVF Centre in Sector 27, Gurugram. Clinic address, phone, WhatsApp, hours, and how to book a fertility consultation.';
 
 export const metadata: Metadata = {
     title: TITLE,

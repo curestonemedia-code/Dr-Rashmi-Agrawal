@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 const TITLE = "IVF Specialist in Gurgaon | Dr. Rashmi Agrawal IVF Centre";
-const DESCRIPTION = "IVF, ICSI and IUI in Gurgaon with Dr. Rashmi Agrawal — MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine. 9,000+ consultations. Book free.";
+const DESCRIPTION = "IVF, ICSI and IUI in Gurgaon with Dr. Rashmi Agrawal — MBBS (Gold Medalist), MS OBGYN, FNB Reproductive Medicine. 9,000+ consultations.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

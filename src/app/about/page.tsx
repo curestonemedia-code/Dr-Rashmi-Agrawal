@@ -134,7 +134,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn btn-primary btn-lg">
-              <CalendarCheck2 className="w-4 h-4" /> Book a Free Consultation
+              <CalendarCheck2 className="w-4 h-4" /> Book a Consultation
             </Link>
             <Link href="/#testimonials" className="btn btn-ghost btn-lg">
               See Patient Stories
@@ -309,7 +309,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/contact" className="btn btn-white btn-lg">
-              <CalendarCheck2 className="w-4 h-4" /> Book Your Free Consultation
+              <CalendarCheck2 className="w-4 h-4" /> Book Your Consultation
             </Link>
             <a
               href="https://wa.me/919811775369"

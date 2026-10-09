@@ -145,7 +145,7 @@ export default function TreatmentsPage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/contact" className="btn btn-primary btn-lg">
-                            Book Free Consultation
+                            Book Consultation
                         </Link>
                         <a href="https://wa.me/919811775369" target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">
                             <MessageCircle className="w-4 h-4 text-green-600" /> WhatsApp Your Reports
@@ -207,7 +207,7 @@ export default function TreatmentsPage() {
                         One consultation and a few targeted tests tell you exactly where you stand.
                     </p>
                     <Link href="/contact" className="btn btn-white btn-lg">
-                        Book Free Consultation
+                        Book Consultation
                     </Link>
                 </div>
             </section>

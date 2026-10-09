@@ -88,11 +88,11 @@ export default function FaqsPage() {
                 <div className="container-x relative text-center">
                     <h2 className="display-sm mb-6" style={{ color: "#fff" }}>Still have questions?</h2>
                     <p className="body-lg mb-10 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
-                        Send your reports on WhatsApp or book a free consultation.
+                        Send your reports on WhatsApp or book a consultation.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <Link href="/?interest=other#book" className="btn btn-white btn-lg">
-                            Book Free Consultation
+                            Book Consultation
                         </Link>
                         <a
                             href="https://wa.me/919811775369"

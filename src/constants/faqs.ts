@@ -27,8 +27,8 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: "No. A large share of couples at our centre conceive with simpler treatments like ovulation tablets, timed intercourse, or IUI. IVF is recommended only when the diagnosis genuinely calls for it.",
       },
       {
-        q: "Are consultations really free?",
-        a: "We offer a free preliminary review of your reports via WhatsApp, and you can book a free consultation to discuss your primary treatment path directly with Dr. Rashmi.",
+        q: "What does the first consultation cost?",
+        a: "We offer a preliminary review of your reports via WhatsApp, and you can book a consultation to discuss your primary treatment path directly with Dr. Rashmi.",
       },
       {
         q: "Can we consult online before visiting Gurugram?",

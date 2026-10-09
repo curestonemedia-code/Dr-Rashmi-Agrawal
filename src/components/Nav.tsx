@@ -57,7 +57,7 @@ export default function Nav() {
         <div className="hidden md:block">
           <Link href="/contact" className="btn btn-primary whitespace-nowrap shrink-0">
             <Calendar style={{ width: '16px', height: '16px' }} className="shrink-0" />
-            Book Free Consultation
+            Book Consultation
           </Link>
         </div>
 
@@ -84,7 +84,7 @@ export default function Nav() {
         </div>
         <Link href="/contact" className="btn btn-primary justify-center" onClick={() => setMenuOpen(false)}>
           <Calendar style={{ width: '16px', height: '16px' }} />
-          Book Free Consultation
+          Book Consultation
         </Link>
       </div>
     </nav>

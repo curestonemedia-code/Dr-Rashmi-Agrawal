@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 Call Us
                             </a>
                             <a href="#blog-enquiry" className="flex-1 rounded-xl bg-[#ef8b92] py-3 text-center text-white">
-                                Book Free Consult
+                                Book Consult
                             </a>
                         </nav>
                         <div className="cond-breadcrumb">
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                                 a substitute for a consultation about your own reports.
                             </p>
                             <Link href="/contact" className="btn btn-primary mt-6 inline-flex">
-                                Book Free Consultation
+                                Book Consultation
                             </Link>
                         </div>
                     </div>
@@ -282,11 +282,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="container-x text-center">
                     <h2 className="heading text-slate-900 mb-4">Ready to talk about your own case?</h2>
                     <p className="body-lg text-slate-600 max-w-xl mx-auto mb-8">
-                        The first consultation is free, and you will leave knowing what your reports actually mean.
+                        The first consultation has no charge, and you will leave knowing what your reports actually mean.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/contact" className="btn btn-primary btn-lg">
-                            Book Free Consultation
+                            Book Consultation
                         </Link>
                         <a
                             href={`https://wa.me/919811775369`}

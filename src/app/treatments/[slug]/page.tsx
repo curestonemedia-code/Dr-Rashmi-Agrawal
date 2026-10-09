@@ -32,11 +32,11 @@ const treatmentData: Record<string, TreatmentEntry> = {
         title: 'IVF, done with total transparency.',
         seo: {
             title: 'IVF Treatment in Gurgaon',
-            description: 'IVF (in vitro fertilisation) in Gurugram with Dr. Rashmi Agrawal — embryology lab, ICSI support, and a written estimate before you begin. Book a free consultation.',
+            description: 'IVF (in vitro fertilisation) in Gurugram with Dr. Rashmi Agrawal — embryology lab, ICSI support, and a written estimate before you begin. Book a consultation.',
         },
         heroDesc: 'One doctor at every step, an advanced embryology lab, and a written estimate before you begin. No surprises.',
         heroStats: [
-            { label: 'Consultation', value: 'Free' },
+            { label: 'Consultation', value: 'No Charge' },
             { label: 'Cycle Length', value: '3–4', unit: 'wks' },
             { label: 'Egg Retrieval', value: 'Daycare' },
             { label: 'Embryo Culture', value: '5', unit: 'd' },
@@ -97,7 +97,7 @@ const treatmentData: Record<string, TreatmentEntry> = {
         cta: {
             heading: 'Ready for Real Answers About IVF?',
             paragraph: 'Bring your reports and leave with a personalised protocol, a realistic estimate, and a complete written cost.',
-            primary: 'Book a Free IVF Consultation',
+            primary: 'Book an IVF Consultation',
             secondary: 'WhatsApp Reports: +91 98117 75369',
         },
     },

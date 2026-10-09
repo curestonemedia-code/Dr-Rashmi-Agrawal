@@ -145,13 +145,13 @@ export default function ConditionsSection() {
                 {/* Section CTA */}
                 <div className="mt-14 text-center">
                     <p className="text-slate-500 max-w-2xl mx-auto mb-6">
-                        Not sure which path is right for you? A free consultation will tell you honestly.
+                        Not sure which path is right for you? A consultation will tell you honestly.
                     </p>
                     <Link
                         href="/?interest=other#book"
                         className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#ef8b92] text-white text-sm font-semibold hover:bg-pink-700 transition-all hover:scale-105"
                     >
-                        Book Free Consultation
+                        Book Consultation
                     </Link>
                 </div>
             </div>

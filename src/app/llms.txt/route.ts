@@ -31,7 +31,7 @@ export function GET() {
 - Consultation hours: Monday to Saturday, 10:00–18:00 IST
 - Consultations to date: 9,000+
 - Years in practice: 10+
-- First consultation: free
+- First consultation: no charge
 - Languages: English, Hindi
 
 ## Lead specialist
