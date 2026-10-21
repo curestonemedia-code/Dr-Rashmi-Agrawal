@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import BlogLeadForm from "./BlogLeadForm";
+import { DOCTOR_REGISTRATION_DISPLAY } from "@/constants/site";
 
 // Keep in sync with src/components/DoctorProfileSection.tsx.
 const CREDENTIALS = [
   "MBBS (Gold Medalist) · MS (OBGY) DNB · FNB Reproductive Medicine",
   "1st Rank, IFS Fellowship Entrance Exam",
   "National 7th IVF Summit Award, IFS Achiever's Award",
+  DOCTOR_REGISTRATION_DISPLAY,
 ];
 
 const STATS = [

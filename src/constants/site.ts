@@ -34,6 +34,12 @@ export const MAP_SHARE_URL = "https://maps.app.goo.gl/mGv5DhiUGLsThhZm9";
 // patients straight into the review form and is better still for collecting.
 export const GOOGLE_REVIEWS_URL = MAP_SHARE_URL;
 
+// Mandatory NMC advertising-notice disclosure — Dr. Rashmi Agrawal's state medical council registration.
+export const DOCTOR_REGISTRATION_COUNCIL = "Delhi Medical Council (DMC)";
+export const DOCTOR_REGISTRATION_NO = "76953";
+export const DOCTOR_REGISTRATION_YEAR = "2016";
+export const DOCTOR_REGISTRATION_DISPLAY = "DMC Reg. No. 76953 (2016)";
+
 export const clinicSchema = {
     "@type": "MedicalClinic",
     "@id": `${SITE_URL}/#clinic`,

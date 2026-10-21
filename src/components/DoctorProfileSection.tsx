@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Award, GraduationCap, Star, Users, BookOpen, Trophy, Stethoscope, MapPin, CalendarCheck2, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MAP_SHARE_URL } from '@/constants/site';
+import { MAP_SHARE_URL, DOCTOR_REGISTRATION_DISPLAY } from '@/constants/site';
 
 export default function DoctorProfileSection() {
     useEffect(() => {
@@ -127,6 +127,9 @@ export default function DoctorProfileSection() {
                                     </p>
                                     <p className="text-slate-300 text-xs font-medium leading-relaxed">
                                         MBBS (Gold Medalist), MS (OBGY) DNB, FNB Reproductive Medicine
+                                    </p>
+                                    <p className="text-slate-400 text-[11px] font-medium leading-relaxed">
+                                        {DOCTOR_REGISTRATION_DISPLAY}
                                     </p>
                                 </div>
                             </div>

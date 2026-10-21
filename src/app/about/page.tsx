@@ -13,7 +13,7 @@ import {
   MapPin,
 } from "lucide-react";
 import ExperienceAndMemberships from "@/components/ExperienceAndMemberships";
-import { OG_IMAGE, MAP_SHARE_URL } from '@/constants/site';
+import { OG_IMAGE, MAP_SHARE_URL, DOCTOR_REGISTRATION_DISPLAY } from '@/constants/site';
 import { graph, jsonLdProps, breadcrumb, webPage } from '@/lib/schema';
 
 // Bare title — the root layout template appends "| Dr. Rashmi Agrawal IVF Centre".
@@ -185,6 +185,9 @@ export default function AboutPage() {
               <p className="text-pink-600 font-bold text-sm uppercase tracking-wider mb-8">
                 Senior IVF & Fertility Specialist — MBBS (Gold Medalist), MS
                 (OBGY), DNB, FNB
+              </p>
+              <p className="-mt-6 mb-8 text-xs font-bold text-slate-400">
+                {DOCTOR_REGISTRATION_DISPLAY}
               </p>
               <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed mb-12">
                 <p>

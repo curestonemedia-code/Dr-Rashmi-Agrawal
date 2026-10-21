@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MessageCircle, Phone, Mail, MapPin, Clock, Star, ArrowRight } from 'lucide-react';
-import { CLINIC_PHONE, CLINIC_PHONE_INTL, CLINIC_EMAIL, CLINIC_ADDRESS, GOOGLE_REVIEWS_URL, MAP_SHARE_URL } from '@/constants/site';
+import { CLINIC_PHONE, CLINIC_PHONE_INTL, CLINIC_EMAIL, CLINIC_ADDRESS, GOOGLE_REVIEWS_URL, MAP_SHARE_URL, DOCTOR_REGISTRATION_DISPLAY } from '@/constants/site';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
 
           <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style={{ color: 'var(--on-dark-muted)', fontSize: '0.8rem' }}>
-            <div>© {year} Dr. Rashmi Agrawal · IVF Centre. All rights reserved.</div>
+            <div>© {year} Dr. Rashmi Agrawal · IVF Centre. All rights reserved. · MS (OBGY) — {DOCTOR_REGISTRATION_DISPLAY}</div>
             <div>Designed with ♥ by Gulshan Chawla</div>
           </div>
         </div>

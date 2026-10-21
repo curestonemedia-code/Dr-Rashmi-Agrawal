@@ -70,6 +70,11 @@ export function physician(): Json {
         name: "Dr. Rashmi Agrawal",
         jobTitle: "Senior IVF Consultant & Fertility Specialist",
         medicalSpecialty: "Reproductive Endocrinology",
+        identifier: {
+            "@type": "PropertyValue",
+            propertyID: "Delhi Medical Council Registration Number",
+            value: "76953",
+        },
         worksFor: { "@id": CLINIC_ID },
         url: `${SITE_URL}/about`,
         image: `${SITE_URL}/dr%20rashmi.jpg`,

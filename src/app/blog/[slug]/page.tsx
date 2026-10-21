@@ -6,6 +6,7 @@ import PortableTextRenderer, { getYouTubeId } from '@/components/blog/PortableTe
 import SanityImage from '@/components/blog/SanityImage';
 import BlogPostCard from '@/components/blog/BlogPostCard';
 import BlogPostAside from '@/components/blog/BlogPostAside';
+import { DOCTOR_REGISTRATION_DISPLAY } from '@/constants/site';
 import {
     formatDate,
     getBlogPost,
@@ -242,8 +243,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </p>
                             <p className="text-slate-600 leading-relaxed">
                                 Reviewed by <strong className="text-slate-900">Dr. Rashmi Agrawal</strong> — MBBS (Gold
-                                Medalist), MS OBGYN, FNB Reproductive Medicine. This article is general information, not
-                                a substitute for a consultation about your own reports.
+                                Medalist), MS OBGYN, FNB Reproductive Medicine, {DOCTOR_REGISTRATION_DISPLAY}. This
+                                article is general information, not a substitute for a consultation about your own reports.
                             </p>
                             <Link href="/contact" className="btn btn-primary mt-6 inline-flex">
                                 Book Consultation
