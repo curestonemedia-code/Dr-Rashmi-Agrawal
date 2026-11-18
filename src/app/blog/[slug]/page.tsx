@@ -6,6 +6,7 @@ import PortableTextRenderer, { getYouTubeId } from '@/components/blog/PortableTe
 import SanityImage from '@/components/blog/SanityImage';
 import BlogPostCard from '@/components/blog/BlogPostCard';
 import BlogPostAside from '@/components/blog/BlogPostAside';
+import BlogEngagement from '@/components/blog/BlogEngagement';
 import { DOCTOR_REGISTRATION_DISPLAY } from '@/constants/site';
 import {
     formatDate,
@@ -300,6 +301,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     </div>
                 </div>
             </section>
+
+            <BlogEngagement postTitle={post.title} />
         </>
     );
 }
