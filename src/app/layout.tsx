@@ -48,8 +48,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    // The old "/dr rashmi.jpg" was declared 1200x1500 but is actually 330x456 —
-    // far below the size social platforms require for a card.
+    // Dr. Rashmi Agrawal's own photo (330x456) — below the ideal 1200x630
+    // card size, but a real doctor photo beats a text-only branded graphic
+    // for trust, and it still clears every platform's minimum (200x200).
     images: [OG_IMAGE],
   },
   twitter: {

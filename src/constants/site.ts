@@ -5,9 +5,9 @@ export const SITE_NAME = "Dr. Rashmi Agrawal IVF Centre";
 // a page that exports `openGraph` without images inherits nothing, and social
 // platforms then have no card image at all.
 export const OG_IMAGE = {
-    url: "/og-image.png",
-    width: 1200,
-    height: 630,
+    url: "/dr-rashmi.jpg",
+    width: 330,
+    height: 456,
     alt: "Dr. Rashmi Agrawal — IVF & Fertility Specialist, Gurugram",
 };
 export const CLINIC_PHONE = "+91 98117 75369";
@@ -47,7 +47,7 @@ export const clinicSchema = {
     url: SITE_URL,
     telephone: CLINIC_PHONE_INTL,
     email: CLINIC_EMAIL,
-    image: `${SITE_URL}/dr%20rashmi.jpg`,
+    image: `${SITE_URL}/dr-rashmi.jpg`,
     medicalSpecialty: "Reproductive Endocrinology",
     address: {
         "@type": "PostalAddress",

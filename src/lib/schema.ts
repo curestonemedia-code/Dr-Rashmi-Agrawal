@@ -77,7 +77,7 @@ export function physician(): Json {
         },
         worksFor: { "@id": CLINIC_ID },
         url: `${SITE_URL}/about`,
-        image: `${SITE_URL}/dr%20rashmi.jpg`,
+        image: `${SITE_URL}/dr-rashmi.jpg`,
         alumniOf: [
             { "@type": "CollegeOrUniversity", name: "Indira Gandhi Government Medical College, Nagpur" },
             { "@type": "CollegeOrUniversity", name: "Government Medical College, Nagpur" },

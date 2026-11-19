@@ -53,7 +53,7 @@ export default function BlogPostAside({ postTitle }: { postTitle: string }) {
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-4">
             <Image
-              src="/dr rashmi.jpg"
+              src="/dr-rashmi.jpg"
               alt="Dr. Rashmi Agrawal"
               width={330}
               height={456}

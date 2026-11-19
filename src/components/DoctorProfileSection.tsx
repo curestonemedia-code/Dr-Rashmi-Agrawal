@@ -105,7 +105,7 @@ export default function DoctorProfileSection() {
                     <div className="xl:col-span-5 relative w-full max-w-lg mx-auto xl:mx-0">
                         <div className="dp-fade-up relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-200 shadow-2xl group">
                             <img
-                                src="/dr rashmi.jpg"
+                                src="/dr-rashmi.jpg"
                                 alt="Dr. Rashmi Agrawal"
                                 className="w-full h-full object-cover object-top scale-[1.02] group-hover:scale-[1.05] transition-transform duration-700 ease-out"
                             />

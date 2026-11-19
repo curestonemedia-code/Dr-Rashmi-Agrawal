@@ -150,7 +150,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-slate-200 shadow-2xl max-w-lg mx-auto lg:mx-0">
                 <img
-                  src="/dr rashmi.jpg"
+                  src="/dr-rashmi.jpg"
                   alt="Dr. Rashmi Agrawal at the Gurugram centre"
                   className="w-full h-full object-cover object-top"
                 />
