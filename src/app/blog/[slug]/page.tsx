@@ -40,7 +40,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
     const title = post.seo?.metaTitle || post.title;
     const description = post.seo?.metaDescription || post.excerpt || '';
-    const image = post.seo?.ogImage?.asset?.url || post.coverImage?.asset?.url;
+    // The declared width/height must match the actual asset — claiming a
+    // fixed 1200x630 while serving a Sanity cover image with its own real
+    // dimensions makes some link-preview crawlers mis-render or reject it.
+    const ogImageAsset = post.seo?.ogImage?.asset || post.coverImage?.asset;
+    const image = ogImageAsset?.url;
+    const imageWidth = ogImageAsset?.metadata?.dimensions?.width || OG_IMAGE.width;
+    const imageHeight = ogImageAsset?.metadata?.dimensions?.height || OG_IMAGE.height;
     const url = `/blog/${post.slug}`;
 
     return {
@@ -54,7 +60,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
             type: 'article',
             publishedTime: post.publishedAt,
             modifiedTime: post.updatedAt || post.publishedAt,
-            images: image ? [{ url: image, width: 1200, height: 630, alt: post.title }] : [OG_IMAGE],
+            images: image ? [{ url: image, width: imageWidth, height: imageHeight, alt: post.title }] : [OG_IMAGE],
         },
         twitter: {
             card: 'summary_large_image',
