@@ -315,7 +315,7 @@ export default function AboutPage() {
               <CalendarCheck2 className="w-4 h-4" /> Book Your Consultation
             </Link>
             <a
-              href="https://wa.me/919811775369"
+              href="https://wa.me/918130205369"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-lg"

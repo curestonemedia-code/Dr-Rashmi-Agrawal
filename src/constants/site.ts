@@ -10,8 +10,8 @@ export const OG_IMAGE = {
     height: 456,
     alt: "Dr. Rashmi Agrawal — IVF & Fertility Specialist, Gurugram",
 };
-export const CLINIC_PHONE = "+91 98117 75369";
-export const CLINIC_PHONE_INTL = "+919811775369";
+export const CLINIC_PHONE = "+91 81302 05369";
+export const CLINIC_PHONE_INTL = "+918130205369";
 export const CLINIC_EMAIL = "care@thecurestone.com";
 export const CLINIC_ADDRESS = {
     streetAddress: "Plot No. 522, near Supermarket, Sector 27",

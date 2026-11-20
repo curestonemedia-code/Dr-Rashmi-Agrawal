@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         article column's left edge. */}
                     <div className="max-w-3xl">
                         <nav className="mb-6 flex gap-2 text-sm font-bold text-[#ef8b92] lg:hidden">
-                            <a href="tel:+919811775369" className="flex-1 rounded-xl border-2 border-[#ef8b92] py-3 text-center">
+                            <a href="tel:+918130205369" className="flex-1 rounded-xl border-2 border-[#ef8b92] py-3 text-center">
                                 Call Us
                             </a>
                             <a href="#blog-enquiry" className="flex-1 rounded-xl bg-[#ef8b92] py-3 text-center text-white">
@@ -297,7 +297,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             Book Consultation
                         </Link>
                         <a
-                            href={`https://wa.me/919811775369`}
+                            href={`https://wa.me/918130205369`}
                             target="_blank"
                             rel="noreferrer"
                             className="btn btn-ghost btn-lg"

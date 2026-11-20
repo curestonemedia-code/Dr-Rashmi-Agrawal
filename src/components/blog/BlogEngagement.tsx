@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import BlogLeadForm from "./BlogLeadForm";
 
-const PHONE_TEL = "+919811775369";
+const PHONE_TEL = "+918130205369";
 const DONE_KEY = "blog-lead-done";
 
 type Mode = "idle" | "popup" | "bar";
